@@ -87,7 +87,6 @@ export const PlasmicShowMoreInfo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicShowMoreInfo__OverridesType = {
   root?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   position?: Flex__<"div">;
   link?: Flex__<"a"> & Partial<LinkProps>;
 };
@@ -191,10 +190,8 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
           <div className={classNames(projectcss.all, sty.freeBox__xnMdf)}>
             <div className={classNames(projectcss.all, sty.freeBox__xpCq)}>
               <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__tmgsT)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -309,6 +306,24 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox___97DUr)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__ohJgz)}
+                displayHeight={"14px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"14px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/proliga_clone/images/freeEuroCoinIcon2141Thumbpng.png",
+                  fullWidth: 512,
+                  fullHeight: 512,
+                  aspectRatio: undefined
+                }}
+              />
+
               <div
                 className={classNames(
                   projectcss.all,
@@ -336,8 +351,7 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "position", "link"],
-  img: ["img"],
+  root: ["root", "position", "link"],
   position: ["position"],
   link: ["link"]
 } as const;
@@ -346,7 +360,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  img: typeof PlasmicImg__;
   position: "div";
   link: "a";
 };
@@ -428,7 +441,6 @@ export const PlasmicShowMoreInfo = Object.assign(
   withPlasmicPageGuard(makeNodeComponent("root")),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
     position: makeNodeComponent("position"),
     link: makeNodeComponent("link"),
 

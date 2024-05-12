@@ -1968,6 +1968,11 @@
           "id": "qIACDQFE5L6I",
           "name": "Isaac.png",
           "filePath": "../public/plasmic/proliga_clone/images/isaacpng.png"
+        },
+        {
+          "id": "pVBgw88_8ORI",
+          "name": "free-euro-coin-icon-2141-thumb.png",
+          "filePath": "../public/plasmic/proliga_clone/images/freeEuroCoinIcon2141Thumbpng.png"
         }
       ],
       "indirect": false,
