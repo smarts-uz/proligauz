@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs from "../../Clubs"; // plasmic-import: EcPHyLOdrRa4/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
 import SignInButtons from "../../SignInButtons"; // plasmic-import: fX0Kd1k2n7hr/component
 import SearchComponent from "../../SearchComponent"; // plasmic-import: mmk_GiTXUtux/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
@@ -95,7 +95,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
-  clubs?: Flex__<typeof Clubs>;
+  clubs2?: Flex__<typeof Clubs2>;
   heroSection?: Flex__<"div">;
   signIn?: Flex__<"div">;
   h4?: Flex__<"h4">;
@@ -180,10 +180,10 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <Clubs
-            data-plasmic-name={"clubs"}
-            data-plasmic-override={overrides.clubs}
-            className={classNames("__wab_instance", sty.clubs)}
+          <Clubs2
+            data-plasmic-name={"clubs2"}
+            data-plasmic-override={overrides.clubs2}
+            className={classNames("__wab_instance", sty.clubs2)}
           />
 
           <div
@@ -918,7 +918,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "navbar",
-    "clubs",
+    "clubs2",
     "heroSection",
     "signIn",
     "h4",
@@ -933,7 +933,7 @@ const PlasmicDescendants = {
     "footer"
   ],
   navbar: ["navbar"],
-  clubs: ["clubs"],
+  clubs2: ["clubs2"],
   heroSection: ["heroSection", "signIn", "h4", "h2", "signInButtons"],
   signIn: ["signIn", "h4", "h2", "signInButtons"],
   h4: ["h4"],
@@ -953,7 +953,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
-  clubs: typeof Clubs;
+  clubs2: typeof Clubs2;
   heroSection: "div";
   signIn: "div";
   h4: "h4";
@@ -1046,7 +1046,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
-    clubs: makeNodeComponent("clubs"),
+    clubs2: makeNodeComponent("clubs2"),
     heroSection: makeNodeComponent("heroSection"),
     signIn: makeNodeComponent("signIn"),
     h4: makeNodeComponent("h4"),

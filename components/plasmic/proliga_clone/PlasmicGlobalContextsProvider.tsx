@@ -15,9 +15,11 @@ export interface GlobalContextsProviderProps {
   antdConfigProviderProps?: Partial<
     Omit<React.ComponentProps<typeof AntdConfigProvider>, "children">
   >;
+
   graphCMSCredentialsProviderProps?: Partial<
     Omit<React.ComponentProps<typeof GraphCMSCredentialsProvider>, "children">
   >;
+
   cmsCredentialsProviderProps?: Partial<
     Omit<React.ComponentProps<typeof CmsCredentialsProvider>, "children">
   >;

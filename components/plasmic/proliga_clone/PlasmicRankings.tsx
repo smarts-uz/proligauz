@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs from "../../Clubs"; // plasmic-import: EcPHyLOdrRa4/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
 import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
 import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
@@ -90,7 +90,7 @@ export const PlasmicRankings__ArgProps = new Array<ArgPropType>();
 export type PlasmicRankings__OverridesType = {
   rankings?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
-  clubs?: Flex__<typeof Clubs>;
+  clubs2?: Flex__<typeof Clubs2>;
   h1?: Flex__<"h1">;
   h4?: Flex__<"h4">;
   rankings2?: Flex__<typeof Rankings2>;
@@ -181,10 +181,10 @@ function PlasmicRankings__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <Clubs
-            data-plasmic-name={"clubs"}
-            data-plasmic-override={overrides.clubs}
-            className={classNames("__wab_instance", sty.clubs)}
+          <Clubs2
+            data-plasmic-name={"clubs2"}
+            data-plasmic-override={overrides.clubs2}
+            className={classNames("__wab_instance", sty.clubs2)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__e476J)}>
@@ -667,7 +667,7 @@ const PlasmicDescendants = {
   rankings: [
     "rankings",
     "navbar",
-    "clubs",
+    "clubs2",
     "h1",
     "h4",
     "rankings2",
@@ -675,7 +675,7 @@ const PlasmicDescendants = {
     "img"
   ],
   navbar: ["navbar"],
-  clubs: ["clubs"],
+  clubs2: ["clubs2"],
   h1: ["h1"],
   h4: ["h4"],
   rankings2: ["rankings2"],
@@ -688,7 +688,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   rankings: "div";
   navbar: typeof Navbar;
-  clubs: typeof Clubs;
+  clubs2: typeof Clubs2;
   h1: "h1";
   h4: "h4";
   rankings2: typeof Rankings2;
@@ -774,7 +774,7 @@ export const PlasmicRankings = Object.assign(
   {
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
-    clubs: makeNodeComponent("clubs"),
+    clubs2: makeNodeComponent("clubs2"),
     h1: makeNodeComponent("h1"),
     h4: makeNodeComponent("h4"),
     rankings2: makeNodeComponent("rankings2"),

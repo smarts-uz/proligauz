@@ -66,7 +66,7 @@ import {
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs from "../../Clubs"; // plasmic-import: EcPHyLOdrRa4/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
 import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
 import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
@@ -96,7 +96,7 @@ export const PlasmicMatches__ArgProps = new Array<ArgPropType>();
 export type PlasmicMatches__OverridesType = {
   root?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
-  clubs?: Flex__<typeof Clubs>;
+  clubs2?: Flex__<typeof Clubs2>;
   h2?: Flex__<"h2">;
   dropdown?: Flex__<typeof AntdDropdown>;
   button?: Flex__<typeof AntdButton>;
@@ -204,10 +204,10 @@ function PlasmicMatches__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <Clubs
-            data-plasmic-name={"clubs"}
-            data-plasmic-override={overrides.clubs}
-            className={classNames("__wab_instance", sty.clubs)}
+          <Clubs2
+            data-plasmic-name={"clubs2"}
+            data-plasmic-override={overrides.clubs2}
+            className={classNames("__wab_instance", sty.clubs2)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__d7DLf)}>
@@ -1465,9 +1465,9 @@ function PlasmicMatches__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "clubs", "h2", "dropdown", "button", "footer"],
+  root: ["root", "navbar", "clubs2", "h2", "dropdown", "button", "footer"],
   navbar: ["navbar"],
-  clubs: ["clubs"],
+  clubs2: ["clubs2"],
   h2: ["h2"],
   dropdown: ["dropdown", "button"],
   button: ["button"],
@@ -1479,7 +1479,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
-  clubs: typeof Clubs;
+  clubs2: typeof Clubs2;
   h2: "h2";
   dropdown: typeof AntdDropdown;
   button: typeof AntdButton;
@@ -1564,7 +1564,7 @@ export const PlasmicMatches = Object.assign(
   {
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
-    clubs: makeNodeComponent("clubs"),
+    clubs2: makeNodeComponent("clubs2"),
     h2: makeNodeComponent("h2"),
     dropdown: makeNodeComponent("dropdown"),
     button: makeNodeComponent("button"),

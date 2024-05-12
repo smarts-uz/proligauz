@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs from "../../Clubs"; // plasmic-import: EcPHyLOdrRa4/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
 import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 
@@ -86,7 +86,7 @@ export type PlasmicMarket__OverridesType = {
   root?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
   freeBox?: Flex__<"div">;
-  clubs?: Flex__<typeof Clubs>;
+  clubs2?: Flex__<typeof Clubs2>;
   columns?: Flex__<"div">;
   footer?: Flex__<typeof Footer>;
 };
@@ -162,10 +162,10 @@ function PlasmicMarket__RenderFunc(props: {
             data-plasmic-override={overrides.freeBox}
             className={classNames(projectcss.all, sty.freeBox)}
           >
-            <Clubs
-              data-plasmic-name={"clubs"}
-              data-plasmic-override={overrides.clubs}
-              className={classNames("__wab_instance", sty.clubs)}
+            <Clubs2
+              data-plasmic-name={"clubs2"}
+              data-plasmic-override={overrides.clubs2}
+              className={classNames("__wab_instance", sty.clubs2)}
             />
           </div>
           <div
@@ -311,10 +311,10 @@ function PlasmicMarket__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "freeBox", "clubs", "columns", "footer"],
+  root: ["root", "navbar", "freeBox", "clubs2", "columns", "footer"],
   navbar: ["navbar"],
-  freeBox: ["freeBox", "clubs"],
-  clubs: ["clubs"],
+  freeBox: ["freeBox", "clubs2"],
+  clubs2: ["clubs2"],
   columns: ["columns"],
   footer: ["footer"]
 } as const;
@@ -325,7 +325,7 @@ type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
   freeBox: "div";
-  clubs: typeof Clubs;
+  clubs2: typeof Clubs2;
   columns: "div";
   footer: typeof Footer;
 };
@@ -409,7 +409,7 @@ export const PlasmicMarket = Object.assign(
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
     freeBox: makeNodeComponent("freeBox"),
-    clubs: makeNodeComponent("clubs"),
+    clubs2: makeNodeComponent("clubs2"),
     columns: makeNodeComponent("columns"),
     footer: makeNodeComponent("footer"),
 

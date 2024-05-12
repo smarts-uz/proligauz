@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs from "../../Clubs"; // plasmic-import: EcPHyLOdrRa4/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
 import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
 import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
@@ -89,7 +89,7 @@ export const PlasmicIdealXl__ArgProps = new Array<ArgPropType>();
 export type PlasmicIdealXl__OverridesType = {
   idealXl?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
-  clubs?: Flex__<typeof Clubs>;
+  clubs2?: Flex__<typeof Clubs2>;
   h4?: Flex__<"h4">;
   h5?: Flex__<"h5">;
   soccerPlaceMens?: Flex__<typeof SoccerPlaceMens>;
@@ -163,10 +163,10 @@ function PlasmicIdealXl__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <Clubs
-            data-plasmic-name={"clubs"}
-            data-plasmic-override={overrides.clubs}
-            className={classNames("__wab_instance", sty.clubs)}
+          <Clubs2
+            data-plasmic-name={"clubs2"}
+            data-plasmic-override={overrides.clubs2}
+            className={classNames("__wab_instance", sty.clubs2)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__mz0Fn)}>
@@ -636,7 +636,7 @@ const PlasmicDescendants = {
   idealXl: [
     "idealXl",
     "navbar",
-    "clubs",
+    "clubs2",
     "h4",
     "h5",
     "soccerPlaceMens",
@@ -644,7 +644,7 @@ const PlasmicDescendants = {
     "cmsDataFetcher"
   ],
   navbar: ["navbar"],
-  clubs: ["clubs"],
+  clubs2: ["clubs2"],
   h4: ["h4"],
   h5: ["h5"],
   soccerPlaceMens: ["soccerPlaceMens"],
@@ -657,7 +657,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   idealXl: "div";
   navbar: typeof Navbar;
-  clubs: typeof Clubs;
+  clubs2: typeof Clubs2;
   h4: "h4";
   h5: "h5";
   soccerPlaceMens: typeof SoccerPlaceMens;
@@ -743,7 +743,7 @@ export const PlasmicIdealXl = Object.assign(
   {
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
-    clubs: makeNodeComponent("clubs"),
+    clubs2: makeNodeComponent("clubs2"),
     h4: makeNodeComponent("h4"),
     h5: makeNodeComponent("h5"),
     soccerPlaceMens: makeNodeComponent("soccerPlaceMens"),

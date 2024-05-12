@@ -59,6 +59,12 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import {
+  executePlasmicDataOp,
+  usePlasmicDataOp,
+  usePlasmicInvalidate
+} from "@plasmicapp/react-web/lib/data-sources";
+
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -81,6 +87,7 @@ export const PlasmicClubs2__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicClubs2__OverridesType = {
   root?: Flex__<"div">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
   img?: Flex__<typeof PlasmicImg__>;
 };
 
@@ -119,6 +126,28 @@ function PlasmicClubs2__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  let [$queries, setDollarQueries] = React.useState<
+    Record<string, ReturnType<typeof usePlasmicDataOp>>
+  >({});
+
+  const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
+    clubsLogo: usePlasmicDataOp(() => {
+      return {
+        sourceId: "bCyY9Km8wqcJwdgC8XtpDZ",
+        opId: "17e07b87-6f52-490f-ab6d-5eba42c1183e",
+        userArgs: {},
+        cacheKey: `plasmic.$.17e07b87-6f52-490f-ab6d-5eba42c1183e.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    })
+  };
+  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
+    setDollarQueries(new$Queries);
+
+    $queries = new$Queries;
+  }
+
   return (
     <div
       data-plasmic-name={"root"}
@@ -136,40 +165,91 @@ function PlasmicClubs2__RenderFunc(props: {
         sty.root
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__vN617)}>
-        {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))([
-          2, 3, 4
-        ]).map((__plasmic_item_0, __plasmic_idx_0) => {
-          const currentItem = __plasmic_item_0;
-          const currentIndex = __plasmic_idx_0;
-          return (
-            <div
-              className={classNames(projectcss.all, sty.freeBox__rdcBx)}
-              key={currentIndex}
-            >
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-              />
-            </div>
-          );
-        })}
+      <div className={classNames(projectcss.all, sty.freeBox__o5Rd2)}>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__vN617)}
+        >
+          {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+            (() => {
+              try {
+                return $queries.clubsLogo.data;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return [];
+                }
+                throw e;
+              }
+            })()
+          ).map((__plasmic_item_0, __plasmic_idx_0) => {
+            const currentItem = __plasmic_item_0;
+            const currentIndex = __plasmic_idx_0;
+            return (
+              <PlasmicLink__
+                data-plasmic-name={"link"}
+                data-plasmic-override={overrides.link}
+                className={classNames(projectcss.all, projectcss.a, sty.link)}
+                component={Link}
+                href={(() => {
+                  try {
+                    return "/club/" + currentItem.name;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return `/club/${""}`;
+                    }
+                    throw e;
+                  }
+                })()}
+                key={currentIndex}
+                platform={"nextjs"}
+              >
+                <PlasmicImg__
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"60"}
+                  loading={"lazy"}
+                  src={(() => {
+                    try {
+                      return currentItem.flag_url;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                  width={"60"}
+                />
+              </PlasmicLink__>
+            );
+          })}
+        </Stack__>
       </div>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img"],
+  root: ["root", "link", "img"],
+  link: ["link", "img"],
   img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -177,6 +257,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  link: "a";
   img: typeof PlasmicImg__;
 };
 
@@ -240,6 +321,7 @@ export const PlasmicClubs2 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    link: makeNodeComponent("link"),
     img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicClubs2
