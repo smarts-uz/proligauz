@@ -1550,19 +1550,6 @@
           "path": "/clubPlayer/[id]"
         },
         {
-          "id": "SJQBsn0MsQyh",
-          "name": "Clubs2",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClubs2.tsx",
-          "importSpec": {
-            "modulePath": "Clubs2.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicClubs2.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "h0_szABvd8-m",
           "name": "ClubInfo",
           "type": "managed",
@@ -1589,6 +1576,33 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/player/[id]"
+        },
+        {
+          "id": "WRV_ZiC5O66i",
+          "name": "Market2",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicMarket2.tsx",
+          "importSpec": {
+            "modulePath": "../pages/market-2.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicMarket2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/market-2"
+        },
+        {
+          "id": "3EueAFP_3sEI",
+          "name": "Clubs2",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClubs2.tsx",
+          "importSpec": {
+            "modulePath": "Clubs2.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicClubs2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

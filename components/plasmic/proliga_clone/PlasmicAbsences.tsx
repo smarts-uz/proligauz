@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import InjuredClub from "../../InjuredClub"; // plasmic-import: QI5VjKINDG8A/component
 import InjuredTeamMember from "../../InjuredTeamMember"; // plasmic-import: sSfppfkBqSwu/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component

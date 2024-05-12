@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import BreakinNewsCards from "../../BreakinNewsCards"; // plasmic-import: cgwtBVaX8unu/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 

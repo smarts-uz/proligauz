@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import SignInButtons from "../../SignInButtons"; // plasmic-import: fX0Kd1k2n7hr/component
 import SearchComponent from "../../SearchComponent"; // plasmic-import: mmk_GiTXUtux/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";

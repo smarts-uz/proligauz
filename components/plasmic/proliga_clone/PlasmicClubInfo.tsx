@@ -59,7 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   executePlasmicDataOp,
   usePlasmicDataOp,
@@ -67,7 +66,7 @@ import {
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -91,6 +90,7 @@ export const PlasmicClubInfo__ArgProps = new Array<ArgPropType>();
 export type PlasmicClubInfo__OverridesType = {
   root?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
+  freeBox?: Flex__<"div">;
   clubs2?: Flex__<typeof Clubs2>;
   h1?: Flex__<"h1">;
 };
@@ -132,8 +132,6 @@ function PlasmicClubInfo__RenderFunc(props: {
     Record<string, ReturnType<typeof usePlasmicDataOp>>
   >({});
 
-  const dataSourcesCtx = usePlasmicDataSourceContext();
-
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
     clubs: usePlasmicDataOp(() => {
       return {
@@ -160,11 +158,11 @@ function PlasmicClubInfo__RenderFunc(props: {
     clubPlayers: usePlasmicDataOp(() => {
       return {
         sourceId: "bCyY9Km8wqcJwdgC8XtpDZ",
-        opId: "36c8aeeb-d5cc-4bdb-a436-16619bbc3094",
+        opId: "441d46be-1f0a-4020-b752-a323a08d6be6",
         userArgs: {},
-        cacheKey: `plasmic.$.36c8aeeb-d5cc-4bdb-a436-16619bbc3094.$.`,
+        cacheKey: `plasmic.$.441d46be-1f0a-4020-b752-a323a08d6be6.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     })
   };
@@ -207,12 +205,17 @@ function PlasmicClubInfo__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <Clubs2
-            data-plasmic-name={"clubs2"}
-            data-plasmic-override={overrides.clubs2}
-            className={classNames("__wab_instance", sty.clubs2)}
-          />
-
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <Clubs2
+              data-plasmic-name={"clubs2"}
+              data-plasmic-override={overrides.clubs2}
+              className={classNames("__wab_instance", sty.clubs2)}
+            />
+          </div>
           <h1
             data-plasmic-name={"h1"}
             data-plasmic-override={overrides.h1}
@@ -249,8 +252,9 @@ function PlasmicClubInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "clubs2", "h1"],
+  root: ["root", "navbar", "freeBox", "clubs2", "h1"],
   navbar: ["navbar"],
+  freeBox: ["freeBox", "clubs2"],
   clubs2: ["clubs2"],
   h1: ["h1"]
 } as const;
@@ -260,6 +264,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
+  freeBox: "div";
   clubs2: typeof Clubs2;
   h1: "h1";
 };
@@ -324,7 +329,7 @@ function withPlasmicPageGuard<P extends object>(
 ) {
   const PageGuard: React.FC<P> = props => (
     <PlasmicPageGuard__
-      minRole={"f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"}
+      minRole={null}
       appId={"tDWy3GXn2mzd9e2xUaPdmu"}
       authorizeEndpoint={"https://studio.plasmic.app/authorize"}
       canTriggerLogin={false}
@@ -342,6 +347,7 @@ export const PlasmicClubInfo = Object.assign(
   {
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
+    freeBox: makeNodeComponent("freeBox"),
     clubs2: makeNodeComponent("clubs2"),
     h1: makeNodeComponent("h1"),
 

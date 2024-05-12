@@ -66,7 +66,7 @@ import {
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
-import Clubs2 from "../../Clubs2"; // plasmic-import: SJQBsn0MsQyh/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
 import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
