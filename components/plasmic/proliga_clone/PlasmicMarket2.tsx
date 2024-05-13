@@ -345,19 +345,6 @@ function PlasmicMarket2__RenderFunc(props: {
                               sty.link___67Oqn
                             )}
                             component={Link}
-                            href={(() => {
-                              try {
-                                return "/player/" + currentItem.id;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return `/player/${""}`;
-                                }
-                                throw e;
-                              }
-                            })()}
                             platform={"nextjs"}
                           >
                             {"DEF"}
