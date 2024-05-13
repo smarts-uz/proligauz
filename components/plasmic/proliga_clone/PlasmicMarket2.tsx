@@ -235,9 +235,58 @@ function PlasmicMarket2__RenderFunc(props: {
                 const currentItem = __plasmic_item_0;
                 const currentIndex = __plasmic_idx_0;
                 return (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pCfmu)}
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link__pCfmu
+                    )}
+                    component={Link}
+                    href={(() => {
+                      try {
+                        return currentItem.club_id;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return `/player/${""}`;
+                        }
+                        throw e;
+                      }
+                    })()}
                     key={currentIndex}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["updateStateVariable"] = true
+                        ? (() => {
+                            const actionArgs = {};
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+                              undefined;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateStateVariable"] != null &&
+                        typeof $steps["updateStateVariable"] === "object" &&
+                        typeof $steps["updateStateVariable"].then === "function"
+                      ) {
+                        $steps["updateStateVariable"] = await $steps[
+                          "updateStateVariable"
+                        ];
+                      }
+                    }}
+                    platform={"nextjs"}
                   >
                     <div
                       className={classNames(projectcss.all, sty.freeBox__z2H1)}
@@ -389,7 +438,7 @@ function PlasmicMarket2__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </PlasmicLink__>
                 );
               })}
             </div>
