@@ -244,7 +244,7 @@ function PlasmicMarket2__RenderFunc(props: {
                     component={Link}
                     href={(() => {
                       try {
-                        return currentItem.club_id;
+                        return "players/" + currentItem.club_id;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -345,7 +345,19 @@ function PlasmicMarket2__RenderFunc(props: {
                               sty.link___67Oqn
                             )}
                             component={Link}
-                            href={"https://www.plasmic.app/"}
+                            href={(() => {
+                              try {
+                                return "players/" + currentItem.club_id;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return `/player/${""}`;
+                                }
+                                throw e;
+                              }
+                            })()}
                             platform={"nextjs"}
                           >
                             {"DEF"}
