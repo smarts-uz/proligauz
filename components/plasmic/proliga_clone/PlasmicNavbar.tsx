@@ -387,7 +387,7 @@ function PlasmicNavbar__RenderFunc(props: {
                     role={"img"}
                   />
                 }
-                link={`/market`}
+                link={`/market-2`}
                 onClick={async event => {
                   const $steps = {};
 
