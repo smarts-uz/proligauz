@@ -244,7 +244,7 @@ function PlasmicMarket2__RenderFunc(props: {
                     component={Link}
                     href={(() => {
                       try {
-                        return "players/" + currentItem.club_id;
+                        return "/player/" + currentItem.id;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -347,7 +347,7 @@ function PlasmicMarket2__RenderFunc(props: {
                             component={Link}
                             href={(() => {
                               try {
-                                return "players/" + currentItem.club_id;
+                                return "/player/" + currentItem.id;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
