@@ -187,160 +187,162 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__xnMdf)}>
-            <div className={classNames(projectcss.all, sty.freeBox__xpCq)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__tmgsT)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={(() => {
-                  try {
-                    return $queries.query.data[0].player_img;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__e2Hpz)}>
-              <div
-                data-plasmic-name={"position"}
-                data-plasmic-override={overrides.position}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.position
-                )}
-              >
-                {"Position"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__oE7P
-                )}
-              >
-                {"FSYP"}
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__h975)}>
-              <PlasmicLink__
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link
-                )}
-                component={Link}
-                href={"https://www.plasmic.app/"}
-                platform={"nextjs"}
-              >
-                {"STR"}
-              </PlasmicLink__>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__q0GOb
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
+          <div className={classNames(projectcss.all, sty.freeBox__qCx1L)}>
+            <div className={classNames(projectcss.all, sty.freeBox__xnMdf)}>
+              <div className={classNames(projectcss.all, sty.freeBox__xpCq)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__tmgsT)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={(() => {
                     try {
-                      return $queries.query.data[0].player_name;
+                      return $queries.query.data[0].player_img;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return "";
+                        return undefined;
                       }
                       throw e;
                     }
                   })()}
-                </React.Fragment>
+                />
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rjhOi
-                )}
-              >
-                {"166"}
+              <div className={classNames(projectcss.all, sty.freeBox__e2Hpz)}>
+                <div
+                  data-plasmic-name={"position"}
+                  data-plasmic-override={overrides.position}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.position
+                  )}
+                >
+                  {"Position"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__oE7P
+                  )}
+                >
+                  {"FSYP"}
+                </div>
               </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__kr515)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___61Lug
-                )}
-              >
-                {"Value"}
+              <div className={classNames(projectcss.all, sty.freeBox__h975)}>
+                <PlasmicLink__
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/"}
+                  platform={"nextjs"}
+                >
+                  {"STR"}
+                </PlasmicLink__>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__q0GOb
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data[0].player_name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rjhOi
+                  )}
+                >
+                  {"166"}
+                </div>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pqiO1
-                )}
-              >
-                {"Avarage"}
+              <div className={classNames(projectcss.all, sty.freeBox__kr515)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___61Lug
+                  )}
+                >
+                  {"Value"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pqiO1
+                  )}
+                >
+                  {"Avarage"}
+                </div>
               </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox___97DUr)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__ohJgz)}
-                displayHeight={"14px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"14px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/proliga_clone/images/freeEuroCoinIcon2141Thumbpng.png",
-                  fullWidth: 512,
-                  fullHeight: 512,
-                  aspectRatio: undefined
-                }}
-              />
+              <div className={classNames(projectcss.all, sty.freeBox___97DUr)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__ohJgz)}
+                  displayHeight={"14px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"14px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/proliga_clone/images/freeEuroCoinIcon2141Thumbpng.png",
+                    fullWidth: 512,
+                    fullHeight: 512,
+                    aspectRatio: undefined
+                  }}
+                />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___1PPyj
-                )}
-              >
-                {"8.175.716"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hoqzv
-                )}
-              >
-                {"6,15"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1PPyj
+                  )}
+                >
+                  {"8.175.716"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hoqzv
+                  )}
+                >
+                  {"6,15"}
+                </div>
               </div>
             </div>
           </div>
