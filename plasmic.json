@@ -1603,6 +1603,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/market-2"
+        },
+        {
+          "id": "kSdCtKX2AhMz",
+          "name": "AuthComponent2",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicAuthComponent2.tsx",
+          "importSpec": {
+            "modulePath": "AuthComponent2.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

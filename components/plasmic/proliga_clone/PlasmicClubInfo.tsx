@@ -90,9 +90,11 @@ export const PlasmicClubInfo__ArgProps = new Array<ArgPropType>();
 export type PlasmicClubInfo__OverridesType = {
   root?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
-  freeBox?: Flex__<"div">;
   clubs2?: Flex__<typeof Clubs2>;
   h1?: Flex__<"h1">;
+  columns?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
+  text?: Flex__<"div">;
 };
 
 export interface DefaultClubInfoProps {}
@@ -164,6 +166,16 @@ function PlasmicClubInfo__RenderFunc(props: {
         invalidatedKeys: null,
         roleId: null
       };
+    }),
+    componentData: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "157523a8-a564-4845-81d4-23951d76d034",
+        userArgs: {},
+        cacheKey: `plasmic.$.157523a8-a564-4845-81d4-23951d76d034.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
     })
   };
   if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
@@ -205,11 +217,7 @@ function PlasmicClubInfo__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox___4MaPl)}>
             <Clubs2
               data-plasmic-name={"clubs2"}
               data-plasmic-override={overrides.clubs2}
@@ -245,6 +253,59 @@ function PlasmicClubInfo__RenderFunc(props: {
               }}
             />
           </h1>
+          <div
+            data-plasmic-name={"columns"}
+            data-plasmic-override={overrides.columns}
+            className={classNames(projectcss.all, sty.columns)}
+          >
+            <div className={classNames(projectcss.all, sty.column__fyBab)}>
+              <div className={classNames(projectcss.all, sty.freeBox__utyoq)}>
+                <PlasmicImg__
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={(() => {
+                    try {
+                      return $queries.clubs.data.flag_url;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                />
+
+                <div
+                  data-plasmic-name={"text"}
+                  data-plasmic-override={overrides.text}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text
+                  )}
+                >
+                  {"Enter some text"}
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.column__chsYc)} />
+
+            <div className={classNames(projectcss.all, sty.column__wE6Fs)} />
+
+            <div className={classNames(projectcss.all, sty.column__oJrng)} />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -252,11 +313,13 @@ function PlasmicClubInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "freeBox", "clubs2", "h1"],
+  root: ["root", "navbar", "clubs2", "h1", "columns", "img", "text"],
   navbar: ["navbar"],
-  freeBox: ["freeBox", "clubs2"],
   clubs2: ["clubs2"],
-  h1: ["h1"]
+  h1: ["h1"],
+  columns: ["columns", "img", "text"],
+  img: ["img"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -264,9 +327,11 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
-  freeBox: "div";
   clubs2: typeof Clubs2;
   h1: "h1";
+  columns: "div";
+  img: typeof PlasmicImg__;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -347,9 +412,11 @@ export const PlasmicClubInfo = Object.assign(
   {
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
-    freeBox: makeNodeComponent("freeBox"),
     clubs2: makeNodeComponent("clubs2"),
     h1: makeNodeComponent("h1"),
+    columns: makeNodeComponent("columns"),
+    img: makeNodeComponent("img"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicClubInfo
     internalVariantProps: PlasmicClubInfo__VariantProps,
