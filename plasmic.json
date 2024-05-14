@@ -1656,6 +1656,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/club-2/[id]"
+        },
+        {
+          "id": "KcNazh2mB31g",
+          "name": "PlayerMarket",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicPlayerMarket.tsx",
+          "importSpec": {
+            "modulePath": "../pages/player-market.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicPlayerMarket.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/player-market"
+        },
+        {
+          "id": "MiYb6Bkn-8fe",
+          "name": "Teams",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicTeams.tsx",
+          "importSpec": {
+            "modulePath": "../pages/club-3/[id].tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicTeams.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/club-3/[id]"
         }
       ],
       "icons": [
