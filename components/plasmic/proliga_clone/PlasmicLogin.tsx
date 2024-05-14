@@ -59,9 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import AuthComponent from "../../AuthComponent"; // plasmic-import: ZdkRel5xiZQr/component
-import LoginRegister from "../../LoginRegister"; // plasmic-import: Fn4_X6LSrEZk/component
-import TextInput from "../../TextInput"; // plasmic-import: xwgFLXqL07mD/component
+import AuthComponent from "../../AuthComponent"; // plasmic-import: f9VC6U83GUs6/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -70,9 +68,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: tDWy3GXn2mzd9e2xUaPdmu/projectcss
 import sty from "./PlasmicLogin.module.css"; // plasmic-import: aTUQBx3a3oCn/css
-
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: TfB627kbYt5s/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: BLgPkmgd4hOv/icon
 
 createPlasmicElementProxy;
 
@@ -87,11 +82,7 @@ export const PlasmicLogin__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLogin__OverridesType = {
   root?: Flex__<"div">;
-  loginRegister?: Flex__<typeof LoginRegister>;
-  emailInput?: Flex__<typeof TextInput>;
-  passwordInput?: Flex__<typeof TextInput>;
-  submitButton?: Flex__<"a"> & Partial<LinkProps>;
-  link?: Flex__<"a"> & Partial<LinkProps>;
+  authComponent?: Flex__<typeof AuthComponent>;
 };
 
 export interface DefaultLoginProps {}
@@ -127,30 +118,6 @@ function PlasmicLogin__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
-  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
-    () => [
-      {
-        path: "emailInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
-        path: "passwordInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      }
-    ],
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
-
   return (
     <React.Fragment>
       <Head></Head>
@@ -179,242 +146,9 @@ function PlasmicLogin__RenderFunc(props: {
           )}
         >
           <AuthComponent
-            className={classNames("__wab_instance", sty.authComponent__jnii3)}
-          />
-
-          <LoginRegister
-            data-plasmic-name={"loginRegister"}
-            data-plasmic-override={overrides.loginRegister}
-            className={classNames("__wab_instance", sty.loginRegister)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__rsYwu)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__saBqc
-                )}
-              >
-                {"llll"}
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__dbln)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kBu9J
-                )}
-              >
-                {"Create  account with Facebook"}
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__mns8U)}
-                displayHeight={"26px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"26px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/proliga_clone/images/_555Webp.webp",
-                  fullWidth: 512,
-                  fullHeight: 512,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__bIrPt)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___9FiWd
-                )}
-              >
-                {"Create accaunt with Google"}
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__qtHu9)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"26px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/proliga_clone/images/googleGLogosvgpng.png",
-                  fullWidth: 768,
-                  fullHeight: 768,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__xVq)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__lkKbe
-                )}
-              >
-                {"Create accaunt with Apple"}
-              </div>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__cy1Q6)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"36px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/proliga_clone/images/imagespng.png",
-                  fullWidth: 266,
-                  fullHeight: 190,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__jyv5D
-              )}
-            >
-              {"OR LOGIN WITH EMAIL"}
-            </div>
-            <TextInput
-              data-plasmic-name={"emailInput"}
-              data-plasmic-override={overrides.emailInput}
-              autoFocus={false}
-              className={classNames("__wab_instance", sty.emailInput)}
-              onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["emailInput", "value"])(
-                  (e => e.target?.value).apply(null, eventArgs)
-                );
-              }}
-              type={"email"}
-              value={
-                generateStateValueProp($state, ["emailInput", "value"]) ?? ""
-              }
-            />
-
-            <TextInput
-              data-plasmic-name={"passwordInput"}
-              data-plasmic-override={overrides.passwordInput}
-              className={classNames("__wab_instance", sty.passwordInput)}
-              onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["passwordInput", "value"])(
-                  (e => e.target?.value).apply(null, eventArgs)
-                );
-              }}
-              placeholder={"Password"}
-              type={"password"}
-              value={
-                generateStateValueProp($state, ["passwordInput", "value"]) ?? ""
-              }
-            />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__zLfc1
-              )}
-            >
-              {"OR REGISTER USING YOUR EMAIL"}
-            </div>
-            <PlasmicLink__
-              data-plasmic-name={"submitButton"}
-              data-plasmic-override={overrides.submitButton}
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.submitButton
-              )}
-              component={Link}
-              href={`/signup`}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateEmailInputValue"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["emailInput", "value"]
-                        },
-                        operation: 0
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateEmailInputValue"] != null &&
-                  typeof $steps["updateEmailInputValue"] === "object" &&
-                  typeof $steps["updateEmailInputValue"].then === "function"
-                ) {
-                  $steps["updateEmailInputValue"] = await $steps[
-                    "updateEmailInputValue"
-                  ];
-                }
-              }}
-              platform={"nextjs"}
-              target={"_blank"}
-            >
-              {"CREATE AN ACCOUNT"}
-            </PlasmicLink__>
-            <div className={classNames(projectcss.all, sty.freeBox__c9Qe6)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__emcK
-                )}
-              >
-                {"I have an Account,"}
-              </div>
-              <PlasmicLink__
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link
-                )}
-                component={Link}
-                href={"/login"}
-                platform={"nextjs"}
-              >
-                {"Start Session"}
-              </PlasmicLink__>
-            </div>
-          </LoginRegister>
-          <AuthComponent
-            className={classNames("__wab_instance", sty.authComponent__tYpck)}
+            data-plasmic-name={"authComponent"}
+            data-plasmic-override={overrides.authComponent}
+            className={classNames("__wab_instance", sty.authComponent)}
           />
         </div>
       </div>
@@ -423,36 +157,15 @@ function PlasmicLogin__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "loginRegister",
-    "emailInput",
-    "passwordInput",
-    "submitButton",
-    "link"
-  ],
-  loginRegister: [
-    "loginRegister",
-    "emailInput",
-    "passwordInput",
-    "submitButton",
-    "link"
-  ],
-  emailInput: ["emailInput"],
-  passwordInput: ["passwordInput"],
-  submitButton: ["submitButton"],
-  link: ["link"]
+  root: ["root", "authComponent"],
+  authComponent: ["authComponent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  loginRegister: typeof LoginRegister;
-  emailInput: typeof TextInput;
-  passwordInput: typeof TextInput;
-  submitButton: "a";
-  link: "a";
+  authComponent: typeof AuthComponent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -532,11 +245,7 @@ export const PlasmicLogin = Object.assign(
   withPlasmicPageGuard(makeNodeComponent("root")),
   {
     // Helper components rendering sub-elements
-    loginRegister: makeNodeComponent("loginRegister"),
-    emailInput: makeNodeComponent("emailInput"),
-    passwordInput: makeNodeComponent("passwordInput"),
-    submitButton: makeNodeComponent("submitButton"),
-    link: makeNodeComponent("link"),
+    authComponent: makeNodeComponent("authComponent"),
 
     // Metadata about props expected for PlasmicLogin
     internalVariantProps: PlasmicLogin__VariantProps,

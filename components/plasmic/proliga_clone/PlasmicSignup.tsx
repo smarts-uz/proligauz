@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import AuthComponent from "../../AuthComponent"; // plasmic-import: ZdkRel5xiZQr/component
+import AuthComponent from "../../AuthComponent"; // plasmic-import: f9VC6U83GUs6/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 

@@ -67,7 +67,6 @@ import {
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
-import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -94,7 +93,6 @@ export type PlasmicMarket2__OverridesType = {
   navbar?: Flex__<typeof Navbar>;
   clubs2?: Flex__<typeof Clubs2>;
   columns?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   footer?: Flex__<typeof Footer>;
 };
 
@@ -142,6 +140,26 @@ function PlasmicMarket2__RenderFunc(props: {
         opId: "22bad793-23fb-4697-9e46-0b36c07c0aee",
         userArgs: {},
         cacheKey: `plasmic.$.22bad793-23fb-4697-9e46-0b36c07c0aee.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
+    }),
+    clubs: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "81587a77-6aad-402c-919c-fd97d198ae18",
+        userArgs: {},
+        cacheKey: `plasmic.$.81587a77-6aad-402c-919c-fd97d198ae18.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    }),
+    players: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "a5975212-7f5e-44da-90fa-68324feac1ff",
+        userArgs: {},
+        cacheKey: `plasmic.$.a5975212-7f5e-44da-90fa-68324feac1ff.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -220,6 +238,212 @@ function PlasmicMarket2__RenderFunc(props: {
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
                   try {
+                    return $queries.players.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link__jFrqQ
+                    )}
+                    component={Link}
+                    href={(() => {
+                      try {
+                        return "/player/" + currentItem.id;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return `/player/${""}`;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    key={currentIndex}
+                    platform={"nextjs"}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__etFpR)}
+                    >
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__pt7R)}
+                        displayHeight={"auto"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"auto"}
+                        loading={"lazy"}
+                        src={(() => {
+                          try {
+                            return currentItem.image;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        width={"112px"}
+                      />
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___1YFnA
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__gFyJp
+                        )}
+                      >
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link__miyxm
+                          )}
+                          component={Link}
+                          href={undefined}
+                          platform={"nextjs"}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem.position;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "DEF";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </PlasmicLink__>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__rmnIp
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem.name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__iq9Oa
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__bisx1
+                          )}
+                        >
+                          {"previous value\n4.306.249"}
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__ft6Zx)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__xIu3E
+                        )}
+                      >
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            sty.link__raRNm
+                          )}
+                          component={Link}
+                          href={"#"}
+                          platform={"nextjs"}
+                        >
+                          {"39%"}
+                        </PlasmicLink__>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___0L1
+                        )}
+                      >
+                        {"Current value"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__gk9Ze
+                        )}
+                      >
+                        {"6.007.170"}
+                      </div>
+                    </div>
+                  </PlasmicLink__>
+                );
+              })}
+            </div>
+            <div className={classNames(projectcss.all, sty.column__exdnn)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fkZm
+                )}
+              >
+                {"Highest transfer Rises"}
+              </div>
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
                     return $queries.clubPlayers.data;
                   } catch (e) {
                     if (
@@ -239,7 +463,7 @@ function PlasmicMarket2__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       projectcss.a,
-                      sty.link__pCfmu
+                      sty.link__bqBjg
                     )}
                     component={Link}
                     href={(() => {
@@ -289,19 +513,17 @@ function PlasmicMarket2__RenderFunc(props: {
                     platform={"nextjs"}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__z2H1)}
+                      className={classNames(projectcss.all, sty.freeBox__xSl54)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox___3Nj1P
+                          sty.freeBox__mfeIx
                         )}
                       >
                         <PlasmicImg__
-                          data-plasmic-name={"img"}
-                          data-plasmic-override={overrides.img}
                           alt={""}
-                          className={classNames(sty.img)}
+                          className={classNames(sty.img__dn7ZE)}
                           displayHeight={"auto"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
@@ -328,13 +550,13 @@ function PlasmicMarket2__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__xuJCh
+                          sty.freeBox__usVrX
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__tExjm
+                            sty.freeBox__lwf58
                           )}
                         >
                           <PlasmicLink__
@@ -342,7 +564,7 @@ function PlasmicMarket2__RenderFunc(props: {
                               projectcss.all,
                               projectcss.a,
                               projectcss.__wab_text,
-                              sty.link___67Oqn
+                              sty.link__nmyw7
                             )}
                             component={Link}
                             platform={"nextjs"}
@@ -353,7 +575,7 @@ function PlasmicMarket2__RenderFunc(props: {
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text__weYog
+                              sty.text___1Rl22
                             )}
                           >
                             <React.Fragment>
@@ -377,14 +599,14 @@ function PlasmicMarket2__RenderFunc(props: {
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__bpMQh
+                            sty.freeBox__fMws
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
                               projectcss.__wab_text,
-                              sty.text___2Ik0G
+                              sty.text__rhSda
                             )}
                           >
                             {"previous value\n4.306.249"}
@@ -394,13 +616,13 @@ function PlasmicMarket2__RenderFunc(props: {
                       <div
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox___8Dmzi
+                          sty.freeBox__rdGq4
                         )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__fXeP
+                            sty.freeBox__lgo8P
                           )}
                         >
                           <PlasmicLink__
@@ -408,7 +630,7 @@ function PlasmicMarket2__RenderFunc(props: {
                               projectcss.all,
                               projectcss.a,
                               projectcss.__wab_text,
-                              sty.link__bkoh
+                              sty.link___3X3Tb
                             )}
                             component={Link}
                             href={"#"}
@@ -421,7 +643,7 @@ function PlasmicMarket2__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__qgR4E
+                            sty.text__yNbnj
                           )}
                         >
                           {"Current value"}
@@ -430,7 +652,7 @@ function PlasmicMarket2__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__vDtix
+                            sty.text__h8Eq
                           )}
                         >
                           {"6.007.170"}
@@ -440,66 +662,6 @@ function PlasmicMarket2__RenderFunc(props: {
                   </PlasmicLink__>
                 );
               })}
-            </div>
-            <div className={classNames(projectcss.all, sty.column__rNnDl)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__lvR8Q
-                )}
-              >
-                {"Highest market reduction"}
-              </div>
-              <MarketMember
-                borjaMayoral={true}
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__n4EsF
-                )}
-              />
-
-              <MarketMember
-                borjaMayoral={true}
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__ccNDp
-                )}
-              />
-
-              <MarketMember
-                className={classNames("__wab_instance", sty.marketMember__zHaX)}
-              />
-
-              <MarketMember
-                borjaMayoral={true}
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__fh9Zi
-                )}
-              />
-
-              <MarketMember
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__vuDvm
-                )}
-              />
-
-              <MarketMember
-                borjaMayoral={true}
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__ziq47
-                )}
-              />
-
-              <MarketMember
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__xiulL
-                )}
-              />
             </div>
           </div>
           <Footer
@@ -514,11 +676,10 @@ function PlasmicMarket2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "clubs2", "columns", "img", "footer"],
+  root: ["root", "navbar", "clubs2", "columns", "footer"],
   navbar: ["navbar"],
   clubs2: ["clubs2"],
-  columns: ["columns", "img"],
-  img: ["img"],
+  columns: ["columns"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -529,7 +690,6 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   clubs2: typeof Clubs2;
   columns: "div";
-  img: typeof PlasmicImg__;
   footer: typeof Footer;
 };
 
@@ -613,7 +773,6 @@ export const PlasmicMarket2 = Object.assign(
     navbar: makeNodeComponent("navbar"),
     clubs2: makeNodeComponent("clubs2"),
     columns: makeNodeComponent("columns"),
-    img: makeNodeComponent("img"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicMarket2

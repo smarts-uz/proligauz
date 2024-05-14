@@ -65,7 +65,6 @@ import {
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
-import TextInput from "../../TextInput"; // plasmic-import: xwgFLXqL07mD/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -74,9 +73,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: tDWy3GXn2mzd9e2xUaPdmu/projectcss
 import sty from "./PlasmicLoginRegister.module.css"; // plasmic-import: Fn4_X6LSrEZk/css
-
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: TfB627kbYt5s/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: BLgPkmgd4hOv/icon
 
 createPlasmicElementProxy;
 
@@ -380,45 +376,6 @@ function PlasmicLoginRegister__RenderFunc(props: {
             >
               {"OR LOGIN WITH EMAIL"}
             </div>
-            <TextInput
-              autoFocus={false}
-              className={classNames("__wab_instance", sty.textInput__i0HvM)}
-              name={"Email"}
-              type={"email"}
-              value={(() => {
-                try {
-                  return $queries.users.schema.fields[4].id;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            />
-
-            <TextInput
-              className={classNames("__wab_instance", sty.textInput__znJzN)}
-              placeholder={"Password"}
-              type={"password"}
-              value={(() => {
-                try {
-                  return $queries.users.schema.fields[1].id;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            />
-
             <div
               className={classNames(
                 projectcss.all,

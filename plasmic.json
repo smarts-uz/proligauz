@@ -41,8 +41,7 @@
           "componentImportPath": "@plasmicpkgs/react-chartjs-2"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -68,8 +67,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "hjKYmYi6HMwK6TRyk7ew5R",
@@ -127,8 +125,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "22U3ZXm4dE59qEW488gxzU",
@@ -162,8 +159,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-graphcms"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -221,8 +217,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "28Ba3BDvRe7EiWdfFNnLB6",
@@ -432,8 +427,7 @@
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -455,8 +449,7 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -484,8 +477,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -539,8 +531,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -940,8 +931,7 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "hsyJcmBceSfPzvvXzVTuk7",
@@ -979,8 +969,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
@@ -1378,19 +1367,6 @@
           "componentType": "component"
         },
         {
-          "id": "ZdkRel5xiZQr",
-          "name": "AuthComponent",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicAuthComponent.tsx",
-          "importSpec": {
-            "modulePath": "AuthComponent.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "VQ1INKk1DLfp",
           "name": "Checkbox",
           "type": "managed",
@@ -1614,6 +1590,32 @@
             "modulePath": "AuthComponent2.tsx"
           },
           "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "ZdkRel5xiZQr",
+          "name": "AuthComponent4",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicAuthComponent4.tsx",
+          "importSpec": {
+            "modulePath": "AuthComponent4.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent4.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "f9VC6U83GUs6",
+          "name": "AuthComponent",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicAuthComponent.tsx",
+          "importSpec": {
+            "modulePath": "AuthComponent.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -2029,12 +2031,6 @@
         "name": "Screen",
         "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
         "contextFilePath": "plasmic/proliga_clone/PlasmicGlobalVariant__Screen.tsx"
-      },
-      {
-        "id": "8IAsAFozBijS",
-        "name": "UnnamedGlobalGroupOfVariants",
-        "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-        "contextFilePath": "plasmic/proliga_clone/PlasmicGlobalVariant__UnnamedGlobalGroupOfVariants.tsx"
       }
     ]
   },

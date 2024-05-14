@@ -93,7 +93,6 @@ export type PlasmicClubInfo__OverridesType = {
   clubs2?: Flex__<typeof Clubs2>;
   h1?: Flex__<"h1">;
   columns?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   text?: Flex__<"div">;
 };
 
@@ -170,9 +169,9 @@ function PlasmicClubInfo__RenderFunc(props: {
     componentData: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "157523a8-a564-4845-81d4-23951d76d034",
+        opId: "b7437d37-78d8-4a62-9896-8014e85b1080",
         userArgs: {},
-        cacheKey: `plasmic.$.157523a8-a564-4845-81d4-23951d76d034.$.`,
+        cacheKey: `plasmic.$.b7437d37-78d8-4a62-9896-8014e85b1080.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -258,53 +257,75 @@ function PlasmicClubInfo__RenderFunc(props: {
             data-plasmic-override={overrides.columns}
             className={classNames(projectcss.all, sty.columns)}
           >
-            <div className={classNames(projectcss.all, sty.column__fyBab)}>
-              <div className={classNames(projectcss.all, sty.freeBox__utyoq)}>
-                <PlasmicImg__
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
-                  alt={""}
-                  className={classNames(sty.img)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={(() => {
-                    try {
-                      return $queries.clubs.data.flag_url;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
+            <div className={classNames(projectcss.all, sty.column__zkqw1)}>
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return $queries.componentData.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
                     }
-                  })()}
-                />
-
-                <div
-                  data-plasmic-name={"text"}
-                  data-plasmic-override={overrides.text}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text
-                  )}
-                >
-                  {"Enter some text"}
-                </div>
-              </div>
+                    throw e;
+                  }
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__yjp)}
+                    key={currentIndex}
+                  >
+                    {(() => {
+                      try {
+                        return currentItem.id === $queries.clubs.data[0].id;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })() ? (
+                      <div
+                        data-plasmic-name={"text"}
+                        data-plasmic-override={overrides.text}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return currentItem.id;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
-            <div className={classNames(projectcss.all, sty.column__chsYc)} />
+            <div className={classNames(projectcss.all, sty.column__k934L)} />
 
-            <div className={classNames(projectcss.all, sty.column__wE6Fs)} />
-
-            <div className={classNames(projectcss.all, sty.column__oJrng)} />
+            <div className={classNames(projectcss.all, sty.column__vtOtf)} />
           </div>
         </div>
       </div>
@@ -313,12 +334,11 @@ function PlasmicClubInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "clubs2", "h1", "columns", "img", "text"],
+  root: ["root", "navbar", "clubs2", "h1", "columns", "text"],
   navbar: ["navbar"],
   clubs2: ["clubs2"],
   h1: ["h1"],
-  columns: ["columns", "img", "text"],
-  img: ["img"],
+  columns: ["columns", "text"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -330,7 +350,6 @@ type NodeDefaultElementType = {
   clubs2: typeof Clubs2;
   h1: "h1";
   columns: "div";
-  img: typeof PlasmicImg__;
   text: "div";
 };
 
@@ -415,7 +434,6 @@ export const PlasmicClubInfo = Object.assign(
     clubs2: makeNodeComponent("clubs2"),
     h1: makeNodeComponent("h1"),
     columns: makeNodeComponent("columns"),
-    img: makeNodeComponent("img"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicClubInfo
