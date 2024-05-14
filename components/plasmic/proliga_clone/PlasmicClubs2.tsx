@@ -196,13 +196,13 @@ function PlasmicClubs2__RenderFunc(props: {
               component={Link}
               href={(() => {
                 try {
-                  return "/club/" + currentItem.name;
+                  return "/club-2/" + currentItem.id;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
                     e?.plasmicType === "PlasmicUndefinedDataError"
                   ) {
-                    return `/club/${""}`;
+                    return `/club-2/${""}`;
                   }
                   throw e;
                 }

@@ -41,7 +41,8 @@
           "componentImportPath": "@plasmicpkgs/react-chartjs-2"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -67,7 +68,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "hjKYmYi6HMwK6TRyk7ew5R",
@@ -125,7 +127,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "22U3ZXm4dE59qEW488gxzU",
@@ -159,7 +162,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-graphcms"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -217,7 +221,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "28Ba3BDvRe7EiWdfFNnLB6",
@@ -427,7 +432,8 @@
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -449,7 +455,8 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -477,7 +484,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -531,7 +539,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -931,7 +940,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "hsyJcmBceSfPzvvXzVTuk7",
@@ -969,7 +979,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
@@ -1618,6 +1629,33 @@
           "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "IDGhXjgrFUMC",
+          "name": "TeamCreateNav",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicTeamCreateNav.tsx",
+          "importSpec": {
+            "modulePath": "TeamCreateNav.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicTeamCreateNav.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "vKrRy_9WiPth",
+          "name": "ClubPlayer",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClubPlayer.tsx",
+          "importSpec": {
+            "modulePath": "../pages/club-2/[id].tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicClubPlayer.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/club-2/[id]"
         }
       ],
       "icons": [
@@ -2002,6 +2040,11 @@
           "id": "pVBgw88_8ORI",
           "name": "free-euro-coin-icon-2141-thumb.png",
           "filePath": "../public/plasmic/proliga_clone/images/freeEuroCoinIcon2141Thumbpng.png"
+        },
+        {
+          "id": "4myAKc1Ieeaw",
+          "name": "4288587awardchampioncuptrophywinner-115769_115744.svg",
+          "filePath": "../public/plasmic/proliga_clone/images/_4288587Awardchampioncuptrophywinner115769115744Svg.svg"
         }
       ],
       "indirect": false,

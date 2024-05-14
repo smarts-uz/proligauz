@@ -156,17 +156,17 @@ function PlasmicClubInfo__RenderFunc(props: {
         roleId: null
       };
     }),
-    clubPlayers: usePlasmicDataOp(() => {
+    player: usePlasmicDataOp(() => {
       return {
         sourceId: "bCyY9Km8wqcJwdgC8XtpDZ",
-        opId: "441d46be-1f0a-4020-b752-a323a08d6be6",
+        opId: "00e873a0-2437-4119-ba8a-08da3add36bd",
         userArgs: {},
-        cacheKey: `plasmic.$.441d46be-1f0a-4020-b752-a323a08d6be6.$.`,
+        cacheKey: `plasmic.$.00e873a0-2437-4119-ba8a-08da3add36bd.$.`,
         invalidatedKeys: null,
         roleId: null
       };
     }),
-    componentData: usePlasmicDataOp(() => {
+    clubPlayer: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
         opId: "b7437d37-78d8-4a62-9896-8014e85b1080",
@@ -261,7 +261,7 @@ function PlasmicClubInfo__RenderFunc(props: {
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
                   try {
-                    return $queries.componentData.data;
+                    return $queries.clubPlayer.data;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -323,8 +323,139 @@ function PlasmicClubInfo__RenderFunc(props: {
                 );
               })}
             </div>
-            <div className={classNames(projectcss.all, sty.column__k934L)} />
-
+            <div className={classNames(projectcss.all, sty.column__k934L)}>
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return $queries.clubPlayer.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__abCr)}
+                    key={currentIndex}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__jsKzf)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={(() => {
+                        try {
+                          return $queries.player.data[0].image;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
+                          }
+                          throw e;
+                        }
+                      })()}
+                    />
+                  </div>
+                );
+              })}
+              {(() => {
+                try {
+                  return true;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })()
+                ? (_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                    (() => {
+                      try {
+                        return $queries.player.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
+                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                    const currentItem = __plasmic_item_0;
+                    const currentIndex = __plasmic_idx_0;
+                    return (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__ifMpQ
+                        )}
+                        key={currentIndex}
+                      >
+                        {(() => {
+                          try {
+                            return (
+                              currentItem.club_id == $queries.clubs.data[0].id
+                            );
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <PlasmicImg__
+                            alt={""}
+                            className={classNames(sty.img__wLbHv)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={(() => {
+                              try {
+                                return currentItem.image;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                          />
+                        ) : null}
+                      </div>
+                    );
+                  })
+                : null}
+            </div>
             <div className={classNames(projectcss.all, sty.column__vtOtf)} />
           </div>
         </div>

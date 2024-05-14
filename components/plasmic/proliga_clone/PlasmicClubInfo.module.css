@@ -128,6 +128,46 @@
   min-width: 0;
   padding: 8px;
 }
+.freeBox__abCr {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.img__jsKzf {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__jsKzf > picture > img {
+  object-fit: cover;
+}
+.freeBox__ifMpQ {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.img__wLbHv {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__wLbHv > picture > img {
+  object-fit: cover;
+}
 .column__vtOtf {
   display: flex;
   position: relative;
