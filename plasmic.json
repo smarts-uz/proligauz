@@ -1591,19 +1591,6 @@
           "componentType": "component"
         },
         {
-          "id": "ZdkRel5xiZQr",
-          "name": "AuthComponent4",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicAuthComponent4.tsx",
-          "importSpec": {
-            "modulePath": "AuthComponent4.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent4.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "f9VC6U83GUs6",
           "name": "AuthComponent",
           "type": "managed",
@@ -1613,19 +1600,6 @@
             "modulePath": "AuthComponent.tsx"
           },
           "cssFilePath": "plasmic/proliga_clone/PlasmicAuthComponent.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "IDGhXjgrFUMC",
-          "name": "TeamCreateNav",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicTeamCreateNav.tsx",
-          "importSpec": {
-            "modulePath": "TeamCreateNav.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicTeamCreateNav.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         },
