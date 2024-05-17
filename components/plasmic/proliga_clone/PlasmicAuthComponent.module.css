@@ -7,6 +7,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  border-radius: 8px;
 }
 .freeBox__fu39V {
   display: flex;
@@ -44,6 +45,39 @@
   font-weight: 700;
   min-width: 0;
 }
+.freeBox__wNrqB {
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+.freeBoxisError__wNrqBy7MDj {
+  display: flex;
+}
+.freeBox__souSm {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+.freeBox__plQdr {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
 .emailInput:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
@@ -76,26 +110,40 @@
   width: auto;
   height: 1em;
 }
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: none;
+}
+.svgisLoading {
+  display: block;
+}
 .submitButton:global(.__wab_instance) {
   max-width: 100%;
+  object-fit: cover;
   position: relative;
+  background: var(--token-I70CVivPMy-a);
+  font-size: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   width: 100%;
   min-width: 0;
 }
-.svg__fTub9 {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
+.submitButtonisLoading:global(.__wab_instance) {
+  display: none;
 }
-.text__u36KZ {
-  padding-right: 0px;
-}
-.svg__t0NPw {
+.text__ftF {
   position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 0;
 }
 .freeBox__ePKyb {
   display: flex;
@@ -131,28 +179,6 @@
   height: 1em;
 }
 .svg__e12Ri {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.submitButtonnn:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  width: 100%;
-  min-width: 0;
-}
-.submitButtonnnisSignUpFlow:global(.__wab_instance) {
-  width: 100%;
-  min-width: 0;
-}
-.svg__oZjc5 {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.svg__pkOg0 {
   position: relative;
   object-fit: cover;
   width: auto;

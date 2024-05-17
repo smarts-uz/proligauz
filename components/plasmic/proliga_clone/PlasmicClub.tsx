@@ -68,6 +68,7 @@ import {
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
+import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -92,6 +93,12 @@ export type PlasmicClub__OverridesType = {
   root?: Flex__<"div">;
   navbar?: Flex__<typeof Navbar>;
   clubs2?: Flex__<typeof Clubs2>;
+  columns?: Flex__<"div">;
+  soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
+  goa?: Flex__<"div">;
+  def?: Flex__<"div">;
+  mid?: Flex__<"div">;
+  str?: Flex__<"div">;
 };
 
 export interface DefaultClubProps {}
@@ -168,6 +175,54 @@ function PlasmicClub__RenderFunc(props: {
         cacheKey: `plasmic.$.2256a57e-9fec-4681-8043-9bed241e2c65.$.`,
         invalidatedKeys: null,
         roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    }),
+    goa: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "8ff07eb7-07ce-4d75-aede-7f3ea8c843fd",
+        userArgs: {
+          filters: [$queries.query.data[0].id]
+        },
+        cacheKey: `plasmic.$.8ff07eb7-07ce-4d75-aede-7f3ea8c843fd.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    }),
+    def: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "5a6116dd-64c4-4a33-b23e-3c3a246c57d8",
+        userArgs: {
+          filters: [$queries.query.data[0].id]
+        },
+        cacheKey: `plasmic.$.5a6116dd-64c4-4a33-b23e-3c3a246c57d8.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
+    }),
+    mid: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "50646560-bd3c-47da-a74f-5e560e687a0c",
+        userArgs: {
+          filters: [$queries.query.data[0].id]
+        },
+        cacheKey: `plasmic.$.50646560-bd3c-47da-a74f-5e560e687a0c.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
+    }),
+    str: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "19b635c5-f9ee-47d5-8bbb-390113a9389e",
+        userArgs: {
+          filters: [$queries.query.data[0].id]
+        },
+        cacheKey: `plasmic.$.19b635c5-f9ee-47d5-8bbb-390113a9389e.$.`,
+        invalidatedKeys: null,
+        roleId: null
       };
     })
   };
@@ -358,6 +413,297 @@ function PlasmicClub__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <div
+            data-plasmic-name={"columns"}
+            data-plasmic-override={overrides.columns}
+            className={classNames(projectcss.all, sty.columns)}
+          >
+            <div className={classNames(projectcss.all, sty.column__mqYQt)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__h0JUm
+                )}
+              >
+                {"Team of the week"}
+              </div>
+              <SoccerPlaceMens2
+                data-plasmic-name={"soccerPlaceMens2"}
+                data-plasmic-override={overrides.soccerPlaceMens2}
+                className={classNames("__wab_instance", sty.soccerPlaceMens2)}
+              />
+
+              <div
+                data-plasmic-name={"goa"}
+                data-plasmic-override={overrides.goa}
+                className={classNames(projectcss.all, sty.goa)}
+              >
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $queries.goa.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__s2ORa)}
+                      key={currentIndex}
+                    >
+                      <PlasmicImg__
+                        alt={(() => {
+                          try {
+                            return currentItem.name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        aria-hidden={"true"}
+                        className={classNames(sty.img__sxe2M)}
+                        displayHeight={"110px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"89px"}
+                        loading={"lazy"}
+                        src={(() => {
+                          try {
+                            return currentItem.image;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              <div
+                data-plasmic-name={"def"}
+                data-plasmic-override={overrides.def}
+                className={classNames(projectcss.all, sty.def)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__b6T8Z)}>
+                  {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                    (() => {
+                      try {
+                        return $queries.def.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
+                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                    const currentItem = __plasmic_item_0;
+                    const currentIndex = __plasmic_idx_0;
+                    return (
+                      <PlasmicImg__
+                        alt={(() => {
+                          try {
+                            return currentItem.name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        className={classNames(sty.img__r0Q4F)}
+                        displayHeight={"110px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"89px"}
+                        key={currentIndex}
+                        loading={"lazy"}
+                        src={(() => {
+                          try {
+                            return currentItem.image;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"mid"}
+                data-plasmic-override={overrides.mid}
+                className={classNames(projectcss.all, sty.mid)}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__wyJc4)}>
+                  {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                    (() => {
+                      try {
+                        return $queries.mid.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
+                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                    const currentItem = __plasmic_item_0;
+                    const currentIndex = __plasmic_idx_0;
+                    return (
+                      <PlasmicImg__
+                        alt={(() => {
+                          try {
+                            return currentItem.name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        className={classNames(sty.img__gpqzU)}
+                        displayHeight={"110px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"89px"}
+                        key={currentIndex}
+                        loading={"lazy"}
+                        src={(() => {
+                          try {
+                            return currentItem.image;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"str"}
+                data-plasmic-override={overrides.str}
+                className={classNames(projectcss.all, sty.str)}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___5EMuE)}
+                >
+                  {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                    (() => {
+                      try {
+                        return $queries.str.data;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
+                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                    const currentItem = __plasmic_item_0;
+                    const currentIndex = __plasmic_idx_0;
+                    return (
+                      <PlasmicImg__
+                        alt={(() => {
+                          try {
+                            return currentItem.name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                        className={classNames(sty.img__yuTxd)}
+                        displayHeight={"110px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"89px"}
+                        key={currentIndex}
+                        loading={"lazy"}
+                        src={(() => {
+                          try {
+                            return currentItem.image;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.column__wlm0)} />
+
+            <div className={classNames(projectcss.all, sty.column__udFqK)} />
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -365,9 +711,25 @@ function PlasmicClub__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "clubs2"],
+  root: [
+    "root",
+    "navbar",
+    "clubs2",
+    "columns",
+    "soccerPlaceMens2",
+    "goa",
+    "def",
+    "mid",
+    "str"
+  ],
   navbar: ["navbar"],
-  clubs2: ["clubs2"]
+  clubs2: ["clubs2"],
+  columns: ["columns", "soccerPlaceMens2", "goa", "def", "mid", "str"],
+  soccerPlaceMens2: ["soccerPlaceMens2"],
+  goa: ["goa"],
+  def: ["def"],
+  mid: ["mid"],
+  str: ["str"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -376,6 +738,12 @@ type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
   clubs2: typeof Clubs2;
+  columns: "div";
+  soccerPlaceMens2: typeof SoccerPlaceMens2;
+  goa: "div";
+  def: "div";
+  mid: "div";
+  str: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -457,6 +825,12 @@ export const PlasmicClub = Object.assign(
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
     clubs2: makeNodeComponent("clubs2"),
+    columns: makeNodeComponent("columns"),
+    soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
+    goa: makeNodeComponent("goa"),
+    def: makeNodeComponent("def"),
+    mid: makeNodeComponent("mid"),
+    str: makeNodeComponent("str"),
 
     // Metadata about props expected for PlasmicClub
     internalVariantProps: PlasmicClub__VariantProps,
