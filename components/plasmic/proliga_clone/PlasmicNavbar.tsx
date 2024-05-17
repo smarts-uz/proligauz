@@ -87,6 +87,7 @@ export const PlasmicNavbar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNavbar__OverridesType = {
   root?: Flex__<"div">;
+  img?: Flex__<typeof PlasmicImg__>;
   loginButton2?: Flex__<typeof LoginButton2>;
 };
 
@@ -184,26 +185,15 @@ function PlasmicNavbar__RenderFunc(props: {
             href={`/`}
             platform={"nextjs"}
           >
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__bqoeq)}
-              displayHeight={"40px"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"none"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={
-                hasVariant(globalVariants, "screen", "mobileOnly")
-                  ? "80px"
-                  : "120px"
-              }
-              src={{
-                src: "/plasmic/proliga_clone/images/logoFantasyDarkBgpng.png",
-                fullWidth: 143,
-                fullHeight: 18,
-                aspectRatio: undefined
-              }}
-            />
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__nqpLo
+              )}
+            >
+              {"Proliga "}
+            </div>
           </PlasmicLink__>
           <Stack__
             as={"div"}
@@ -584,8 +574,10 @@ function PlasmicNavbar__RenderFunc(props: {
         </Stack__>
         <div className={classNames(projectcss.all, sty.freeBox__vxTjO)}>
           <PlasmicImg__
+            data-plasmic-name={"img"}
+            data-plasmic-override={overrides.img}
             alt={""}
-            className={classNames(sty.img__y8Z6M)}
+            className={classNames(sty.img)}
             displayHeight={"40px"}
             displayMaxHeight={"none"}
             displayMaxWidth={"none"}
@@ -677,7 +669,8 @@ function PlasmicNavbar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "loginButton2"],
+  root: ["root", "img", "loginButton2"],
+  img: ["img"],
   loginButton2: ["loginButton2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -685,6 +678,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  img: typeof PlasmicImg__;
   loginButton2: typeof LoginButton2;
 };
 
@@ -748,6 +742,7 @@ export const PlasmicNavbar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    img: makeNodeComponent("img"),
     loginButton2: makeNodeComponent("loginButton2"),
 
     // Metadata about props expected for PlasmicNavbar

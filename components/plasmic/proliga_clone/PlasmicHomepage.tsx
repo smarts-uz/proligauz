@@ -254,15 +254,7 @@ function PlasmicHomepage__RenderFunc(props: {
                             )}
                           >
                             <React.Fragment>
-                              <span
-                                className={
-                                  "plasmic_default__all plasmic_default__span"
-                                }
-                                style={{ color: "var(--token-jgohepLVeKvh)" }}
-                              >
-                                {"LALIALIGA"}
-                              </span>
-                              <React.Fragment> </React.Fragment>
+                              <React.Fragment>{"PROLIGA "}</React.Fragment>
                               <span
                                 className={
                                   "plasmic_default__all plasmic_default__span"

@@ -66,10 +66,14 @@ import {
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
+import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
 import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
+
+import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -91,11 +95,11 @@ export const PlasmicTeams__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTeams__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
+  navbar?: Flex__<typeof Navbar>;
   columns?: Flex__<"div">;
-  dropdown?: Flex__<typeof AntdDropdown>;
+  _532?: Flex__<typeof AntdDropdown>;
   button?: Flex__<typeof AntdButton>;
-  img?: Flex__<typeof PlasmicImg__>;
+  soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
 };
 
 export interface DefaultTeamsProps {}
@@ -169,6 +173,10 @@ function PlasmicTeams__RenderFunc(props: {
     $queries = new$Queries;
   }
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants_8Rmrqs5Mzp6I()
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -196,12 +204,16 @@ function PlasmicTeams__RenderFunc(props: {
             sty.root
           )}
         >
+          <Navbar
+            data-plasmic-name={"navbar"}
+            data-plasmic-override={overrides.navbar}
+            className={classNames("__wab_instance", sty.navbar)}
+          />
+
           <Stack__
             as={"div"}
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
             hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox)}
+            className={classNames(projectcss.all, sty.freeBox__cstxG)}
           >
             <PlasmicLink__
               className={classNames(
@@ -245,92 +257,406 @@ function PlasmicTeams__RenderFunc(props: {
               >
                 {"Line-Up"}
               </div>
-              <AntdDropdown
-                data-plasmic-name={"dropdown"}
-                data-plasmic-override={overrides.dropdown}
-                className={classNames("__wab_instance", sty.dropdown)}
-                dropdownMenuScopeClassName={sty["dropdown__dropdownMenu"]}
-                fakeOpen={false}
-                menuItems={() => (
-                  <React.Fragment>
-                    <AntdMenuItem
-                      className={classNames(
-                        "__wab_instance",
-                        sty.menuItem__yHZg2
-                      )}
-                      key={"menu-item-1"}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__n6PxQ
-                        )}
-                      >
-                        {"Menu item"}
-                      </div>
-                    </AntdMenuItem>
-                    <AntdMenuItem
-                      className={classNames(
-                        "__wab_instance",
-                        sty.menuItem__gb7Ov
-                      )}
-                      key={"menu-item-2"}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__ioQc
-                        )}
-                      >
-                        {"Menu item"}
-                      </div>
-                    </AntdMenuItem>
-                  </React.Fragment>
-                )}
-                menuItemsJson={[
-                  { type: "item", value: "action1", label: "Action 1" },
-                  { type: "item", value: "action2", label: "Action 2" }
-                ]}
-              >
-                <AntdButton
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dtZNz
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))([
+                2, 3, 4
+              ]).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <AntdDropdown
+                    data-plasmic-name={"_532"}
+                    data-plasmic-override={overrides._532}
+                    className={classNames("__wab_instance", sty._532)}
+                    dropdownMenuScopeClassName={sty["_532__dropdownMenu"]}
+                    fakeOpen={false}
+                    key={currentIndex}
+                    menuItems={() => (
+                      <React.Fragment>
+                        <AntdMenuItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.menuItem__yHZg2
+                          )}
+                          key={"menu-item-1"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__n6PxQ
+                            )}
+                          >
+                            {"Menu item"}
+                          </div>
+                        </AntdMenuItem>
+                        <AntdMenuItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.menuItem__gb7Ov
+                          )}
+                          key={"menu-item-2"}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ioQc
+                            )}
+                          >
+                            {"Menu item"}
+                          </div>
+                        </AntdMenuItem>
+                      </React.Fragment>
                     )}
+                    menuItemsJson={(() => {
+                      const __composite = [
+                        { type: "item", value: "action1", label: null },
+                        { type: "item", value: "action2", label: null }
+                      ];
+                      __composite["0"]["label"] = "4-2-2-3";
+                      __composite["1"]["label"] = "1-5-2-3";
+                      return __composite;
+                    })()}
                   >
-                    {"Dropdown"}
+                    <AntdButton
+                      data-plasmic-name={"button"}
+                      data-plasmic-override={overrides.button}
+                      className={classNames("__wab_instance", sty.button)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dtZNz
+                        )}
+                      >
+                        {"Dropdown"}
+                      </div>
+                    </AntdButton>
+                  </AntdDropdown>
+                );
+              })}
+              <div className={classNames(projectcss.all, sty.freeBox__u1Zqe)}>
+                <div className={classNames(projectcss.all, sty.freeBox__iw1Nk)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___6S8Gg)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__pQzQt)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__nPy7E
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___4Hmyz)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={
+                            "https://assets-fantasy.llt-services.com/players/t178/p75/256x256/p75_t178_1_001_000.png"
+                          }
+                          width={"52.55px"}
+                        />
+
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__e6Q93)}
+                          displayHeight={"auto"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={
+                            "https://assets-fantasy.llt-services.com/teambadge/t178/color/t178_fc-barcelona.png"
+                          }
+                          width={"15px"}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__rCe6L
+                        )}
+                      >
+                        {"Ingiro Marti...."}
+                      </div>
+                    </div>
                   </div>
-                </AntdButton>
-              </AntdDropdown>
+                  <SoccerPlaceMens2
+                    data-plasmic-name={"soccerPlaceMens2"}
+                    data-plasmic-override={overrides.soccerPlaceMens2}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.soccerPlaceMens2
+                    )}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.column__wTiGc)}>
+              <div className={classNames(projectcss.all, sty.freeBox__peasw)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__r9E
+                  )}
+                >
+                  {"Squad"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fjj5R
+                  )}
+                >
+                  {"Players(2/11)"}
+                </div>
+              </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__u55K7)}
+              >
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__tjnjF
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/"}
+                  platform={"nextjs"}
+                >
+                  {"ALL"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__llnkR
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/"}
+                  platform={"nextjs"}
+                >
+                  {"GOA"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__yKoXy
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/"}
+                  platform={"nextjs"}
+                >
+                  {"DEF"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__urgD1
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/"}
+                  platform={"nextjs"}
+                >
+                  {"MID"}
+                </PlasmicLink__>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__xEuMz
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/"}
+                  platform={"nextjs"}
+                >
+                  {"STR"}
+                </PlasmicLink__>
+              </Stack__>
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__za9Hp)}>
+            <div className={classNames(projectcss.all, sty.freeBox__mgXs8)}>
               <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__lAwIj)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
+                height={"45px"}
                 loading={"lazy"}
-                src={{
-                  src: "/plasmic/proliga_clone/images/soccerPlacejpg.jpg",
-                  fullWidth: 903,
-                  fullHeight: 1606,
-                  aspectRatio: undefined
-                }}
+                src={"https://cdn-icons-png.flaticon.com/512/3022/3022675.png"}
+                width={"30px"}
               />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qOi0G
+                )}
+              >
+                {"PROLIGA Fantasy"}
+              </div>
             </div>
-            <div className={classNames(projectcss.all, sty.column__wTiGc)} />
+            <div className={classNames(projectcss.all, sty.freeBox__jgA6A)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___0RJcx)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                height={"18.13"}
+                loading={"lazy"}
+                src={
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
+                }
+                width={"23.13"}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___0TTSl
+                )}
+              >
+                {"Standing"}
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__oknKy)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__pRQoA)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                height={"18.13"}
+                loading={"lazy"}
+                src={
+                  "https://cdn-icons-png.flaticon.com/256/10167/10167851.png"
+                }
+                width={"23.13"}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__bdwkQ
+                )}
+              >
+                {"My Team"}
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__xRaMp)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__qgQW)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                height={"18.13"}
+                loading={"lazy"}
+                src={
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
+                }
+                width={"23.13"}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__p1Zqz
+                )}
+              >
+                {"Market"}
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__xj5Xg)}>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__f68Hh)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                height={"18.13"}
+                loading={"lazy"}
+                src={
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
+                }
+                width={"23.13"}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__nHDO
+                )}
+              >
+                {"Activity"}
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__dbRpg)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___58Ka2
+                )}
+              >
+                {"END OF THE FIXTURE (36)"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___9ApTh
+                )}
+              >
+                {"Friyday 16:00 Goo"}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -339,23 +665,23 @@ function PlasmicTeams__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "columns", "dropdown", "button", "img"],
-  freeBox: ["freeBox"],
-  columns: ["columns", "dropdown", "button", "img"],
-  dropdown: ["dropdown", "button"],
+  root: ["root", "navbar", "columns", "_532", "button", "soccerPlaceMens2"],
+  navbar: ["navbar"],
+  columns: ["columns", "_532", "button", "soccerPlaceMens2"],
+  _532: ["_532", "button"],
   button: ["button"],
-  img: ["img"]
+  soccerPlaceMens2: ["soccerPlaceMens2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
+  navbar: typeof Navbar;
   columns: "div";
-  dropdown: typeof AntdDropdown;
+  _532: typeof AntdDropdown;
   button: typeof AntdButton;
-  img: typeof PlasmicImg__;
+  soccerPlaceMens2: typeof SoccerPlaceMens2;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -435,11 +761,11 @@ export const PlasmicTeams = Object.assign(
   withPlasmicPageGuard(makeNodeComponent("root")),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
+    navbar: makeNodeComponent("navbar"),
     columns: makeNodeComponent("columns"),
-    dropdown: makeNodeComponent("dropdown"),
+    _532: makeNodeComponent("_532"),
     button: makeNodeComponent("button"),
-    img: makeNodeComponent("img"),
+    soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
 
     // Metadata about props expected for PlasmicTeams
     internalVariantProps: PlasmicTeams__VariantProps,

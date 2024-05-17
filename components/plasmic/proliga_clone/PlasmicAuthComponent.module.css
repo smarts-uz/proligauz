@@ -82,17 +82,16 @@
   width: 100%;
   min-width: 0;
 }
-.submitButtonisSignUpFlow:global(.__wab_instance) {
-  width: 100%;
-  min-width: 0;
-}
-.svg__oZjc5 {
+.svg__fTub9 {
   position: relative;
   object-fit: cover;
   width: auto;
   height: 1em;
 }
-.svg__pkOg0 {
+.text__u36KZ {
+  padding-right: 0px;
+}
+.svg__t0NPw {
   position: relative;
   object-fit: cover;
   width: auto;
@@ -132,6 +131,28 @@
   height: 1em;
 }
 .svg__e12Ri {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.submitButtonnn:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.submitButtonnnisSignUpFlow:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
+}
+.svg__oZjc5 {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__pkOg0 {
   position: relative;
   object-fit: cover;
   width: auto;

@@ -97,6 +97,7 @@ export type PlasmicAuthComponent__OverridesType = {
   submitButton?: Flex__<typeof Button>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   button?: Flex__<typeof Button>;
+  submitButtonnn?: Flex__<typeof Button>;
 };
 
 export interface DefaultAuthComponentProps {
@@ -262,18 +263,18 @@ function PlasmicAuthComponent__RenderFunc(props: {
         <Button
           data-plasmic-name={"submitButton"}
           data-plasmic-override={overrides.submitButton}
-          className={classNames("__wab_instance", sty.submitButton, {
-            [sty.submitButtonisSignUpFlow]: hasVariant(
-              $state,
-              "isSignUpFlow",
-              "isSignUpFlow"
-            )
-          })}
+          className={classNames("__wab_instance", sty.submitButton)}
           color={"green"}
         >
-          {hasVariant($state, "isSignUpFlow", "isSignUpFlow")
-            ? "Sign Up"
-            : "Login"}
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__u36KZ
+            )}
+          >
+            {"Login"}
+          </div>
         </Button>
         <div className={classNames(projectcss.all, sty.freeBox__ePKyb)}>
           <div
@@ -331,6 +332,22 @@ function PlasmicAuthComponent__RenderFunc(props: {
           </PlasmicLink__>
         </div>
       </Stack__>
+      <Button
+        data-plasmic-name={"submitButtonnn"}
+        data-plasmic-override={overrides.submitButtonnn}
+        className={classNames("__wab_instance", sty.submitButtonnn, {
+          [sty.submitButtonnnisSignUpFlow]: hasVariant(
+            $state,
+            "isSignUpFlow",
+            "isSignUpFlow"
+          )
+        })}
+        color={"green"}
+      >
+        {hasVariant($state, "isSignUpFlow", "isSignUpFlow")
+          ? "Sign Up"
+          : "Login"}
+      </Button>
     </div>
   ) as React.ReactElement | null;
 }
@@ -342,13 +359,15 @@ const PlasmicDescendants = {
     "passwordInput",
     "submitButton",
     "link",
-    "button"
+    "button",
+    "submitButtonnn"
   ],
   emailInput: ["emailInput"],
   passwordInput: ["passwordInput"],
   submitButton: ["submitButton"],
   link: ["link", "button"],
-  button: ["button"]
+  button: ["button"],
+  submitButtonnn: ["submitButtonnn"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -360,6 +379,7 @@ type NodeDefaultElementType = {
   submitButton: typeof Button;
   link: "a";
   button: typeof Button;
+  submitButtonnn: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -427,6 +447,7 @@ export const PlasmicAuthComponent = Object.assign(
     submitButton: makeNodeComponent("submitButton"),
     link: makeNodeComponent("link"),
     button: makeNodeComponent("button"),
+    submitButtonnn: makeNodeComponent("submitButtonnn"),
 
     // Metadata about props expected for PlasmicAuthComponent
     internalVariantProps: PlasmicAuthComponent__VariantProps,

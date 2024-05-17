@@ -41,8 +41,7 @@
           "componentImportPath": "@plasmicpkgs/react-chartjs-2"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -68,8 +67,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "hjKYmYi6HMwK6TRyk7ew5R",
@@ -127,8 +125,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-cms"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "22U3ZXm4dE59qEW488gxzU",
@@ -162,8 +159,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-graphcms"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -221,8 +217,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "28Ba3BDvRe7EiWdfFNnLB6",
@@ -432,8 +427,7 @@
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -455,8 +449,7 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "YUiM7yqBWAqsh8KSnrdj7",
@@ -484,8 +477,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-query"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -539,8 +531,7 @@
           }
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -940,8 +931,7 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "hsyJcmBceSfPzvvXzVTuk7",
@@ -979,8 +969,7 @@
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
@@ -1684,6 +1673,59 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/club-3/[id]"
+        },
+        {
+          "id": "xodLqMOhDs29",
+          "name": "SoccerPlaceMens2",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicSoccerPlaceMens2.tsx",
+          "importSpec": {
+            "modulePath": "SoccerPlaceMens2.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicSoccerPlaceMens2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "qUbRTVIHal7b",
+          "name": "Card",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicCard.tsx",
+          "importSpec": {
+            "modulePath": "Card.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "qXLKrSBr6JMH",
+          "name": "StandingPlayers",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicStandingPlayers.tsx",
+          "importSpec": {
+            "modulePath": "StandingPlayers.tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicStandingPlayers.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "xmY-b23pZr3-",
+          "name": "Club",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClub.tsx",
+          "importSpec": {
+            "modulePath": "../pages/club-4/[id].tsx"
+          },
+          "cssFilePath": "plasmic/proliga_clone/PlasmicClub.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/club-4/[id]"
         }
       ],
       "icons": [
@@ -2073,6 +2115,11 @@
           "id": "4myAKc1Ieeaw",
           "name": "4288587awardchampioncuptrophywinner-115769_115744.svg",
           "filePath": "../public/plasmic/proliga_clone/images/_4288587Awardchampioncuptrophywinner115769115744Svg.svg"
+        },
+        {
+          "id": "Lnc2t21zGDm9",
+          "name": "euro.png",
+          "filePath": "../public/plasmic/proliga_clone/images/europng.png"
         }
       ],
       "indirect": false,
