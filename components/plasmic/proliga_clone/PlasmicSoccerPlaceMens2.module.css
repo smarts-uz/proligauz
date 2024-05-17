@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 903px;
+  height: 1034px;
+  justify-content: flex-start;
+  align-items: center;
+  background: url("/plasmic/proliga_clone/images/soccerPlacejpg.jpg") top 50% left 50% / cover repeat;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
