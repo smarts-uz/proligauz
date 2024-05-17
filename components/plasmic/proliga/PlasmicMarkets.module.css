@@ -471,6 +471,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  background: #232433;
   min-width: 0;
   padding: 8px;
 }
@@ -492,7 +493,7 @@
   height: auto;
   max-width: 100%;
   min-width: 0;
-  padding: 8px;
+  padding: 8px 8px 0px;
 }
 .link__pKRx3 {
   position: relative;
@@ -517,6 +518,7 @@
   max-width: 100%;
   color: var(--token-jgohepLVeKvh);
   font-size: 12px;
+  padding-bottom: 0px;
   min-width: 0;
 }
 .text__u5Rv3 {
@@ -546,7 +548,7 @@
   color: var(--token-jgohepLVeKvh);
   font-size: 18px;
   background: var(--token-6u49iN2cxqzs);
-  padding: 5px 10px;
+  padding: 1px 3px 5px 4px;
 }
 .text__wkqI {
   position: relative;

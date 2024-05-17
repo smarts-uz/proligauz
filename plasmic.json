@@ -1683,6 +1683,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/market-2"
+        },
+        {
+          "id": "0Wn5PD6iZBUT",
+          "name": "PlayerInfo",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicPlayerInfo.tsx",
+          "importSpec": {
+            "modulePath": "../pages/player-2/[id].tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicPlayerInfo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/player-2/[id]"
         }
       ],
       "icons": [

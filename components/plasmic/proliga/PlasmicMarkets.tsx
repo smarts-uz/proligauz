@@ -167,9 +167,9 @@ function PlasmicMarkets__RenderFunc(props: {
     playersDescanding: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "9f50e777-f6f4-4678-b959-213aea448c0f",
+        opId: "d1cb0887-bbdb-4d01-9946-8a2ae359471e",
         userArgs: {},
-        cacheKey: `plasmic.$.9f50e777-f6f4-4678-b959-213aea448c0f.$.`,
+        cacheKey: `plasmic.$.d1cb0887-bbdb-4d01-9946-8a2ae359471e.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -672,99 +672,164 @@ function PlasmicMarkets__RenderFunc(props: {
                   </PlasmicLink__>
                 );
               })}
-              <div className={classNames(projectcss.all, sty.freeBox__xk7BC)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__kOkQo)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={
-                    "https://assets-fantasy.llt-services.com/players/t186/p908/256x256/p908_t186_1_001_000.png"
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return $queries.playersDescanding.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
                   }
-                  width={"112px"}
-                />
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__xk7BC)}
+                    key={currentIndex}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__kOkQo)}
+                      displayHeight={"auto"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={(() => {
+                        try {
+                          return currentItem.image;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "https://assets-fantasy.llt-services.com/players/t186/p908/256x256/p908_t186_1_001_000.png";
+                          }
+                          throw e;
+                        }
+                      })()}
+                      width={"112px"}
+                    />
 
-                <div className={classNames(projectcss.all, sty.freeBox__vAvM)}>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__pKRx3
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"GOA"}
-                  </PlasmicLink__>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2Mju
-                    )}
-                  >
-                    {"Ronaldo"}
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__vAvM)}
+                    >
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          sty.link__pKRx3
+                        )}
+                        component={Link}
+                        href={"https://www.plasmic.app/"}
+                        platform={"nextjs"}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return currentItem.position;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "GOA";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </PlasmicLink__>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___2Mju
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return currentItem.name;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "Ronaldo";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__v4LFv
+                        )}
+                      >
+                        {"pervious value"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__u5Rv3
+                        )}
+                      >
+                        {"1.205.63"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__hv6Sr)}
+                    >
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          sty.link__w0Wrt
+                        )}
+                        component={Link}
+                        href={"https://www.plasmic.app/"}
+                        platform={"nextjs"}
+                      >
+                        {"39%"}
+                      </PlasmicLink__>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__wkqI
+                        )}
+                      >
+                        {"Current value"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__gdgLe
+                        )}
+                      >
+                        {"18.265.43"}
+                      </div>
+                    </div>
                   </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__v4LFv
-                    )}
-                  >
-                    {"pervious value"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__u5Rv3
-                    )}
-                  >
-                    {"1.205.63"}
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__hv6Sr)}>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__w0Wrt
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    {"39%"}
-                  </PlasmicLink__>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wkqI
-                    )}
-                  >
-                    {"Current value"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gdgLe
-                    )}
-                  >
-                    {"18.265.43"}
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
           <Footer

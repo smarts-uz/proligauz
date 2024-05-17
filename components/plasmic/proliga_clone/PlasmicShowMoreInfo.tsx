@@ -132,13 +132,11 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
     query: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "73362b7e-ced3-4eaa-a806-842e83528f32",
-        userArgs: {
-          filters: [$ctx.params.id]
-        },
+        opId: "4517b04f-e2d4-4046-a537-fb59d4a273d8",
+        userArgs: {},
         cacheKey: `plasmic.$.${(() => {
           try {
-            return "getOne";
+            return undefined;
           } catch (e) {
             if (
               e instanceof TypeError ||
@@ -148,7 +146,7 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
             }
             throw e;
           }
-        })()}.$.73362b7e-ced3-4eaa-a806-842e83528f32.$.`,
+        })()}.$.4517b04f-e2d4-4046-a537-fb59d4a273d8.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -156,11 +154,11 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
     query2: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "b2b86d80-c52f-497d-acbd-5a0ad1e275cc",
+        opId: "a5975212-7f5e-44da-90fa-68324feac1ff",
         userArgs: {},
-        cacheKey: `plasmic.$.b2b86d80-c52f-497d-acbd-5a0ad1e275cc.$.`,
+        cacheKey: `plasmic.$.a5975212-7f5e-44da-90fa-68324feac1ff.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     })
   };
@@ -201,7 +199,7 @@ function PlasmicShowMoreInfo__RenderFunc(props: {
             {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
               (() => {
                 try {
-                  return $queries.query2.data;
+                  return 1;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
