@@ -316,11 +316,14 @@
   min-width: 0;
   padding: 8px;
 }
-.img__sxe2M {
+.link__cGxPy {
   position: relative;
+  z-index: 3;
+  display: flex;
+}
+.img__sxe2M {
   object-fit: cover;
   max-width: 100%;
-  z-index: 3;
   width: 89px;
   height: 110px;
   flex-shrink: 0;
@@ -356,16 +359,19 @@
   min-width: 0;
   padding: 8px;
 }
-.img__r0Q4F {
+.link__hhs63 {
   position: relative;
+  z-index: 3;
+  align-self: center;
+  display: flex;
+  margin: 0px 15px;
+}
+.img__r0Q4F {
   object-fit: cover;
   max-width: 100%;
-  align-self: center;
-  z-index: 3;
   width: 89px;
   height: 110px;
   flex-shrink: 0;
-  margin: 0px 15px;
   border-width: 3px;
   border-style: solid;
 }

@@ -492,43 +492,99 @@ function PlasmicClub__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__s2ORa)}
                       key={currentIndex}
                     >
-                      <PlasmicImg__
-                        alt={(() => {
-                          try {
-                            return currentItem.name;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          sty.link__cGxPy
+                        )}
+                        component={Link}
+                        platform={"nextjs"}
+                      >
+                        <PlasmicImg__
+                          alt={(() => {
+                            try {
+                              return currentItem.name;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
-                        aria-hidden={"true"}
-                        className={classNames(sty.img__sxe2M)}
-                        displayHeight={"110px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"89px"}
-                        loading={"lazy"}
-                        src={(() => {
-                          try {
-                            return currentItem.image;
-                          } catch (e) {
+                          })()}
+                          aria-hidden={"true"}
+                          className={classNames(sty.img__sxe2M)}
+                          displayHeight={"110px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"89px"}
+                          loading={"lazy"}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToPlayerInfo"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/player-2/${(() => {
+                                      try {
+                                        return currentItem.id;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()}`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
                             if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
+                              $steps["goToPlayerInfo"] != null &&
+                              typeof $steps["goToPlayerInfo"] === "object" &&
+                              typeof $steps["goToPlayerInfo"].then ===
+                                "function"
                             ) {
-                              return undefined;
+                              $steps["goToPlayerInfo"] = await $steps[
+                                "goToPlayerInfo"
+                              ];
                             }
-                            throw e;
-                          }
-                        })()}
-                      />
+                          }}
+                          src={(() => {
+                            try {
+                              return currentItem.image;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      </PlasmicLink__>
                     </div>
                   );
                 })}
@@ -557,43 +613,99 @@ function PlasmicClub__RenderFunc(props: {
                     const currentItem = __plasmic_item_0;
                     const currentIndex = __plasmic_idx_0;
                     return (
-                      <PlasmicImg__
-                        alt={(() => {
-                          try {
-                            return currentItem.name;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
-                        className={classNames(sty.img__r0Q4F)}
-                        displayHeight={"110px"}
-                        displayMaxHeight={"none"}
-                        displayMaxWidth={"100%"}
-                        displayMinHeight={"0"}
-                        displayMinWidth={"0"}
-                        displayWidth={"89px"}
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          sty.link__hhs63
+                        )}
+                        component={Link}
                         key={currentIndex}
-                        loading={"lazy"}
-                        src={(() => {
-                          try {
-                            return currentItem.image;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
+                        platform={"nextjs"}
+                      >
+                        <PlasmicImg__
+                          alt={(() => {
+                            try {
+                              return currentItem.name;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
                             }
-                            throw e;
-                          }
-                        })()}
-                      />
+                          })()}
+                          className={classNames(sty.img__r0Q4F)}
+                          displayHeight={"110px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"89px"}
+                          loading={"lazy"}
+                          onClick={async event => {
+                            const $steps = {};
+
+                            $steps["goToPlayerInfo"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/player-2/${(() => {
+                                      try {
+                                        return currentItem.id;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()}`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["goToPlayerInfo"] != null &&
+                              typeof $steps["goToPlayerInfo"] === "object" &&
+                              typeof $steps["goToPlayerInfo"].then ===
+                                "function"
+                            ) {
+                              $steps["goToPlayerInfo"] = await $steps[
+                                "goToPlayerInfo"
+                              ];
+                            }
+                          }}
+                          src={(() => {
+                            try {
+                              return currentItem.image;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      </PlasmicLink__>
                     );
                   })}
                 </div>
@@ -645,6 +757,49 @@ function PlasmicClub__RenderFunc(props: {
                         displayWidth={"89px"}
                         key={currentIndex}
                         loading={"lazy"}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["goToPage"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: (() => {
+                                    try {
+                                      return currentItem.id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToPage"] != null &&
+                            typeof $steps["goToPage"] === "object" &&
+                            typeof $steps["goToPage"].then === "function"
+                          ) {
+                            $steps["goToPage"] = await $steps["goToPage"];
+                          }
+                        }}
                         src={(() => {
                           try {
                             return currentItem.image;
@@ -712,6 +867,51 @@ function PlasmicClub__RenderFunc(props: {
                         displayWidth={"89px"}
                         key={currentIndex}
                         loading={"lazy"}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["goToPlayerInfo"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  destination: `/player-2/${(() => {
+                                    try {
+                                      return currentItem.id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}`
+                                };
+                                return (({ destination }) => {
+                                  if (
+                                    typeof destination === "string" &&
+                                    destination.startsWith("#")
+                                  ) {
+                                    document
+                                      .getElementById(destination.substr(1))
+                                      .scrollIntoView({ behavior: "smooth" });
+                                  } else {
+                                    __nextRouter?.push(destination);
+                                  }
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["goToPlayerInfo"] != null &&
+                            typeof $steps["goToPlayerInfo"] === "object" &&
+                            typeof $steps["goToPlayerInfo"].then === "function"
+                          ) {
+                            $steps["goToPlayerInfo"] = await $steps[
+                              "goToPlayerInfo"
+                            ];
+                          }
+                        }}
                         src={(() => {
                           try {
                             return currentItem.image;
