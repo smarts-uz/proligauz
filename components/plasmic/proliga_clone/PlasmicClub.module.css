@@ -266,7 +266,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   min-width: 0;
   padding: 8px;
@@ -585,6 +585,105 @@
   color: var(--token-_Z-x7YSfdB4D);
   font-weight: 900;
   padding-left: 8px;
+  min-width: 0;
+}
+.text__b9Hq8 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--token-jgohepLVeKvh);
+  margin-bottom: 10px;
+  min-width: 0;
+}
+.freeBox__inZ07 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: var(--token-jgohepLVeKvh);
+  margin-bottom: 8px;
+  min-width: 0;
+  padding: 8px;
+}
+.text__wdvqd {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--token-w7ybUCajlWG4);
+  margin-right: 8px;
+  text-align: right;
+}
+.img__eqrV9 {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 20px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.img__eqrV9 > picture > img {
+  object-fit: cover;
+}
+.freeBox__wiDx7 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  padding: 8px;
+}
+.text__z8WF2 {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  font-weight: 900;
+  color: var(--token-LqtA0Zd3XkIQ);
+}
+.freeBox___0UzpB {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  padding: 8px;
+}
+.img__tltYu {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 20px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.img__tltYu > picture > img {
+  object-fit: cover;
+}
+.text__kuL0 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  align-self: center;
   min-width: 0;
 }
 .column__udFqK {

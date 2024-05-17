@@ -270,19 +270,6 @@ function PlasmicMarkets__RenderFunc(props: {
                       sty.link__jFrqQ
                     )}
                     component={Link}
-                    href={(() => {
-                      try {
-                        return "/player/" + currentItem.id;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return `/player/${""}`;
-                        }
-                        throw e;
-                      }
-                    })()}
                     key={currentIndex}
                     platform={"nextjs"}
                   >
@@ -476,19 +463,6 @@ function PlasmicMarkets__RenderFunc(props: {
                       sty.link__bqBjg
                     )}
                     component={Link}
-                    href={(() => {
-                      try {
-                        return "/player/" + currentItem.id;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return `/player/${""}`;
-                        }
-                        throw e;
-                      }
-                    })()}
                     key={currentIndex}
                     onClick={async event => {
                       const $steps = {};

@@ -59,14 +59,12 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   executePlasmicDataOp,
   usePlasmicDataOp,
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
-import { RichDetails } from "@plasmicpkgs/plasmic-rich-components/skinny/rich-details";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -90,7 +88,7 @@ export const PlasmicPlayerInfo__ArgProps = new Array<ArgPropType>();
 export type PlasmicPlayerInfo__OverridesType = {
   root?: Flex__<"div">;
   h1?: Flex__<"h1">;
-  dataDetails?: Flex__<typeof RichDetails>;
+  link?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultPlayerInfoProps {}
@@ -129,8 +127,6 @@ function PlasmicPlayerInfo__RenderFunc(props: {
   let [$queries, setDollarQueries] = React.useState<
     Record<string, ReturnType<typeof usePlasmicDataOp>>
   >({});
-
-  const dataSourcesCtx = usePlasmicDataSourceContext();
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
     query: usePlasmicDataOp(() => {
@@ -217,25 +213,119 @@ function PlasmicPlayerInfo__RenderFunc(props: {
               })()}
             </React.Fragment>
           </h1>
-          <RichDetails
-            data-plasmic-name={"dataDetails"}
-            data-plasmic-override={overrides.dataDetails}
-            bordered={true}
-            className={classNames("__wab_instance", sty.dataDetails)}
-            data={(() => {
-              try {
-                return $queries.query.data[0];
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return null;
-                }
-                throw e;
+          <div className={classNames(projectcss.all, sty.freeBox__xdMCu)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img___0OoC)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              height={"214px"}
+              loading={"lazy"}
+              src={
+                "https://assets-fantasy.llt-services.com/players/t179/p1821/256x256/p1821_t179_1_001_000.png"
               }
-            })()}
-          />
+              width={"344px"}
+            />
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox___0CmUs)}>
+            <div className={classNames(projectcss.all, sty.freeBox__tnxJ)}>
+              <div className={classNames(projectcss.all, sty.freeBox__qzn9Z)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wYltr
+                  )}
+                >
+                  {"Position"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tXebw
+                  )}
+                >
+                  {"FSYP"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__yfCB)}>
+                <PlasmicLink__
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link
+                  )}
+                  component={Link}
+                  href={"https://www.plasmic.app/"}
+                  platform={"nextjs"}
+                >
+                  {"STR"}
+                </PlasmicLink__>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fiSj
+                  )}
+                >
+                  {"ISaac"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1J5Jj
+                  )}
+                >
+                  {"92"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__fbX8B)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vLuJj
+                  )}
+                >
+                  {"Value"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__j08Jk
+                  )}
+                >
+                  {"Average"}
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__vuD6M)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__cgS9C)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={
+                    "https://www.iconpacks.net/icons/1/free-euro-icon-795-thumb.png"
+                  }
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -243,9 +333,9 @@ function PlasmicPlayerInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "dataDetails"],
+  root: ["root", "h1", "link"],
   h1: ["h1"],
-  dataDetails: ["dataDetails"]
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -253,7 +343,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
-  dataDetails: typeof RichDetails;
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -316,7 +406,7 @@ function withPlasmicPageGuard<P extends object>(
 ) {
   const PageGuard: React.FC<P> = props => (
     <PlasmicPageGuard__
-      minRole={"f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"}
+      minRole={null}
       appId={"tDWy3GXn2mzd9e2xUaPdmu"}
       authorizeEndpoint={"https://studio.plasmic.app/authorize"}
       canTriggerLogin={false}
@@ -334,7 +424,7 @@ export const PlasmicPlayerInfo = Object.assign(
   {
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
-    dataDetails: makeNodeComponent("dataDetails"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicPlayerInfo
     internalVariantProps: PlasmicPlayerInfo__VariantProps,

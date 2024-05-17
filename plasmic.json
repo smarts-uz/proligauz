@@ -1537,20 +1537,6 @@
           "path": "/club/[name]"
         },
         {
-          "id": "KFKTV1su0dbH",
-          "name": "ShowMoreInfo",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicShowMoreInfo.tsx",
-          "importSpec": {
-            "modulePath": "../pages/player/[id].tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicShowMoreInfo.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/player/[id]"
-        },
-        {
           "id": "3EueAFP_3sEI",
           "name": "Clubs2",
           "type": "managed",

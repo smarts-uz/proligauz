@@ -243,6 +243,18 @@ function PlasmicClub__RenderFunc(props: {
         invalidatedKeys: null,
         roleId: null
       };
+    }),
+    lastMatches: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "64be2aee-8b8c-4ffd-8b32-7bd124229cd0",
+        userArgs: {
+          filters: [$queries.query.data[0].id]
+        },
+        cacheKey: `plasmic.$.64be2aee-8b8c-4ffd-8b32-7bd124229cd0.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
     })
   };
   if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
@@ -880,6 +892,180 @@ function PlasmicClub__RenderFunc(props: {
                             projectcss.all,
                             projectcss.__wab_text,
                             sty.text__bjRyz
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $queries.clubs.data[
+                                  currentItem.away_id - 1
+                                ].name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__b9Hq8
+                  )}
+                >
+                  {"Last Matches"}
+                </div>
+                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                  (() => {
+                    try {
+                      return $queries.lastMatches.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()
+                ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                  const currentItem = __plasmic_item_0;
+                  const currentIndex = __plasmic_idx_0;
+                  return (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__inZ07)}
+                      key={currentIndex}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__wdvqd
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $queries.clubs.data[
+                                currentItem.home_id - 1
+                              ].name;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
+                      <PlasmicImg__
+                        alt={""}
+                        className={classNames(sty.img__eqrV9)}
+                        displayHeight={"30px"}
+                        displayMaxHeight={"none"}
+                        displayMaxWidth={"100%"}
+                        displayMinHeight={"0"}
+                        displayMinWidth={"0"}
+                        displayWidth={"20px"}
+                        loading={"lazy"}
+                        src={(() => {
+                          try {
+                            return $queries.clubs.data[currentItem.home_id - 1]
+                              .flag_url;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__wiDx7
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__z8WF2
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem.result;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___0UzpB
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__tltYu)}
+                          displayHeight={"30px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"20px"}
+                          loading={"lazy"}
+                          src={(() => {
+                            try {
+                              return $queries.clubs.data[
+                                currentItem.away_id - 1
+                              ].flag_url;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__kuL0
                           )}
                         >
                           <React.Fragment>
