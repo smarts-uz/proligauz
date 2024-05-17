@@ -755,19 +755,45 @@ function PlasmicClub__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__ilRW)}
                       key={currentIndex}
                     >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___7LwHj
+                        )}
+                      >
+                        <React.Fragment>
+                          {(() => {
+                            try {
+                              return $queries.clubs.data[
+                                currentItem.home_id - 1
+                              ].name;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        </React.Fragment>
+                      </div>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__sQzsp)}
-                        displayHeight={"auto"}
+                        displayHeight={"30px"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
                         displayMinWidth={"0"}
-                        displayWidth={"auto"}
+                        displayWidth={"20px"}
                         loading={"lazy"}
                         src={(() => {
                           try {
-                            return undefined;
+                            return $queries.clubs.data[currentItem.home_id - 1]
+                              .flag_url;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -779,6 +805,105 @@ function PlasmicClub__RenderFunc(props: {
                           }
                         })()}
                       />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__j4PNe
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__wgDbi
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem.starts_at;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "TOMORROW";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___1EB
+                          )}
+                        >
+                          {"0:0"}
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___9ZxXp
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___2TD9Q)}
+                          displayHeight={"30px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"20px"}
+                          loading={"lazy"}
+                          src={(() => {
+                            try {
+                              return $queries.clubs.data[
+                                currentItem.away_id - 1
+                              ].flag_url;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__bjRyz
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $queries.clubs.data[
+                                  currentItem.away_id - 1
+                                ].name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
