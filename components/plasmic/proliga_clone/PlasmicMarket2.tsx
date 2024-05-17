@@ -147,19 +147,29 @@ function PlasmicMarket2__RenderFunc(props: {
     clubs: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "81587a77-6aad-402c-919c-fd97d198ae18",
+        opId: "157523a8-a564-4845-81d4-23951d76d034",
         userArgs: {},
-        cacheKey: `plasmic.$.81587a77-6aad-402c-919c-fd97d198ae18.$.`,
+        cacheKey: `plasmic.$.157523a8-a564-4845-81d4-23951d76d034.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     }),
     players: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "a5975212-7f5e-44da-90fa-68324feac1ff",
+        opId: "6ab7b077-d6d7-443c-b43a-f8b385e79200",
         userArgs: {},
-        cacheKey: `plasmic.$.a5975212-7f5e-44da-90fa-68324feac1ff.$.`,
+        cacheKey: `plasmic.$.6ab7b077-d6d7-443c-b43a-f8b385e79200.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
+    }),
+    playersDescanding: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "9f50e777-f6f4-4678-b959-213aea448c0f",
+        userArgs: {},
+        cacheKey: `plasmic.$.9f50e777-f6f4-4678-b959-213aea448c0f.$.`,
         invalidatedKeys: null,
         roleId: null
       };
