@@ -65,6 +65,8 @@ import {
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
+import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
+import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import { SimpleChart } from "@plasmicpkgs/react-chartjs-2";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -88,6 +90,8 @@ export const PlasmicPlayerInfo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPlayerInfo__OverridesType = {
   root?: Flex__<"div">;
+  navbar?: Flex__<typeof Navbar>;
+  clubs2?: Flex__<typeof Clubs2>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   chart?: Flex__<typeof SimpleChart>;
 };
@@ -188,6 +192,18 @@ function PlasmicPlayerInfo__RenderFunc(props: {
             sty.root
           )}
         >
+          <Navbar
+            data-plasmic-name={"navbar"}
+            data-plasmic-override={overrides.navbar}
+            className={classNames("__wab_instance", sty.navbar)}
+          />
+
+          <Clubs2
+            data-plasmic-name={"clubs2"}
+            data-plasmic-override={overrides.clubs2}
+            className={classNames("__wab_instance", sty.clubs2)}
+          />
+
           <div className={classNames(projectcss.all, sty.freeBox__uhOzD)}>
             <div className={classNames(projectcss.all, sty.freeBox__xC2PH)}>
               <div className={classNames(projectcss.all, sty.freeBox__xdMCu)}>
@@ -357,7 +373,9 @@ function PlasmicPlayerInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "link", "chart"],
+  root: ["root", "navbar", "clubs2", "link", "chart"],
+  navbar: ["navbar"],
+  clubs2: ["clubs2"],
   link: ["link"],
   chart: ["chart"]
 } as const;
@@ -366,6 +384,8 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  navbar: typeof Navbar;
+  clubs2: typeof Clubs2;
   link: "a";
   chart: typeof SimpleChart;
 };
@@ -447,6 +467,8 @@ export const PlasmicPlayerInfo = Object.assign(
   withPlasmicPageGuard(makeNodeComponent("root")),
   {
     // Helper components rendering sub-elements
+    navbar: makeNodeComponent("navbar"),
+    clubs2: makeNodeComponent("clubs2"),
     link: makeNodeComponent("link"),
     chart: makeNodeComponent("chart"),
 
