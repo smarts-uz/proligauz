@@ -1509,20 +1509,6 @@
           "componentType": "component"
         },
         {
-          "id": "ecsLMMRvrXIh",
-          "name": "_1",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/Plasmic_1.tsx",
-          "importSpec": {
-            "modulePath": "../pages/1.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/Plasmic_1.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/1"
-        },
-        {
           "id": "HKQhiFHHfgky",
           "name": "MoreInfo",
           "type": "managed",
