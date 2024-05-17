@@ -515,7 +515,7 @@ function PlasmicClub__RenderFunc(props: {
                               throw e;
                             }
                           })()}
-                          aria-hidden={"true"}
+                          aria-hidden={"false"}
                           className={classNames(sty.img__sxe2M)}
                           displayHeight={"110px"}
                           displayMaxHeight={"none"}
@@ -715,7 +715,15 @@ function PlasmicClub__RenderFunc(props: {
                 data-plasmic-override={overrides.mid}
                 className={classNames(projectcss.all, sty.mid)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__wyJc4)}>
+                <PlasmicLink__
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__wyJc4
+                  )}
+                  component={Link}
+                  platform={"nextjs"}
+                >
                   {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                     (() => {
                       try {
@@ -760,10 +768,10 @@ function PlasmicClub__RenderFunc(props: {
                         onClick={async event => {
                           const $steps = {};
 
-                          $steps["goToPage"] = true
+                          $steps["goToPlayerInfo"] = true
                             ? (() => {
                                 const actionArgs = {
-                                  destination: (() => {
+                                  destination: `/player-2/${(() => {
                                     try {
                                       return currentItem.id;
                                     } catch (e) {
@@ -776,7 +784,7 @@ function PlasmicClub__RenderFunc(props: {
                                       }
                                       throw e;
                                     }
-                                  })()
+                                  })()}`
                                 };
                                 return (({ destination }) => {
                                   if (
@@ -793,11 +801,13 @@ function PlasmicClub__RenderFunc(props: {
                               })()
                             : undefined;
                           if (
-                            $steps["goToPage"] != null &&
-                            typeof $steps["goToPage"] === "object" &&
-                            typeof $steps["goToPage"].then === "function"
+                            $steps["goToPlayerInfo"] != null &&
+                            typeof $steps["goToPlayerInfo"] === "object" &&
+                            typeof $steps["goToPlayerInfo"].then === "function"
                           ) {
-                            $steps["goToPage"] = await $steps["goToPage"];
+                            $steps["goToPlayerInfo"] = await $steps[
+                              "goToPlayerInfo"
+                            ];
                           }
                         }}
                         src={(() => {
@@ -816,7 +826,7 @@ function PlasmicClub__RenderFunc(props: {
                       />
                     );
                   })}
-                </div>
+                </PlasmicLink__>
               </div>
               <div
                 data-plasmic-name={"str"}
