@@ -331,19 +331,7 @@ function PlasmicMarkets__RenderFunc(props: {
                         displayMinWidth={"0"}
                         displayWidth={"auto"}
                         loading={"lazy"}
-                        src={(() => {
-                          try {
-                            return currentItem.image;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()}
+                        src={currentItem.image}
                         width={"112px"}
                       />
                     </div>
@@ -774,19 +762,7 @@ function PlasmicMarkets__RenderFunc(props: {
                       displayMinWidth={"0"}
                       displayWidth={"auto"}
                       loading={"lazy"}
-                      src={(() => {
-                        try {
-                          return currentItem.image;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "https://assets-fantasy.llt-services.com/players/t186/p908/256x256/p908_t186_1_001_000.png";
-                          }
-                          throw e;
-                        }
-                      })()}
+                      src={currentItem.image}
                       width={"112px"}
                     />
 

@@ -162,18 +162,6 @@ function PlasmicClub__RenderFunc(props: {
         roleId: null
       };
     }),
-    player: usePlasmicDataOp(() => {
-      return {
-        sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "cd389ffd-474e-4351-9b57-c04df18a2a1b",
-        userArgs: {
-          filters: [$queries.query.data[0].id]
-        },
-        cacheKey: `plasmic.$.cd389ffd-474e-4351-9b57-c04df18a2a1b.$.`,
-        invalidatedKeys: null,
-        roleId: null
-      };
-    }),
     goa: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
