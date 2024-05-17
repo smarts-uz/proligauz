@@ -433,73 +433,75 @@ function PlasmicButton__RenderFunc(props: {
           )
         })}
       >
-        {renderPlasmicSlot({
-          defaultContents: (
-            <ChecksvgIcon
-              className={classNames(projectcss.all, sty.svg__fm6WH)}
-              role={"img"}
-            />
-          ),
+        {false
+          ? renderPlasmicSlot({
+              defaultContents: (
+                <ChecksvgIcon
+                  className={classNames(projectcss.all, sty.svg__fm6WH)}
+                  role={"img"}
+                />
+              ),
 
-          value: args.startIcon,
-          className: classNames(sty.slotTargetStartIcon, {
-            [sty.slotTargetStartIconcolor_blue]: hasVariant(
-              $state,
-              "color",
-              "blue"
-            ),
-            [sty.slotTargetStartIconcolor_clear]: hasVariant(
-              $state,
-              "color",
-              "clear"
-            ),
-            [sty.slotTargetStartIconcolor_link]: hasVariant(
-              $state,
-              "color",
-              "link"
-            ),
-            [sty.slotTargetStartIconcolor_softBlue]: hasVariant(
-              $state,
-              "color",
-              "softBlue"
-            ),
-            [sty.slotTargetStartIconcolor_softGreen]: hasVariant(
-              $state,
-              "color",
-              "softGreen"
-            ),
-            [sty.slotTargetStartIconcolor_softRed]: hasVariant(
-              $state,
-              "color",
-              "softRed"
-            ),
-            [sty.slotTargetStartIconcolor_softSand]: hasVariant(
-              $state,
-              "color",
-              "softSand"
-            ),
-            [sty.slotTargetStartIconcolor_softYellow]: hasVariant(
-              $state,
-              "color",
-              "softYellow"
-            ),
-            [sty.slotTargetStartIconcolor_white]: hasVariant(
-              $state,
-              "color",
-              "white"
-            ),
-            [sty.slotTargetStartIconcolor_yellow]: hasVariant(
-              $state,
-              "color",
-              "yellow"
-            ),
-            [sty.slotTargetStartIconshowStartIcon]: hasVariant(
-              $state,
-              "showStartIcon",
-              "showStartIcon"
-            )
-          })
-        })}
+              value: args.startIcon,
+              className: classNames(sty.slotTargetStartIcon, {
+                [sty.slotTargetStartIconcolor_blue]: hasVariant(
+                  $state,
+                  "color",
+                  "blue"
+                ),
+                [sty.slotTargetStartIconcolor_clear]: hasVariant(
+                  $state,
+                  "color",
+                  "clear"
+                ),
+                [sty.slotTargetStartIconcolor_link]: hasVariant(
+                  $state,
+                  "color",
+                  "link"
+                ),
+                [sty.slotTargetStartIconcolor_softBlue]: hasVariant(
+                  $state,
+                  "color",
+                  "softBlue"
+                ),
+                [sty.slotTargetStartIconcolor_softGreen]: hasVariant(
+                  $state,
+                  "color",
+                  "softGreen"
+                ),
+                [sty.slotTargetStartIconcolor_softRed]: hasVariant(
+                  $state,
+                  "color",
+                  "softRed"
+                ),
+                [sty.slotTargetStartIconcolor_softSand]: hasVariant(
+                  $state,
+                  "color",
+                  "softSand"
+                ),
+                [sty.slotTargetStartIconcolor_softYellow]: hasVariant(
+                  $state,
+                  "color",
+                  "softYellow"
+                ),
+                [sty.slotTargetStartIconcolor_white]: hasVariant(
+                  $state,
+                  "color",
+                  "white"
+                ),
+                [sty.slotTargetStartIconcolor_yellow]: hasVariant(
+                  $state,
+                  "color",
+                  "yellow"
+                ),
+                [sty.slotTargetStartIconshowStartIcon]: hasVariant(
+                  $state,
+                  "showStartIcon",
+                  "showStartIcon"
+                )
+              })
+            })
+          : null}
       </div>
       <div
         data-plasmic-name={"contentContainer"}

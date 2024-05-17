@@ -196,7 +196,7 @@ function PlasmicClubs2__RenderFunc(props: {
               component={Link}
               href={(() => {
                 try {
-                  return "/club-2/" + currentItem.id;
+                  return "/clubs/" + currentItem.id;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||

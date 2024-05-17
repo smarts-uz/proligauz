@@ -1731,7 +1731,7 @@
           "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
           "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClub.tsx",
           "importSpec": {
-            "modulePath": "../pages/club-4/[id].tsx"
+            "modulePath": "../pages/clubs/[id].tsx"
           },
           "cssFilePath": "plasmic/proliga_clone/PlasmicClub.module.css",
           "scheme": "blackbox",

@@ -399,11 +399,14 @@
   text-decoration-line: underline;
 }
 .endIconContainer {
-  display: flex;
   position: relative;
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+  display: none;
+}
+.endIconContainershowEndIcon {
+  display: flex;
 }
 .slotTargetEndIcon {
   color: #ededec;
