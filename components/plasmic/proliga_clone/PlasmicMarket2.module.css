@@ -462,6 +462,26 @@
   font-weight: 700;
   min-width: 0;
 }
+.freeBox__xk7BC {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.img__kOkQo {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__kOkQo > picture > img {
+  object-fit: cover;
+}
 .footer:global(.__wab_instance) {
   max-width: 100%;
   position: relative;

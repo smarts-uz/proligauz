@@ -672,6 +672,19 @@ function PlasmicMarket2__RenderFunc(props: {
                   </PlasmicLink__>
                 );
               })}
+              <div className={classNames(projectcss.all, sty.freeBox__xk7BC)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__kOkQo)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                />
+              </div>
             </div>
           </div>
           <Footer
