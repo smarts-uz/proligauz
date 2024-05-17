@@ -168,25 +168,25 @@ function PlasmicClub__RenderFunc(props: {
     player: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "2256a57e-9fec-4681-8043-9bed241e2c65",
+        opId: "cd389ffd-474e-4351-9b57-c04df18a2a1b",
         userArgs: {
           filters: [$queries.query.data[0].id]
         },
-        cacheKey: `plasmic.$.2256a57e-9fec-4681-8043-9bed241e2c65.$.`,
+        cacheKey: `plasmic.$.cd389ffd-474e-4351-9b57-c04df18a2a1b.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     }),
     goa: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "8ff07eb7-07ce-4d75-aede-7f3ea8c843fd",
+        opId: "7ae82885-b344-40f8-99da-858490d35afb",
         userArgs: {
           filters: [$queries.query.data[0].id]
         },
-        cacheKey: `plasmic.$.8ff07eb7-07ce-4d75-aede-7f3ea8c843fd.$.`,
+        cacheKey: `plasmic.$.7ae82885-b344-40f8-99da-858490d35afb.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     }),
     def: usePlasmicDataOp(() => {
@@ -238,13 +238,13 @@ function PlasmicClub__RenderFunc(props: {
     nextMatch: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "6b8b2cec-2154-46bf-ac0d-7a099d063bef",
+        opId: "540af0f2-9a8a-4a4a-89cd-b7a8775523e2",
         userArgs: {
           filters: [$queries.query.data[0].id]
         },
-        cacheKey: `plasmic.$.6b8b2cec-2154-46bf-ac0d-7a099d063bef.$.`,
+        cacheKey: `plasmic.$.540af0f2-9a8a-4a4a-89cd-b7a8775523e2.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     })
   };
