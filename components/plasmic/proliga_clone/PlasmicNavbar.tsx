@@ -381,9 +381,9 @@ function PlasmicNavbar__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToMarket2"] = true
+                  $steps["goToPage"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/market-2` };
+                        const actionArgs = {};
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&
@@ -399,11 +399,11 @@ function PlasmicNavbar__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToMarket2"] != null &&
-                    typeof $steps["goToMarket2"] === "object" &&
-                    typeof $steps["goToMarket2"].then === "function"
+                    $steps["goToPage"] != null &&
+                    typeof $steps["goToPage"] === "object" &&
+                    typeof $steps["goToPage"].then === "function"
                   ) {
-                    $steps["goToMarket2"] = await $steps["goToMarket2"];
+                    $steps["goToPage"] = await $steps["goToPage"];
                   }
                 }}
                 startIcon={

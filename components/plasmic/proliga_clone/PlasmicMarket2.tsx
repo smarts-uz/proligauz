@@ -683,7 +683,27 @@ function PlasmicMarket2__RenderFunc(props: {
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
                   loading={"lazy"}
+                  src={
+                    "https://assets-fantasy.llt-services.com/players/t186/p908/256x256/p908_t186_1_001_000.png"
+                  }
+                  width={"112px"}
                 />
+
+                <div className={classNames(projectcss.all, sty.freeBox__vAvM)}>
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__pKRx3
+                    )}
+                    component={Link}
+                    href={"https://www.plasmic.app/"}
+                    platform={"nextjs"}
+                  >
+                    {"GOA"}
+                  </PlasmicLink__>
+                </div>
               </div>
             </div>
           </div>
