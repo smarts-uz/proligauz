@@ -137,9 +137,9 @@ function PlasmicMarkets__RenderFunc(props: {
     clubPlayers: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "22bad793-23fb-4697-9e46-0b36c07c0aee",
+        opId: "2b21b1b6-c456-4b94-9b70-a0ec5cc48532",
         userArgs: {},
-        cacheKey: `plasmic.$.22bad793-23fb-4697-9e46-0b36c07c0aee.$.`,
+        cacheKey: `plasmic.$.2b21b1b6-c456-4b94-9b70-a0ec5cc48532.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -271,6 +271,51 @@ function PlasmicMarkets__RenderFunc(props: {
                     )}
                     component={Link}
                     key={currentIndex}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToPlayerInfo"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/player-2/${(() => {
+                                try {
+                                  return currentItem.id;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToPlayerInfo"] != null &&
+                        typeof $steps["goToPlayerInfo"] === "object" &&
+                        typeof $steps["goToPlayerInfo"].then === "function"
+                      ) {
+                        $steps["goToPlayerInfo"] = await $steps[
+                          "goToPlayerInfo"
+                        ];
+                      }
+                    }}
                     platform={"nextjs"}
                   >
                     <div
@@ -664,9 +709,60 @@ function PlasmicMarkets__RenderFunc(props: {
                 const currentItem = __plasmic_item_0;
                 const currentIndex = __plasmic_idx_0;
                 return (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__xk7BC)}
+                  <PlasmicLink__
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link__xk7BC
+                    )}
+                    component={Link}
                     key={currentIndex}
+                    onClick={async event => {
+                      const $steps = {};
+
+                      $steps["goToPlayerInfo"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/player-2/${(() => {
+                                try {
+                                  return currentItem.id;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}`
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["goToPlayerInfo"] != null &&
+                        typeof $steps["goToPlayerInfo"] === "object" &&
+                        typeof $steps["goToPlayerInfo"].then === "function"
+                      ) {
+                        $steps["goToPlayerInfo"] = await $steps[
+                          "goToPlayerInfo"
+                        ];
+                      }
+                    }}
+                    platform={"nextjs"}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -801,7 +897,7 @@ function PlasmicMarkets__RenderFunc(props: {
                         {"18.265.43"}
                       </div>
                     </div>
-                  </div>
+                  </PlasmicLink__>
                 );
               })}
             </div>
