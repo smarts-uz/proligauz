@@ -65,6 +65,7 @@ import {
   usePlasmicInvalidate
 } from "@plasmicapp/react-web/lib/data-sources";
 
+import { SimpleChart } from "@plasmicpkgs/react-chartjs-2";
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -87,7 +88,7 @@ export const PlasmicPlayerInfo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPlayerInfo__OverridesType = {
   root?: Flex__<"div">;
-  h1?: Flex__<"h1">;
+  chart?: Flex__<typeof SimpleChart>;
   link?: Flex__<"a"> & Partial<LinkProps>;
 };
 
@@ -187,32 +188,6 @@ function PlasmicPlayerInfo__RenderFunc(props: {
             sty.root
           )}
         >
-          <h1
-            data-plasmic-name={"h1"}
-            data-plasmic-override={overrides.h1}
-            className={classNames(
-              projectcss.all,
-              projectcss.h1,
-              projectcss.__wab_text,
-              sty.h1
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $queries.query.data[0].name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "Page title";
-                  }
-                  throw e;
-                }
-              })()}
-            </React.Fragment>
-          </h1>
           <div className={classNames(projectcss.all, sty.freeBox__xdMCu)}>
             <PlasmicImg__
               alt={""}
@@ -222,15 +197,38 @@ function PlasmicPlayerInfo__RenderFunc(props: {
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
               displayMinWidth={"0"}
-              displayWidth={"auto"}
+              displayWidth={"329px"}
               height={"214px"}
               loading={"lazy"}
-              src={
-                "https://assets-fantasy.llt-services.com/players/t179/p1821/256x256/p1821_t179_1_001_000.png"
-              }
-              width={"344px"}
+              src={(() => {
+                try {
+                  return $queries.query.data[0].image;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "https://assets-fantasy.llt-services.com/players/t179/p1821/256x256/p1821_t179_1_001_000.png";
+                  }
+                  throw e;
+                }
+              })()}
+              width={"214px"}
             />
           </div>
+          <SimpleChart
+            data-plasmic-name={"chart"}
+            data-plasmic-override={overrides.chart}
+            className={classNames("__wab_instance", sty.chart)}
+            data={[
+              { region: "APAC", revenue: 3294, spend: 2675 },
+              { region: "EMEA", revenue: 3245, spend: 3895 },
+              { region: "LATAM", revenue: 2165, spend: 3498 },
+              { region: "AMER", revenue: 3215, spend: 1656 }
+            ]}
+            type={"line"}
+          />
+
           <div className={classNames(projectcss.all, sty.freeBox___0CmUs)}>
             <div className={classNames(projectcss.all, sty.freeBox__tnxJ)}>
               <div className={classNames(projectcss.all, sty.freeBox__qzn9Z)}>
@@ -267,7 +265,21 @@ function PlasmicPlayerInfo__RenderFunc(props: {
                   href={"https://www.plasmic.app/"}
                   platform={"nextjs"}
                 >
-                  {"STR"}
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data[0].position;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "STR";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </PlasmicLink__>
                 <div
                   className={classNames(
@@ -276,7 +288,21 @@ function PlasmicPlayerInfo__RenderFunc(props: {
                     sty.text__fiSj
                   )}
                 >
-                  {"ISaac"}
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data[0].name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "ISaac";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </div>
                 <div
                   className={classNames(
@@ -318,11 +344,46 @@ function PlasmicPlayerInfo__RenderFunc(props: {
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"auto"}
+                  height={"14px"}
                   loading={"lazy"}
                   src={
                     "https://www.iconpacks.net/icons/1/free-euro-icon-795-thumb.png"
                   }
+                  width={"14px"}
                 />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ru4Cf
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data[0].market_value;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "5.256.346";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1N3Wx
+                  )}
+                >
+                  {"7.08"}
+                </div>
               </div>
             </div>
           </div>
@@ -333,8 +394,8 @@ function PlasmicPlayerInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "link"],
-  h1: ["h1"],
+  root: ["root", "chart", "link"],
+  chart: ["chart"],
   link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -342,7 +403,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  h1: "h1";
+  chart: typeof SimpleChart;
   link: "a";
 };
 
@@ -423,7 +484,7 @@ export const PlasmicPlayerInfo = Object.assign(
   withPlasmicPageGuard(makeNodeComponent("root")),
   {
     // Helper components rendering sub-elements
-    h1: makeNodeComponent("h1"),
+    chart: makeNodeComponent("chart"),
     link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicPlayerInfo
