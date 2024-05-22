@@ -225,6 +225,16 @@ function PlasmicTeams2Market__RenderFunc(props: {
         invalidatedKeys: null,
         roleId: null
       };
+    }),
+    userTeam: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "f2c281a8-38ed-48b3-ba38-e7231daa5b27",
+        userArgs: {},
+        cacheKey: `plasmic.$.f2c281a8-38ed-48b3-ba38-e7231daa5b27.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
     })
   };
   if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
@@ -502,6 +512,55 @@ function PlasmicTeams2Market__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.freeBox__nsFJd)}
                   key={currentIndex}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["postgresCreate"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            dataOp: {
+                              sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                              opId: "f569081c-7890-4699-bbd4-6fd4d259a37b",
+                              userArgs: {
+                                variables: [
+                                  currentItem.id,
+                                  currentItem.position,
+                                  $queries.userTeam.data[0].id
+                                ]
+                              },
+                              cacheKey: null,
+                              invalidatedKeys: ["plasmic_refresh_all"],
+                              roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                            }
+                          };
+                          return (async ({ dataOp, continueOnError }) => {
+                            try {
+                              const response = await executePlasmicDataOp(
+                                dataOp,
+                                {
+                                  userAuthToken: dataSourcesCtx?.userAuthToken,
+                                  user: dataSourcesCtx?.user
+                                }
+                              );
+                              await plasmicInvalidate(dataOp.invalidatedKeys);
+                              return response;
+                            } catch (e) {
+                              if (!continueOnError) {
+                                throw e;
+                              }
+                              return e;
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["postgresCreate"] != null &&
+                      typeof $steps["postgresCreate"] === "object" &&
+                      typeof $steps["postgresCreate"].then === "function"
+                    ) {
+                      $steps["postgresCreate"] = await $steps["postgresCreate"];
+                    }
+                  }}
                 >
                   <PlasmicImg__
                     alt={""}

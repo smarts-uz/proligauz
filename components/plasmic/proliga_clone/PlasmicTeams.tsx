@@ -147,21 +147,67 @@ function PlasmicTeams__RenderFunc(props: {
     teamP: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "0e79ed19-4a3b-4216-a233-9855320d2693",
+        opId: "f2c281a8-38ed-48b3-ba38-e7231daa5b27",
         userArgs: {},
-        cacheKey: `plasmic.$.0e79ed19-4a3b-4216-a233-9855320d2693.$.`,
+        cacheKey: `plasmic.$.f2c281a8-38ed-48b3-ba38-e7231daa5b27.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     }),
     goa: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "0587a83a-421e-4952-9de7-8fda9765b854",
+        opId: "41745ec7-b280-49d3-b0ed-c347cb66f7ed",
         userArgs: {
           filters: [$queries.teamP.data[0].id]
         },
-        cacheKey: `plasmic.$.0587a83a-421e-4952-9de7-8fda9765b854.$.`,
+        cacheKey: `plasmic.$.41745ec7-b280-49d3-b0ed-c347cb66f7ed.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
+    }),
+    player: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "599769b6-a1bd-4576-8520-bce68660a78f",
+        userArgs: {},
+        cacheKey: `plasmic.$.599769b6-a1bd-4576-8520-bce68660a78f.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
+    }),
+    def: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "105ce4d6-f10b-4e05-88d8-e9b788210405",
+        userArgs: {
+          filters: [$queries.teamP.data[0].id]
+        },
+        cacheKey: `plasmic.$.105ce4d6-f10b-4e05-88d8-e9b788210405.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    }),
+    mid: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "6bdd93d5-cbe1-4513-9e93-4dd708ab47ff",
+        userArgs: {
+          filters: [$queries.teamP.data[0].id]
+        },
+        cacheKey: `plasmic.$.6bdd93d5-cbe1-4513-9e93-4dd708ab47ff.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    }),
+    str: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "8ed66bc2-bbd7-4865-ac90-a1928fef354e",
+        userArgs: {
+          filters: [$queries.teamP.data[0].id]
+        },
+        cacheKey: `plasmic.$.8ed66bc2-bbd7-4865-ac90-a1928fef354e.$.`,
         invalidatedKeys: null,
         roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
@@ -357,12 +403,66 @@ function PlasmicTeams__RenderFunc(props: {
                         component={Link}
                         platform={"nextjs"}
                       >
-                        <AvatarPlayer
-                          className={classNames(
-                            "__wab_instance",
-                            sty.avatarPlayer__uvTA
-                          )}
-                        />
+                        {(_par =>
+                          !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                          (() => {
+                            try {
+                              return $queries.goa.data;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })()
+                        ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                          const currentItem = __plasmic_item_0;
+                          const currentIndex = __plasmic_idx_0;
+                          return (
+                            <AvatarPlayer
+                              className={classNames(
+                                "__wab_instance",
+                                sty.avatarPlayer__uvTA
+                              )}
+                              image={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].image;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                              key={currentIndex}
+                              name={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
+                          );
+                        })}
                       </PlasmicLink__>
                     </div>
                     <Stack__
@@ -376,7 +476,7 @@ function PlasmicTeams__RenderFunc(props: {
                         !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                         (() => {
                           try {
-                            return [2, 3, 4, 5];
+                            return $queries.def.data;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -407,6 +507,38 @@ function PlasmicTeams__RenderFunc(props: {
                                 "__wab_instance",
                                 sty.avatarPlayer__gYokA
                               )}
+                              image={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].image;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                              name={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                             />
                           </PlasmicLink__>
                         );
@@ -423,7 +555,7 @@ function PlasmicTeams__RenderFunc(props: {
                         !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                         (() => {
                           try {
-                            return [2, 3, 4];
+                            return $queries.mid.data;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -454,6 +586,38 @@ function PlasmicTeams__RenderFunc(props: {
                                 "__wab_instance",
                                 sty.avatarPlayer__nu6Lx
                               )}
+                              image={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].image;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                              name={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                             />
                           </PlasmicLink__>
                         );
@@ -470,7 +634,7 @@ function PlasmicTeams__RenderFunc(props: {
                         !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                         (() => {
                           try {
-                            return [2, 3, 4];
+                            return $queries.str.data;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
@@ -501,6 +665,38 @@ function PlasmicTeams__RenderFunc(props: {
                                 "__wab_instance",
                                 sty.avatarPlayer__jttBq
                               )}
+                              image={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].image;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                              name={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                             />
                           </PlasmicLink__>
                         );
