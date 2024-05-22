@@ -2151,6 +2151,16 @@
       }
     },
     {
+      "name": "Unnamed Style Token 4",
+      "type": "color",
+      "value": "#00AA20",
+      "category": "color",
+      "meta": {
+        "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+        "id": "mKZG6c9qAjpe"
+      }
+    },
+    {
       "name": "member-back-yellow",
       "type": "color",
       "value": "#F8B034",

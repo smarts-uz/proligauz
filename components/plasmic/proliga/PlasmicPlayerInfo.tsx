@@ -315,12 +315,12 @@ function PlasmicPlayerInfo__RenderFunc(props: {
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__cgS9C)}
-                      displayHeight={"auto"}
+                      displayHeight={"14px"}
                       displayMaxHeight={"none"}
                       displayMaxWidth={"100%"}
                       displayMinHeight={"0"}
                       displayMinWidth={"0"}
-                      displayWidth={"auto"}
+                      displayWidth={"14px"}
                       height={"14px"}
                       loading={"lazy"}
                       src={
@@ -363,6 +363,7 @@ function PlasmicPlayerInfo__RenderFunc(props: {
                 { region: "LATAM", revenue: 2165, spend: 3498 },
                 { region: "AMER", revenue: 3215, spend: 1656 }
               ]}
+              labelField={"spend"}
               type={"line"}
             />
           </div>

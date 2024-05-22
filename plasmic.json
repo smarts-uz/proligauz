@@ -1696,6 +1696,103 @@
           "cssFilePath": "plasmic/proliga/PlasmicMarketPlayer.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "rNb-IFMSQJkH",
+          "name": "PlayerInfoMarket",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicPlayerInfoMarket.tsx",
+          "importSpec": {
+            "modulePath": "PlayerInfoMarket.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicPlayerInfoMarket.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "sLfjzSKSb4kE",
+          "name": "TeamMarket",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicTeamMarket.tsx",
+          "importSpec": {
+            "modulePath": "../pages/player/[id].tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicTeamMarket.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/player/[id]"
+        },
+        {
+          "id": "EwVsXqDViOHx",
+          "name": "Teams2Market",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicTeams2Market.tsx",
+          "importSpec": {
+            "modulePath": "../pages/new-page.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicTeams2Market.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page"
+        },
+        {
+          "id": "bCMc_ebYmgPo",
+          "name": "Select",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicSelect.tsx",
+          "importSpec": {
+            "modulePath": "Select.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicSelect.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select"
+        },
+        {
+          "id": "9ZP2kLqrSFkb",
+          "name": "Select__Option",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicSelect__Option.tsx",
+          "importSpec": {
+            "modulePath": "Select__Option.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicSelect__Option.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select-option"
+        },
+        {
+          "id": "LeJ4LqKJQKcN",
+          "name": "Select__OptionGroup",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicSelect__OptionGroup.tsx",
+          "importSpec": {
+            "modulePath": "Select__OptionGroup.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicSelect__OptionGroup.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select-option-group"
+        },
+        {
+          "id": "lVSiHlW15HI5",
+          "name": "Select__Overlay",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicSelect__Overlay.tsx",
+          "importSpec": {
+            "modulePath": "Select__Overlay.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicSelect__Overlay.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "triggered-overlay"
         }
       ],
       "icons": [
@@ -1733,6 +1830,16 @@
           "id": "CfMMOMbkSfDj",
           "name": "Rolling1X10S200Px200PxsvgIcon",
           "moduleFilePath": "plasmic/proliga_clone/icons/PlasmicIcon__Rolling1X10S200Px200Pxsvg.tsx"
+        },
+        {
+          "id": "a_BfcfBfPHVZ",
+          "name": "ChevronDownsvgIcon",
+          "moduleFilePath": "plasmic/proliga/icons/PlasmicIcon__ChevronDownsvg.tsx"
+        },
+        {
+          "id": "DSgGrZ0WQs_W",
+          "name": "ChevronUpsvgIcon",
+          "moduleFilePath": "plasmic/proliga/icons/PlasmicIcon__ChevronUpsvg.tsx"
         }
       ],
       "images": [

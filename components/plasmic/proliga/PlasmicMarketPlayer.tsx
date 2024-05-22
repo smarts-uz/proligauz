@@ -81,20 +81,26 @@ export type PlasmicMarketPlayer__VariantsArgs = {};
 type VariantPropType = keyof PlasmicMarketPlayer__VariantsArgs;
 export const PlasmicMarketPlayer__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicMarketPlayer__ArgsType = {};
+export type PlasmicMarketPlayer__ArgsType = {
+  onImagesChange?: (val: string) => void;
+};
 type ArgPropType = keyof PlasmicMarketPlayer__ArgsType;
-export const PlasmicMarketPlayer__ArgProps = new Array<ArgPropType>();
+export const PlasmicMarketPlayer__ArgProps = new Array<ArgPropType>(
+  "onImagesChange"
+);
 
 export type PlasmicMarketPlayer__OverridesType = {
   root?: Flex__<"div">;
   playerName?: Flex__<"div">;
   position?: Flex__<"div">;
   price?: Flex__<"div">;
+  team?: Flex__<"div">;
   fsyp?: Flex__<"div">;
   point?: Flex__<"div">;
 };
 
 export interface DefaultMarketPlayerProps {
+  onImagesChange?: (val: string) => void;
   className?: string;
 }
 
@@ -132,6 +138,57 @@ function PlasmicMarketPlayer__RenderFunc(props: {
   let [$queries, setDollarQueries] = React.useState<
     Record<string, ReturnType<typeof usePlasmicDataOp>>
   >({});
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "variable",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return undefined;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return {};
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "images",
+        type: "readonly",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $queries.query.data;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return {};
+              }
+              throw e;
+            }
+          })(),
+
+        onChangeProp: "onImagesChange"
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: $queries,
+    $refs
+  });
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
     query: usePlasmicDataOp(() => {
@@ -142,6 +199,16 @@ function PlasmicMarketPlayer__RenderFunc(props: {
         cacheKey: `plasmic.$.5785d4e9-205f-401e-8e78-e8b37b031070.$.`,
         invalidatedKeys: null,
         roleId: null
+      };
+    }),
+    club: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "81587a77-6aad-402c-919c-fd97d198ae18",
+        userArgs: {},
+        cacheKey: `plasmic.$.81587a77-6aad-402c-919c-fd97d198ae18.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
     })
   };
@@ -193,6 +260,25 @@ function PlasmicMarketPlayer__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox__w71JL)}
             key={currentIndex}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["runElementAction"] = true
+                ? (() => {
+                    const actionArgs = {};
+                    return (({ tplRef, action, args }) => {
+                      return $refs?.[tplRef]?.[action]?.(...(args ?? []));
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runElementAction"] != null &&
+                typeof $steps["runElementAction"] === "object" &&
+                typeof $steps["runElementAction"].then === "function"
+              ) {
+                $steps["runElementAction"] = await $steps["runElementAction"];
+              }
+            }}
           >
             <PlasmicImg__
               alt={""}
@@ -228,21 +314,24 @@ function PlasmicMarketPlayer__RenderFunc(props: {
                 sty.playerName
               )}
             >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return currentItem.name;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "";
+              <div
+                className={projectcss.__wab_expr_html_text}
+                dangerouslySetInnerHTML={{
+                  __html: (() => {
+                    try {
+                      return currentItem.name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
                     }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
+                  })()
+                }}
+              />
             </div>
             <div
               data-plasmic-name={"position"}
@@ -321,6 +410,62 @@ function PlasmicMarketPlayer__RenderFunc(props: {
             <Stack__
               as={"div"}
               hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__e2A0G)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__soiFk)}
+                displayHeight={"22px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"22px"}
+                loading={"lazy"}
+                src={(() => {
+                  try {
+                    return $queries.club.data[currentItem.club_id - 1].flag_url;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              />
+
+              <div
+                data-plasmic-name={"team"}
+                data-plasmic-override={overrides.team}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.team
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $queries.club.data[currentItem.club_id - 1].name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </Stack__>
+            <Stack__
+              as={"div"}
+              hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__gqxNg)}
             >
               <div
@@ -368,10 +513,11 @@ function PlasmicMarketPlayer__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "playerName", "position", "price", "fsyp", "point"],
+  root: ["root", "playerName", "position", "price", "team", "fsyp", "point"],
   playerName: ["playerName"],
   position: ["position"],
   price: ["price"],
+  team: ["team"],
   fsyp: ["fsyp"],
   point: ["point"]
 } as const;
@@ -383,6 +529,7 @@ type NodeDefaultElementType = {
   playerName: "div";
   position: "div";
   price: "div";
+  team: "div";
   fsyp: "div";
   point: "div";
 };
@@ -450,6 +597,7 @@ export const PlasmicMarketPlayer = Object.assign(
     playerName: makeNodeComponent("playerName"),
     position: makeNodeComponent("position"),
     price: makeNodeComponent("price"),
+    team: makeNodeComponent("team"),
     fsyp: makeNodeComponent("fsyp"),
     point: makeNodeComponent("point"),
 
