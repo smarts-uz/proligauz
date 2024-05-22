@@ -59,11 +59,19 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import {
+  executePlasmicDataOp,
+  usePlasmicDataOp,
+  usePlasmicInvalidate
+} from "@plasmicapp/react-web/lib/data-sources";
+
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
 import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import AvatarPlayer from "../../AvatarPlayer"; // plasmic-import: 4QnaRcOLXj0D/component
 import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
 
@@ -91,6 +99,10 @@ export type PlasmicTeams__OverridesType = {
   columns?: Flex__<"div">;
   _532?: Flex__<typeof AntdDropdown>;
   button?: Flex__<typeof AntdButton>;
+  goa?: Flex__<"div">;
+  def2?: Flex__<"div">;
+  mid?: Flex__<"div">;
+  str?: Flex__<"div">;
   soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
 };
 
@@ -126,6 +138,40 @@ function PlasmicTeams__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = useCurrentUser?.() || {};
+
+  let [$queries, setDollarQueries] = React.useState<
+    Record<string, ReturnType<typeof usePlasmicDataOp>>
+  >({});
+
+  const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
+    teamP: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "0e79ed19-4a3b-4216-a233-9855320d2693",
+        userArgs: {},
+        cacheKey: `plasmic.$.0e79ed19-4a3b-4216-a233-9855320d2693.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    }),
+    goa: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "0587a83a-421e-4952-9de7-8fda9765b854",
+        userArgs: {
+          filters: [$queries.teamP.data[0].id]
+        },
+        cacheKey: `plasmic.$.0587a83a-421e-4952-9de7-8fda9765b854.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    })
+  };
+  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
+    setDollarQueries(new$Queries);
+
+    $queries = new$Queries;
+  }
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants_8Rmrqs5Mzp6I()
@@ -292,89 +338,175 @@ function PlasmicTeams__RenderFunc(props: {
               })}
               <div className={classNames(projectcss.all, sty.freeBox__u1Zqe)}>
                 <div className={classNames(projectcss.all, sty.freeBox__iw1Nk)}>
-                  <div
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox___6S8Gg)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__pQzQt)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["goToPage"] = true
-                          ? (() => {
-                              const actionArgs = {};
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["goToPage"] != null &&
-                          typeof $steps["goToPage"] === "object" &&
-                          typeof $steps["goToPage"].then === "function"
-                        ) {
-                          $steps["goToPage"] = await $steps["goToPage"];
-                        }
-                      }}
+                      data-plasmic-name={"goa"}
+                      data-plasmic-override={overrides.goa}
+                      className={classNames(projectcss.all, sty.goa)}
                     >
-                      <div
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
-                          sty.freeBox__nPy7E
+                          projectcss.a,
+                          sty.link__dcpmG
                         )}
+                        component={Link}
+                        platform={"nextjs"}
                       >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img___4Hmyz)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={
-                            "https://assets-fantasy.llt-services.com/players/t178/p75/256x256/p75_t178_1_001_000.png"
-                          }
-                          width={"52.55px"}
+                        <AvatarPlayer
+                          className={classNames(
+                            "__wab_instance",
+                            sty.avatarPlayer__uvTA
+                          )}
                         />
-
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__e6Q93)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={
-                            "https://assets-fantasy.llt-services.com/teambadge/t178/color/t178_fc-barcelona.png"
-                          }
-                          width={"15px"}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__rCe6L
-                        )}
-                      >
-                        {"Ingiro Marti...."}
-                      </div>
+                      </PlasmicLink__>
                     </div>
-                  </div>
+                    <Stack__
+                      as={"div"}
+                      data-plasmic-name={"def2"}
+                      data-plasmic-override={overrides.def2}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.def2)}
+                    >
+                      {(_par =>
+                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                        (() => {
+                          try {
+                            return [2, 3, 4, 5];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()
+                      ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                        const currentItem = __plasmic_item_0;
+                        const currentIndex = __plasmic_idx_0;
+                        return (
+                          <PlasmicLink__
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              sty.link__vv8U
+                            )}
+                            component={Link}
+                            href={`/new-page`}
+                            key={currentIndex}
+                            platform={"nextjs"}
+                          >
+                            <AvatarPlayer
+                              className={classNames(
+                                "__wab_instance",
+                                sty.avatarPlayer__gYokA
+                              )}
+                            />
+                          </PlasmicLink__>
+                        );
+                      })}
+                    </Stack__>
+                    <Stack__
+                      as={"div"}
+                      data-plasmic-name={"mid"}
+                      data-plasmic-override={overrides.mid}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.mid)}
+                    >
+                      {(_par =>
+                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                        (() => {
+                          try {
+                            return [2, 3, 4];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()
+                      ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                        const currentItem = __plasmic_item_0;
+                        const currentIndex = __plasmic_idx_0;
+                        return (
+                          <PlasmicLink__
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              sty.link__ofx2
+                            )}
+                            component={Link}
+                            href={`/new-page`}
+                            key={currentIndex}
+                            platform={"nextjs"}
+                          >
+                            <AvatarPlayer
+                              className={classNames(
+                                "__wab_instance",
+                                sty.avatarPlayer__nu6Lx
+                              )}
+                            />
+                          </PlasmicLink__>
+                        );
+                      })}
+                    </Stack__>
+                    <Stack__
+                      as={"div"}
+                      data-plasmic-name={"str"}
+                      data-plasmic-override={overrides.str}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.str)}
+                    >
+                      {(_par =>
+                        !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                        (() => {
+                          try {
+                            return [2, 3, 4];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })()
+                      ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                        const currentItem = __plasmic_item_0;
+                        const currentIndex = __plasmic_idx_0;
+                        return (
+                          <PlasmicLink__
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              sty.link__l1A6S
+                            )}
+                            component={Link}
+                            href={`/new-page`}
+                            key={currentIndex}
+                            platform={"nextjs"}
+                          >
+                            <AvatarPlayer
+                              className={classNames(
+                                "__wab_instance",
+                                sty.avatarPlayer__jttBq
+                              )}
+                            />
+                          </PlasmicLink__>
+                        );
+                      })}
+                    </Stack__>
+                  </Stack__>
                   <SoccerPlaceMens2
                     data-plasmic-name={"soccerPlaceMens2"}
                     data-plasmic-override={overrides.soccerPlaceMens2}
@@ -647,11 +779,35 @@ function PlasmicTeams__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "columns", "_532", "button", "soccerPlaceMens2"],
+  root: [
+    "root",
+    "navbar",
+    "columns",
+    "_532",
+    "button",
+    "goa",
+    "def2",
+    "mid",
+    "str",
+    "soccerPlaceMens2"
+  ],
   navbar: ["navbar"],
-  columns: ["columns", "_532", "button", "soccerPlaceMens2"],
+  columns: [
+    "columns",
+    "_532",
+    "button",
+    "goa",
+    "def2",
+    "mid",
+    "str",
+    "soccerPlaceMens2"
+  ],
   _532: ["_532", "button"],
   button: ["button"],
+  goa: ["goa"],
+  def2: ["def2"],
+  mid: ["mid"],
+  str: ["str"],
   soccerPlaceMens2: ["soccerPlaceMens2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -663,6 +819,10 @@ type NodeDefaultElementType = {
   columns: "div";
   _532: typeof AntdDropdown;
   button: typeof AntdButton;
+  goa: "div";
+  def2: "div";
+  mid: "div";
+  str: "div";
   soccerPlaceMens2: typeof SoccerPlaceMens2;
 };
 
@@ -747,6 +907,10 @@ export const PlasmicTeams = Object.assign(
     columns: makeNodeComponent("columns"),
     _532: makeNodeComponent("_532"),
     button: makeNodeComponent("button"),
+    goa: makeNodeComponent("goa"),
+    def2: makeNodeComponent("def2"),
+    mid: makeNodeComponent("mid"),
+    str: makeNodeComponent("str"),
     soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
 
     // Metadata about props expected for PlasmicTeams
