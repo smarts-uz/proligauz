@@ -164,7 +164,7 @@
   padding: 8px 32px;
   border: 0.5px solid #514e4e;
 }
-.select:global(.__wab_instance) {
+.clubSelect:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-left: 10px;
@@ -190,6 +190,7 @@
   max-width: 100%;
   position: relative;
   align-self: flex-end;
+  flex-shrink: 1;
 }
 .playerAction:global(.__wab_instance) {
   max-width: 100%;
@@ -282,7 +283,7 @@
 }
 .text__eWsH {
   position: relative;
-  width: 100px;
+  width: 110px;
   height: auto;
   max-width: 100%;
   color: var(--token-jgohepLVeKvh);

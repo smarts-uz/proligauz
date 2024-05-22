@@ -101,7 +101,7 @@ export type PlasmicTeams2Market__OverridesType = {
   columns?: Flex__<"div">;
   column?: Flex__<"div">;
   textInput?: Flex__<typeof TextInput>;
-  select?: Flex__<typeof Select>;
+  clubSelect?: Flex__<typeof Select>;
   type?: Flex__<typeof Select>;
   playerCount?: Flex__<typeof Select>;
   playerAction?: Flex__<typeof PlayerAction>;
@@ -152,10 +152,10 @@ function PlasmicTeams2Market__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "select.value",
+        path: "clubSelect.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $ctx }) => "null"
       },
       {
         path: "type.value",
@@ -185,9 +185,10 @@ function PlasmicTeams2Market__RenderFunc(props: {
     players: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "7c546f1a-06c8-4fa6-9b77-d087d919c4f0",
+        opId: "901956cb-01dd-4578-8169-826c1b3d3626",
         userArgs: {
-          pagination: [$state.playerCount.value]
+          pagination: [$state.playerCount.value],
+          filters: [$state.clubSelect.value]
         },
         cacheKey: `plasmic.$.${(() => {
           try {
@@ -201,7 +202,7 @@ function PlasmicTeams2Market__RenderFunc(props: {
             }
             throw e;
           }
-        })()}.$.7c546f1a-06c8-4fa6-9b77-d087d919c4f0.$.`,
+        })()}.$.901956cb-01dd-4578-8169-826c1b3d3626.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -212,6 +213,16 @@ function PlasmicTeams2Market__RenderFunc(props: {
         opId: "157523a8-a564-4845-81d4-23951d76d034",
         userArgs: {},
         cacheKey: `plasmic.$.157523a8-a564-4845-81d4-23951d76d034.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
+    }),
+    clubName: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "36b50d85-4a34-4b1b-b4ce-c1c4d87b86b2",
+        userArgs: {},
+        cacheKey: `plasmic.$.36b50d85-4a34-4b1b-b4ce-c1c4d87b86b2.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -334,24 +345,24 @@ function PlasmicTeams2Market__RenderFunc(props: {
                   {"FAVOURITES"}
                 </PlasmicLink__>
                 <Select
-                  data-plasmic-name={"select"}
-                  data-plasmic-override={overrides.select}
-                  className={classNames("__wab_instance", sty.select)}
+                  data-plasmic-name={"clubSelect"}
+                  data-plasmic-override={overrides.clubSelect}
+                  className={classNames("__wab_instance", sty.clubSelect)}
                   color={"clear"}
                   onChange={(...eventArgs) => {
-                    generateStateOnChangeProp($state, ["select", "value"])(
+                    generateStateOnChangeProp($state, ["clubSelect", "value"])(
                       eventArgs[0]
                     );
                   }}
                   options={(() => {
                     const __composite = [
-                      { value: "option1", label: null },
-                      { value: "option2", label: null },
-                      { label: null }
+                      { value: null, label: null },
+                      { label: null, value: null }
                     ];
-                    __composite["0"]["label"] = "Real Madrid";
-                    __composite["1"]["label"] = "Valencia";
-                    __composite["2"]["label"] = "Benfica";
+                    __composite["0"]["value"] = $queries.club.data[0].id;
+                    __composite["0"]["label"] = $queries.club.data[0].name;
+                    __composite["1"]["label"] = "All";
+                    __composite["1"]["value"] = "null";
                     return __composite;
                   })()}
                   placeholder={
@@ -365,7 +376,10 @@ function PlasmicTeams2Market__RenderFunc(props: {
                       {"TEAM"}
                     </div>
                   }
-                  value={generateStateValueProp($state, ["select", "value"])}
+                  value={generateStateValueProp($state, [
+                    "clubSelect",
+                    "value"
+                  ])}
                 />
 
                 <Select
@@ -887,16 +901,23 @@ const PlasmicDescendants = {
     "columns",
     "column",
     "textInput",
-    "select",
+    "clubSelect",
     "type",
     "playerCount",
     "playerAction"
   ],
   navbar: ["navbar"],
-  columns: ["columns", "column", "textInput", "select", "type", "playerCount"],
-  column: ["column", "textInput", "select", "type", "playerCount"],
+  columns: [
+    "columns",
+    "column",
+    "textInput",
+    "clubSelect",
+    "type",
+    "playerCount"
+  ],
+  column: ["column", "textInput", "clubSelect", "type", "playerCount"],
   textInput: ["textInput"],
-  select: ["select"],
+  clubSelect: ["clubSelect"],
   type: ["type"],
   playerCount: ["playerCount"],
   playerAction: ["playerAction"]
@@ -910,7 +931,7 @@ type NodeDefaultElementType = {
   columns: "div";
   column: "div";
   textInput: typeof TextInput;
-  select: typeof Select;
+  clubSelect: typeof Select;
   type: typeof Select;
   playerCount: typeof Select;
   playerAction: typeof PlayerAction;
@@ -997,7 +1018,7 @@ export const PlasmicTeams2Market = Object.assign(
     columns: makeNodeComponent("columns"),
     column: makeNodeComponent("column"),
     textInput: makeNodeComponent("textInput"),
-    select: makeNodeComponent("select"),
+    clubSelect: makeNodeComponent("clubSelect"),
     type: makeNodeComponent("type"),
     playerCount: makeNodeComponent("playerCount"),
     playerAction: makeNodeComponent("playerAction"),
