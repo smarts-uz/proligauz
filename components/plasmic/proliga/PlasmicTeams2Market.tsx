@@ -155,7 +155,7 @@ function PlasmicTeams2Market__RenderFunc(props: {
         path: "clubSelect.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "null"
+        initFunc: ({ $props, $state, $queries, $ctx }) => "not null"
       },
       {
         path: "type.value",
@@ -185,10 +185,9 @@ function PlasmicTeams2Market__RenderFunc(props: {
     players: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "901956cb-01dd-4578-8169-826c1b3d3626",
+        opId: "96bcfd12-123e-4ab6-af1b-2653e72ef171",
         userArgs: {
-          pagination: [$state.playerCount.value],
-          filters: [$state.clubSelect.value]
+          pagination: [$state.playerCount.value]
         },
         cacheKey: `plasmic.$.${(() => {
           try {
@@ -202,7 +201,7 @@ function PlasmicTeams2Market__RenderFunc(props: {
             }
             throw e;
           }
-        })()}.$.901956cb-01dd-4578-8169-826c1b3d3626.$.`,
+        })()}.$.96bcfd12-123e-4ab6-af1b-2653e72ef171.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -362,7 +361,7 @@ function PlasmicTeams2Market__RenderFunc(props: {
                     __composite["0"]["value"] = $queries.club.data[0].id;
                     __composite["0"]["label"] = $queries.club.data[0].name;
                     __composite["1"]["label"] = "All";
-                    __composite["1"]["value"] = "null";
+                    __composite["1"]["value"] = "not null";
                     return __composite;
                   })()}
                   placeholder={

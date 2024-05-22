@@ -1596,7 +1596,7 @@
           "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
           "renderModuleFilePath": "plasmic/proliga_clone/PlasmicTeams.tsx",
           "importSpec": {
-            "modulePath": "../pages/club-3/[id].tsx"
+            "modulePath": "../pages/team/classic.tsx"
           },
           "cssFilePath": "plasmic/proliga_clone/PlasmicTeams.module.css",
           "scheme": "blackbox",
@@ -1793,6 +1793,47 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "triggered-overlay"
+        },
+        {
+          "id": "Dg7NemWYQFk2",
+          "name": "TeamCreate",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicTeamCreate.tsx",
+          "importSpec": {
+            "modulePath": "../pages/team-create.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicTeamCreate.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/team-create"
+        },
+        {
+          "id": "4QnaRcOLXj0D",
+          "name": "AvatarPlayer",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicAvatarPlayer.tsx",
+          "importSpec": {
+            "modulePath": "AvatarPlayer.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicAvatarPlayer.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "HCDyn0G4nu0e",
+          "name": "Championships",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicChampionships.tsx",
+          "importSpec": {
+            "modulePath": "../pages/competition/[id].tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicChampionships.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/competition/[id]"
         }
       ],
       "icons": [
