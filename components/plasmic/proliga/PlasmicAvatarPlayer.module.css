@@ -1,0 +1,35 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background: var(--token-w7ybUCajlWG4);
+  justify-self: flex-start;
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.text {
+  position: relative;
+  width: 53px;
+  height: auto;
+  max-width: 100%;
+  color: var(--token-41VRhDKfihhY);
+  background: linear-gradient(
+      var(--token-LqtA0Zd3XkIQ),
+      var(--token-LqtA0Zd3XkIQ)
+    ),
+    var(--token-jgohepLVeKvh);
+  font-size: 10px;
+  font-weight: 900;
+  text-align: center;
+  font-family: "Inria Serif", serif;
+}

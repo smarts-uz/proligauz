@@ -19,7 +19,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
   background: #232433;
@@ -27,6 +27,7 @@
   top: auto;
   z-index: 1;
   order: 1;
+  min-width: 0;
   padding: 8px;
 }
 .root:hover .freeBox__xd44L {
@@ -82,12 +83,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
   background: #232433;
   margin-left: 8px;
   margin-right: 8px;
+  min-width: 0;
   padding: 8px;
 }
 .freeBox__bXyWd {
@@ -161,10 +163,11 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
   background: #232433;
+  min-width: 0;
   padding: 8px;
 }
 .freeBox___27Ek1 {

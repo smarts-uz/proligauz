@@ -85,9 +85,19 @@ export const PlasmicMarketMember__VariantProps = new Array<VariantPropType>(
   "mendez"
 );
 
-export type PlasmicMarketMember__ArgsType = {};
+export type PlasmicMarketMember__ArgsType = {
+  image?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  clubImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  name?: string;
+  position?: string;
+};
 type ArgPropType = keyof PlasmicMarketMember__ArgsType;
-export const PlasmicMarketMember__ArgProps = new Array<ArgPropType>();
+export const PlasmicMarketMember__ArgProps = new Array<ArgPropType>(
+  "image",
+  "clubImage",
+  "name",
+  "position"
+);
 
 export type PlasmicMarketMember__OverridesType = {
   root?: Flex__<"div">;
@@ -95,6 +105,10 @@ export type PlasmicMarketMember__OverridesType = {
 };
 
 export interface DefaultMarketMemberProps {
+  image?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  clubImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  name?: string;
+  position?: string;
   borjaMayoral?: SingleBooleanChoiceArg<"borjaMayoral">;
   pedri?: SingleBooleanChoiceArg<"pedri">;
   mendez?: SingleBooleanChoiceArg<"mendez">;
@@ -118,7 +132,29 @@ function PlasmicMarketMember__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          image: {
+            src: "/plasmic/proliga_clone/images/rodrygopng.png",
+            fullWidth: 256,
+            fullHeight: 256,
+            aspectRatio: undefined
+          },
+          clubImage: {
+            src: "/plasmic/proliga_clone/images/realMadridpng.png",
+            fullWidth: 80,
+            fullHeight: 104,
+            aspectRatio: undefined
+          },
+          name: "PLayer",
+          position: "DEF"
+        },
+        props.args
+      ),
+    [props.args]
+  );
 
   const $props = {
     ...args,
@@ -218,35 +254,7 @@ function PlasmicMarketMember__RenderFunc(props: {
             displayMinWidth={"0"}
             displayWidth={"104px"}
             loading={"lazy"}
-            src={
-              hasVariant($state, "mendez", "mendez")
-                ? {
-                    src: "/plasmic/proliga_clone/images/willianJosepng.png",
-                    fullWidth: 256,
-                    fullHeight: 256,
-                    aspectRatio: undefined
-                  }
-                : hasVariant($state, "pedri", "pedri")
-                ? {
-                    src: "/plasmic/proliga_clone/images/ikerMunofizpng.png",
-                    fullWidth: 256,
-                    fullHeight: 256,
-                    aspectRatio: undefined
-                  }
-                : hasVariant($state, "borjaMayoral", "borjaMayoral")
-                ? {
-                    src: "/plasmic/proliga_clone/images/willianJosepng.png",
-                    fullWidth: 256,
-                    fullHeight: 256,
-                    aspectRatio: undefined
-                  }
-                : {
-                    src: "/plasmic/proliga_clone/images/rodrygopng.png",
-                    fullWidth: 256,
-                    fullHeight: 256,
-                    aspectRatio: undefined
-                  }
-            }
+            src={args.image}
           />
 
           <PlasmicImg__
@@ -271,35 +279,7 @@ function PlasmicMarketMember__RenderFunc(props: {
             displayMinWidth={"0"}
             displayWidth={"28px"}
             loading={"lazy"}
-            src={
-              hasVariant($state, "mendez", "mendez")
-                ? {
-                    src: "/plasmic/proliga_clone/images/osasunapng.png",
-                    fullWidth: 120,
-                    fullHeight: 120,
-                    aspectRatio: undefined
-                  }
-                : hasVariant($state, "pedri", "pedri")
-                ? {
-                    src: "/plasmic/proliga_clone/images/fcBarcelonapng.png",
-                    fullWidth: 96,
-                    fullHeight: 100,
-                    aspectRatio: undefined
-                  }
-                : hasVariant($state, "borjaMayoral", "borjaMayoral")
-                ? {
-                    src: "/plasmic/proliga_clone/images/cadizpng.png",
-                    fullWidth: 1024,
-                    fullHeight: 1024,
-                    aspectRatio: undefined
-                  }
-                : {
-                    src: "/plasmic/proliga_clone/images/realMadridpng.png",
-                    fullWidth: 80,
-                    fullHeight: 104,
-                    aspectRatio: undefined
-                  }
-            }
+            src={args.clubImage}
           />
         </div>
         <div className={classNames(projectcss.all, sty.freeBox__z6CCz)}>
@@ -322,7 +302,21 @@ function PlasmicMarketMember__RenderFunc(props: {
               href={"https://www.plasmic.app/"}
               platform={"nextjs"}
             >
-              {"DEF"}
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return $props.position;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "DEF";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
             </PlasmicLink__>
             <div
               className={classNames(
@@ -348,13 +342,29 @@ function PlasmicMarketMember__RenderFunc(props: {
                 }
               )}
             >
-              {hasVariant($state, "mendez", "mendez")
-                ? "Mendez"
-                : hasVariant($state, "pedri", "pedri")
-                ? "Pedri"
-                : hasVariant($state, "borjaMayoral", "borjaMayoral")
-                ? "Borja "
-                : "Militao"}
+              {hasVariant($state, "mendez", "mendez") ? (
+                "Mendez"
+              ) : hasVariant($state, "pedri", "pedri") ? (
+                "Pedri"
+              ) : hasVariant($state, "borjaMayoral", "borjaMayoral") ? (
+                "Borja "
+              ) : (
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $props.name;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "Militao";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              )}
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__vyio0)}>
