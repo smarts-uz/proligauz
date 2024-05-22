@@ -537,6 +537,73 @@ function PlasmicNavbar__RenderFunc(props: {
                 </div>
               </Button>
             </PlasmicLink__>
+            <PlasmicLink__
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                sty.link__fy5Z9
+              )}
+              component={Link}
+              href={`/team-create`}
+              platform={"nextjs"}
+            >
+              <Button
+                className={classNames("__wab_instance", sty.button__kGq7)}
+                endIcon={
+                  <IconIcon
+                    className={classNames(projectcss.all, sty.svg___1QdIx)}
+                    role={"img"}
+                  />
+                }
+                link={`/team-create`}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToTeamCreate"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/team-create` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToTeamCreate"] != null &&
+                    typeof $steps["goToTeamCreate"] === "object" &&
+                    typeof $steps["goToTeamCreate"].then === "function"
+                  ) {
+                    $steps["goToTeamCreate"] = await $steps["goToTeamCreate"];
+                  }
+                }}
+                startIcon={
+                  <ChecksvgIcon
+                    className={classNames(projectcss.all, sty.svg__duTOh)}
+                    role={"img"}
+                  />
+                }
+                submitsForm={true}
+                target={true}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__q6YEk
+                  )}
+                >
+                  {"Team Market"}
+                </div>
+              </Button>
+            </PlasmicLink__>
           </Stack__>
           {false ? (
             <div className={classNames(projectcss.all, sty.freeBox__k04Vr)}>

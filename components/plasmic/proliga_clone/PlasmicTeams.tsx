@@ -1005,6 +1005,34 @@ function PlasmicTeams__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__bdwkQ
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToTeams"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/team/classic` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToTeams"] != null &&
+                    typeof $steps["goToTeams"] === "object" &&
+                    typeof $steps["goToTeams"].then === "function"
+                  ) {
+                    $steps["goToTeams"] = await $steps["goToTeams"];
+                  }
+                }}
               >
                 {"My Team"}
               </div>
@@ -1033,6 +1061,36 @@ function PlasmicTeams__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__p1Zqz
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToTeams2Market"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/new-page` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToTeams2Market"] != null &&
+                    typeof $steps["goToTeams2Market"] === "object" &&
+                    typeof $steps["goToTeams2Market"].then === "function"
+                  ) {
+                    $steps["goToTeams2Market"] = await $steps[
+                      "goToTeams2Market"
+                    ];
+                  }
+                }}
               >
                 {"Market"}
               </div>

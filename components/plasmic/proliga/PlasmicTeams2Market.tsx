@@ -841,7 +841,37 @@ function PlasmicTeams2Market__RenderFunc(props: {
                 {"Standing"}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vrUkZ)}>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__vrUkZ)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToTeams"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/team/classic` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToTeams"] != null &&
+                  typeof $steps["goToTeams"] === "object" &&
+                  typeof $steps["goToTeams"].then === "function"
+                ) {
+                  $steps["goToTeams"] = await $steps["goToTeams"];
+                }
+              }}
+            >
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__rlilw)}
@@ -893,6 +923,36 @@ function PlasmicTeams2Market__RenderFunc(props: {
                   projectcss.__wab_text,
                   sty.text__u7Gmh
                 )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToTeams2Market"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/new-page` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToTeams2Market"] != null &&
+                    typeof $steps["goToTeams2Market"] === "object" &&
+                    typeof $steps["goToTeams2Market"].then === "function"
+                  ) {
+                    $steps["goToTeams2Market"] = await $steps[
+                      "goToTeams2Market"
+                    ];
+                  }
+                }}
               >
                 {"Market"}
               </div>

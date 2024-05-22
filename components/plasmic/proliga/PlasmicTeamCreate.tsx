@@ -324,9 +324,9 @@ function PlasmicTeamCreate__RenderFunc(props: {
                         ];
                       }
 
-                      $steps["goToTeams"] = true
+                      $steps["goToTeams2Market"] = true
                         ? (() => {
-                            const actionArgs = { destination: `/team/classic` };
+                            const actionArgs = { destination: `/new-page` };
                             return (({ destination }) => {
                               if (
                                 typeof destination === "string" &&
@@ -342,11 +342,13 @@ function PlasmicTeamCreate__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToTeams"] != null &&
-                        typeof $steps["goToTeams"] === "object" &&
-                        typeof $steps["goToTeams"].then === "function"
+                        $steps["goToTeams2Market"] != null &&
+                        typeof $steps["goToTeams2Market"] === "object" &&
+                        typeof $steps["goToTeams2Market"].then === "function"
                       ) {
-                        $steps["goToTeams"] = await $steps["goToTeams"];
+                        $steps["goToTeams2Market"] = await $steps[
+                          "goToTeams2Market"
+                        ];
                       }
                     }}
                   >

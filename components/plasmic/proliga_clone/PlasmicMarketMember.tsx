@@ -198,11 +198,6 @@ function PlasmicMarketMember__RenderFunc(props: {
     $refs
   });
 
-  const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
-  const triggers = {
-    hover_root: isRootHover
-  };
-
   return (
     <div
       data-plasmic-name={"root"}
@@ -228,7 +223,6 @@ function PlasmicMarketMember__RenderFunc(props: {
           [sty.rootpedri]: hasVariant($state, "pedri", "pedri")
         }
       )}
-      data-plasmic-trigger-props={[triggerRootHoverProps]}
     >
       <div className={classNames(projectcss.all, sty.freeBox__xd44L)}>
         <div className={classNames(projectcss.all, sty.freeBox__lCzs2)}>

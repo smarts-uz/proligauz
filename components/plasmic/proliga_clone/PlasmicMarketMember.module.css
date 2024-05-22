@@ -12,6 +12,7 @@
     ),
     #ffffff;
   justify-self: flex-start;
+  cursor: pointer;
 }
 .freeBox__xd44L {
   display: flex;
@@ -29,9 +30,6 @@
   order: 1;
   min-width: 0;
   padding: 8px;
-}
-.root:hover .freeBox__xd44L {
-  opacity: 0.3;
 }
 .freeBox__lCzs2 {
   display: flex;
@@ -234,7 +232,4 @@
   display: none;
   padding: 5px 15px;
   border: 1px solid var(--token-jgohepLVeKvh);
-}
-.root:hover .linkToPlayerInfo {
-  display: block;
 }

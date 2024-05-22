@@ -228,7 +228,43 @@ function PlasmicChampionships__RenderFunc(props: {
                   }
                 />
               </div>
-              <div className={classNames(projectcss.all, sty.column___1YXpz)}>
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.column___1YXpz
+                )}
+                component={Link}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToTeamCreate"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/team-create` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToTeamCreate"] != null &&
+                    typeof $steps["goToTeamCreate"] === "object" &&
+                    typeof $steps["goToTeamCreate"].then === "function"
+                  ) {
+                    $steps["goToTeamCreate"] = await $steps["goToTeamCreate"];
+                  }
+                }}
+                platform={"nextjs"}
+              >
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__pykFi)}
@@ -241,7 +277,7 @@ function PlasmicChampionships__RenderFunc(props: {
                   loading={"lazy"}
                   src={"https://cdn.worldvectorlogo.com/logos/laliga-1.svg"}
                 />
-              </div>
+              </PlasmicLink__>
               <div className={classNames(projectcss.all, sty.column__fSsuY)}>
                 <PlasmicImg__
                   alt={""}

@@ -223,6 +223,7 @@
   max-width: 100%;
   background: #232433;
   margin-bottom: 3px;
+  cursor: pointer;
   min-width: 0;
   padding: 8px;
 }
@@ -419,6 +420,7 @@
   height: auto;
   max-width: 100%;
   margin-top: 32px;
+  cursor: pointer;
   min-width: 0;
   padding: 8px;
 }
@@ -449,6 +451,7 @@
   height: auto;
   max-width: 100%;
   margin-top: 32px;
+  cursor: pointer;
   min-width: 0;
   padding: 8px;
 }
