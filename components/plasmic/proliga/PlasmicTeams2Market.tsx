@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   executePlasmicDataOp,
   usePlasmicDataOp,
@@ -102,6 +103,7 @@ export type PlasmicTeams2Market__OverridesType = {
   textInput?: Flex__<typeof TextInput>;
   select?: Flex__<typeof Select>;
   type?: Flex__<typeof Select>;
+  playerCount?: Flex__<typeof Select>;
   playerAction?: Flex__<typeof PlayerAction>;
 };
 
@@ -160,6 +162,12 @@ function PlasmicTeams2Market__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "playerCount.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -170,13 +178,17 @@ function PlasmicTeams2Market__RenderFunc(props: {
     $queries: $queries,
     $refs
   });
+  const dataSourcesCtx = usePlasmicDataSourceContext();
+  const plasmicInvalidate = usePlasmicInvalidate();
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
     players: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "c625845b-309a-4cf4-b866-6f0e66fe6877",
-        userArgs: {},
+        opId: "7c546f1a-06c8-4fa6-9b77-d087d919c4f0",
+        userArgs: {
+          pagination: [$state.playerCount.value]
+        },
         cacheKey: `plasmic.$.${(() => {
           try {
             return undefined;
@@ -189,7 +201,7 @@ function PlasmicTeams2Market__RenderFunc(props: {
             }
             throw e;
           }
-        })()}.$.c625845b-309a-4cf4-b866-6f0e66fe6877.$.`,
+        })()}.$.7c546f1a-06c8-4fa6-9b77-d087d919c4f0.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -389,6 +401,62 @@ function PlasmicTeams2Market__RenderFunc(props: {
                     </div>
                   }
                   value={generateStateValueProp($state, ["type", "value"])}
+                />
+
+                <Select
+                  data-plasmic-name={"playerCount"}
+                  data-plasmic-override={overrides.playerCount}
+                  className={classNames("__wab_instance", sty.playerCount)}
+                  color={"clear"}
+                  onChange={async (...eventArgs: any) => {
+                    ((...eventArgs) => {
+                      generateStateOnChangeProp($state, [
+                        "playerCount",
+                        "value"
+                      ])(eventArgs[0]);
+                    }).apply(null, eventArgs);
+                    (async value => {
+                      const $steps = {};
+
+                      $steps["refreshData"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              queryInvalidation: ["plasmic_refresh_all"]
+                            };
+                            return (async ({ queryInvalidation }) => {
+                              if (!queryInvalidation) {
+                                return;
+                              }
+                              await plasmicInvalidate(queryInvalidation);
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["refreshData"] != null &&
+                        typeof $steps["refreshData"] === "object" &&
+                        typeof $steps["refreshData"].then === "function"
+                      ) {
+                        $steps["refreshData"] = await $steps["refreshData"];
+                      }
+                    }).apply(null, eventArgs);
+                  }}
+                  options={(() => {
+                    const __composite = [
+                      { value: null, label: null },
+                      { value: null, label: null },
+                      { label: null }
+                    ];
+                    __composite["0"]["value"] = 15;
+                    __composite["0"]["label"] = "15";
+                    __composite["1"]["value"] = 25;
+                    __composite["1"]["label"] = "25";
+                    __composite["2"]["label"] = "All";
+                    return __composite;
+                  })()}
+                  value={generateStateValueProp($state, [
+                    "playerCount",
+                    "value"
+                  ])}
                 />
               </div>
             </div>
@@ -821,14 +889,16 @@ const PlasmicDescendants = {
     "textInput",
     "select",
     "type",
+    "playerCount",
     "playerAction"
   ],
   navbar: ["navbar"],
-  columns: ["columns", "column", "textInput", "select", "type"],
-  column: ["column", "textInput", "select", "type"],
+  columns: ["columns", "column", "textInput", "select", "type", "playerCount"],
+  column: ["column", "textInput", "select", "type", "playerCount"],
   textInput: ["textInput"],
   select: ["select"],
   type: ["type"],
+  playerCount: ["playerCount"],
   playerAction: ["playerAction"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -842,6 +912,7 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   select: typeof Select;
   type: typeof Select;
+  playerCount: typeof Select;
   playerAction: typeof PlayerAction;
 };
 
@@ -928,6 +999,7 @@ export const PlasmicTeams2Market = Object.assign(
     textInput: makeNodeComponent("textInput"),
     select: makeNodeComponent("select"),
     type: makeNodeComponent("type"),
+    playerCount: makeNodeComponent("playerCount"),
     playerAction: makeNodeComponent("playerAction"),
 
     // Metadata about props expected for PlasmicTeams2Market
