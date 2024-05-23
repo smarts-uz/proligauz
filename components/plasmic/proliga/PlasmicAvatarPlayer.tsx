@@ -121,7 +121,7 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
         {
           image:
             "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif",
-          name: "Player"
+          name: "Unnamed"
         },
         props.args
       ),
@@ -188,7 +188,7 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return "Player..";
+                return "Unnamed";
               }
               throw e;
             }

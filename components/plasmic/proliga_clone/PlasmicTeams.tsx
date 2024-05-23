@@ -259,11 +259,11 @@ function PlasmicTeams__RenderFunc(props: {
     clubs: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "f9565a2e-c8aa-474a-89bb-2ee1630bdf04",
+        opId: "b1ee9585-82c2-420d-84ee-79c8b90e3b65",
         userArgs: {},
-        cacheKey: `plasmic.$.f9565a2e-c8aa-474a-89bb-2ee1630bdf04.$.`,
+        cacheKey: `plasmic.$.b1ee9585-82c2-420d-84ee-79c8b90e3b65.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     }),
     pickplayer: usePlasmicDataOp(() => {
@@ -642,155 +642,125 @@ function PlasmicTeams__RenderFunc(props: {
                             )}
                             key={currentIndex}
                           >
-                            {(_par =>
-                              !_par ? [] : Array.isArray(_par) ? _par : [_par])(
-                              (() => {
+                            <AvatarPlayer
+                              className={classNames(
+                                "__wab_instance",
+                                sty.avatarPlayer__gYokA
+                              )}
+                              clickOn={async event => {
+                                const $steps = {};
+
+                                $steps["updateInputState"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["inputState"]
+                                        },
+                                        operation: 0,
+                                        value: currentItem.position
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateInputState"] != null &&
+                                  typeof $steps["updateInputState"] ===
+                                    "object" &&
+                                  typeof $steps["updateInputState"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateInputState"] = await $steps[
+                                    "updateInputState"
+                                  ];
+                                }
+
+                                $steps["updateInputState2"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["teamplayerstate"]
+                                        },
+                                        operation: 0,
+                                        value: currentItem.id
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateInputState2"] != null &&
+                                  typeof $steps["updateInputState2"] ===
+                                    "object" &&
+                                  typeof $steps["updateInputState2"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateInputState2"] = await $steps[
+                                    "updateInputState2"
+                                  ];
+                                }
+                              }}
+                              image={(() => {
                                 try {
-                                  return $queries.def.data;
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].image;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return [];
+                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
                                   }
                                   throw e;
                                 }
-                              })()
-                            ).map((__plasmic_item_1, __plasmic_idx_1) => {
-                              const currentItem = __plasmic_item_1;
-                              const currentIndex = __plasmic_idx_1;
-                              return (
-                                <AvatarPlayer
-                                  className={classNames(
-                                    "__wab_instance",
-                                    sty.avatarPlayer__gYokA
-                                  )}
-                                  clickOn={async event => {
-                                    const $steps = {};
-
-                                    $steps["updateInputState"] = true
-                                      ? (() => {
-                                          const actionArgs = {
-                                            variable: {
-                                              objRoot: $state,
-                                              variablePath: ["inputState"]
-                                            },
-                                            operation: 0,
-                                            value: currentItem.position
-                                          };
-                                          return (({
-                                            variable,
-                                            value,
-                                            startIndex,
-                                            deleteCount
-                                          }) => {
-                                            if (!variable) {
-                                              return;
-                                            }
-                                            const { objRoot, variablePath } =
-                                              variable;
-
-                                            $stateSet(
-                                              objRoot,
-                                              variablePath,
-                                              value
-                                            );
-                                            return value;
-                                          })?.apply(null, [actionArgs]);
-                                        })()
-                                      : undefined;
-                                    if (
-                                      $steps["updateInputState"] != null &&
-                                      typeof $steps["updateInputState"] ===
-                                        "object" &&
-                                      typeof $steps["updateInputState"].then ===
-                                        "function"
-                                    ) {
-                                      $steps["updateInputState"] = await $steps[
-                                        "updateInputState"
-                                      ];
-                                    }
-
-                                    $steps["updateInputState2"] = true
-                                      ? (() => {
-                                          const actionArgs = {
-                                            variable: {
-                                              objRoot: $state,
-                                              variablePath: ["teamplayerstate"]
-                                            },
-                                            operation: 0,
-                                            value: currentItem.id
-                                          };
-                                          return (({
-                                            variable,
-                                            value,
-                                            startIndex,
-                                            deleteCount
-                                          }) => {
-                                            if (!variable) {
-                                              return;
-                                            }
-                                            const { objRoot, variablePath } =
-                                              variable;
-
-                                            $stateSet(
-                                              objRoot,
-                                              variablePath,
-                                              value
-                                            );
-                                            return value;
-                                          })?.apply(null, [actionArgs]);
-                                        })()
-                                      : undefined;
-                                    if (
-                                      $steps["updateInputState2"] != null &&
-                                      typeof $steps["updateInputState2"] ===
-                                        "object" &&
-                                      typeof $steps["updateInputState2"]
-                                        .then === "function"
-                                    ) {
-                                      $steps["updateInputState2"] =
-                                        await $steps["updateInputState2"];
-                                    }
-                                  }}
-                                  image={(() => {
-                                    try {
-                                      return $queries.player.data[
-                                        currentItem.player_id - 1
-                                      ].image;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                  key={currentIndex}
-                                  name={(() => {
-                                    try {
-                                      return $queries.player.data[
-                                        currentItem.player_id - 1
-                                      ].name;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                />
-                              );
-                            })}
+                              })()}
+                              name={(() => {
+                                try {
+                                  return $queries.player.data[
+                                    currentItem.player_id - 1
+                                  ].name;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "Unnamed";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
                           </div>
                         );
                       })}
@@ -1119,7 +1089,11 @@ function PlasmicTeams__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.column__wTiGc)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.column__wTiGc)}
+            >
               <div className={classNames(projectcss.all, sty.freeBox__peasw)}>
                 <div
                   className={classNames(
@@ -1352,7 +1326,7 @@ function PlasmicTeams__RenderFunc(props: {
                   />
                 );
               })}
-            </div>
+            </Stack__>
           </div>
           <SideBarMyTeam
             data-plasmic-name={"sideBarMyTeam"}

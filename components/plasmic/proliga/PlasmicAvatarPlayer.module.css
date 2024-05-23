@@ -8,6 +8,11 @@
   align-items: center;
   background: var(--token-w7ybUCajlWG4);
   justify-self: flex-start;
+  transition-property: all;
+  transition-duration: 1s;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
 }
 .img {
   position: relative;
