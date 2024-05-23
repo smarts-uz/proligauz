@@ -1834,6 +1834,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/competition/[id]"
+        },
+        {
+          "id": "rr9gNzDgkKM7",
+          "name": "UpdateTeamsName",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicUpdateTeamsName.tsx",
+          "importSpec": {
+            "modulePath": "UpdateTeamsName.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicUpdateTeamsName.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

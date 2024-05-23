@@ -379,6 +379,21 @@
     flex-shrink: 0;
   }
 }
+.freeBox__k5DV {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.updateTeamsName:global(.__wab_instance) {
+  position: relative;
+}
 .column__wTiGc {
   display: flex;
   position: relative;

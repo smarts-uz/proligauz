@@ -71,6 +71,7 @@ import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import AvatarPlayer from "../../AvatarPlayer"; // plasmic-import: 4QnaRcOLXj0D/component
 import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
+import UpdateTeamsName from "../../UpdateTeamsName"; // plasmic-import: rr9gNzDgkKM7/component
 import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -106,6 +107,7 @@ export type PlasmicTeams__OverridesType = {
   mid?: Flex__<"div">;
   str?: Flex__<"div">;
   soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
+  updateTeamsName?: Flex__<typeof UpdateTeamsName>;
   marketMember?: Flex__<typeof MarketMember>;
   footer?: Flex__<typeof Footer>;
 };
@@ -146,6 +148,23 @@ function PlasmicTeams__RenderFunc(props: {
   let [$queries, setDollarQueries] = React.useState<
     Record<string, ReturnType<typeof usePlasmicDataOp>>
   >({});
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "updateTeamsName.updateName",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: $queries,
+    $refs
+  });
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
     teamP: usePlasmicDataOp(() => {
@@ -737,6 +756,27 @@ function PlasmicTeams__RenderFunc(props: {
                       sty.soccerPlaceMens2
                     )}
                   />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__k5DV)}
+                  >
+                    <UpdateTeamsName
+                      data-plasmic-name={"updateTeamsName"}
+                      data-plasmic-override={overrides.updateTeamsName}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.updateTeamsName
+                      )}
+                      onUpdateNameChange={generateStateOnChangeProp($state, [
+                        "updateTeamsName",
+                        "updateName"
+                      ])}
+                      updateName={generateStateValueProp($state, [
+                        "updateTeamsName",
+                        "updateName"
+                      ])}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1169,6 +1209,7 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
+    "updateTeamsName",
     "marketMember",
     "footer"
   ],
@@ -1182,6 +1223,7 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
+    "updateTeamsName",
     "marketMember"
   ],
   _532: ["_532", "button"],
@@ -1191,6 +1233,7 @@ const PlasmicDescendants = {
   mid: ["mid"],
   str: ["str"],
   soccerPlaceMens2: ["soccerPlaceMens2"],
+  updateTeamsName: ["updateTeamsName"],
   marketMember: ["marketMember"],
   footer: ["footer"]
 } as const;
@@ -1208,6 +1251,7 @@ type NodeDefaultElementType = {
   mid: "div";
   str: "div";
   soccerPlaceMens2: typeof SoccerPlaceMens2;
+  updateTeamsName: typeof UpdateTeamsName;
   marketMember: typeof MarketMember;
   footer: typeof Footer;
 };
@@ -1298,6 +1342,7 @@ export const PlasmicTeams = Object.assign(
     mid: makeNodeComponent("mid"),
     str: makeNodeComponent("str"),
     soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
+    updateTeamsName: makeNodeComponent("updateTeamsName"),
     marketMember: makeNodeComponent("marketMember"),
     footer: makeNodeComponent("footer"),
 
