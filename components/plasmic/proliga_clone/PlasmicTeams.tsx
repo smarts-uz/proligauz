@@ -259,9 +259,9 @@ function PlasmicTeams__RenderFunc(props: {
     clubs: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "b1ee9585-82c2-420d-84ee-79c8b90e3b65",
+        opId: "e3473a79-f02a-4518-82ce-04e07fa19d37",
         userArgs: {},
-        cacheKey: `plasmic.$.b1ee9585-82c2-420d-84ee-79c8b90e3b65.$.`,
+        cacheKey: `plasmic.$.e3473a79-f02a-4518-82ce-04e07fa19d37.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -571,6 +571,29 @@ function PlasmicTeams__RenderFunc(props: {
                                   ];
                                 }
                               }}
+                              clubLogo={(() => {
+                                try {
+                                  return $queries.clubs.data[
+                                    $queries.player.data[
+                                      currentItem.player_id - 1
+                                    ].club_id - 1
+                                  ].flag_url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return {
+                                      src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
+                                      fullWidth: 690,
+                                      fullHeight: 690,
+                                      aspectRatio: undefined
+                                    };
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               image={(() => {
                                 try {
                                   return $queries.player.data[
@@ -599,7 +622,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return undefined;
+                                    return "Player";
                                   }
                                   throw e;
                                 }
@@ -728,6 +751,29 @@ function PlasmicTeams__RenderFunc(props: {
                                   ];
                                 }
                               }}
+                              clubLogo={(() => {
+                                try {
+                                  return $queries.clubs.data[
+                                    $queries.player.data[
+                                      currentItem.player_id - 1
+                                    ].club_id - 1
+                                  ].flag_url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return {
+                                      src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
+                                      fullWidth: 690,
+                                      fullHeight: 690,
+                                      aspectRatio: undefined
+                                    };
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               image={(() => {
                                 try {
                                   return $queries.player.data[
@@ -755,7 +801,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "Unnamed";
+                                    return "Player";
                                   }
                                   throw e;
                                 }
@@ -884,6 +930,29 @@ function PlasmicTeams__RenderFunc(props: {
                                   ];
                                 }
                               }}
+                              clubLogo={(() => {
+                                try {
+                                  return $queries.clubs.data[
+                                    $queries.player.data[
+                                      currentItem.player_id - 1
+                                    ].club_id - 1
+                                  ].flag_url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return {
+                                      src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
+                                      fullWidth: 690,
+                                      fullHeight: 690,
+                                      aspectRatio: undefined
+                                    };
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               image={(() => {
                                 try {
                                   return $queries.player.data[
@@ -911,7 +980,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return undefined;
+                                    return "Player";
                                   }
                                   throw e;
                                 }
@@ -1040,6 +1109,29 @@ function PlasmicTeams__RenderFunc(props: {
                                   ];
                                 }
                               }}
+                              clubLogo={(() => {
+                                try {
+                                  return $queries.clubs.data[
+                                    $queries.player.data[
+                                      currentItem.player_id - 1
+                                    ].club_id - 1
+                                  ].flag_url;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return {
+                                      src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
+                                      fullWidth: 690,
+                                      fullHeight: 690,
+                                      aspectRatio: undefined
+                                    };
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               image={(() => {
                                 try {
                                   return $queries.player.data[
@@ -1067,7 +1159,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return undefined;
+                                    return "Player";
                                   }
                                   throw e;
                                 }

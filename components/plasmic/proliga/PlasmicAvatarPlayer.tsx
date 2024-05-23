@@ -77,17 +77,19 @@ export type PlasmicAvatarPlayer__ArgsType = {
   image?: React.ComponentProps<typeof PlasmicImg__>["src"];
   name?: string;
   clickOn?: (event: any) => void;
+  clubLogo?: React.ComponentProps<typeof PlasmicImg__>["src"];
 };
 type ArgPropType = keyof PlasmicAvatarPlayer__ArgsType;
 export const PlasmicAvatarPlayer__ArgProps = new Array<ArgPropType>(
   "image",
   "name",
-  "clickOn"
+  "clickOn",
+  "clubLogo"
 );
 
 export type PlasmicAvatarPlayer__OverridesType = {
   root?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
+  freeBox?: Flex__<"div">;
   text?: Flex__<"div">;
 };
 
@@ -95,6 +97,7 @@ export interface DefaultAvatarPlayerProps {
   image?: React.ComponentProps<typeof PlasmicImg__>["src"];
   name?: string;
   clickOn?: (event: any) => void;
+  clubLogo?: React.ComponentProps<typeof PlasmicImg__>["src"];
   className?: string;
 }
 
@@ -121,7 +124,13 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
         {
           image:
             "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif",
-          name: "Unnamed"
+          name: "Player",
+          clubLogo: {
+            src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
+            fullWidth: 690,
+            fullHeight: 690,
+            aspectRatio: undefined
+          }
         },
         props.args
       ),
@@ -157,23 +166,39 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
         sty.root
       )}
     >
-      <PlasmicImg__
-        data-plasmic-name={"img"}
-        data-plasmic-override={overrides.img}
-        alt={""}
-        className={classNames(sty.img)}
-        displayHeight={"auto"}
-        displayMaxHeight={"none"}
-        displayMaxWidth={"100%"}
-        displayMinHeight={"0"}
-        displayMinWidth={"0"}
-        displayWidth={"auto"}
-        loading={"lazy"}
-        onClick={args.clickOn}
-        src={args.image}
-        width={"52.5px"}
-      />
+      <div
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(projectcss.all, sty.freeBox)}
+      >
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__a9SuT)}
+          displayHeight={"auto"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"auto"}
+          loading={"lazy"}
+          onClick={args.clickOn}
+          src={args.image}
+          width={"52.5px"}
+        />
 
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__iv6Eb)}
+          displayHeight={"10px"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"10px"}
+          loading={"lazy"}
+          src={args.clubLogo}
+        />
+      </div>
       <div
         data-plasmic-name={"text"}
         data-plasmic-override={overrides.text}
@@ -188,7 +213,7 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
                 e instanceof TypeError ||
                 e?.plasmicType === "PlasmicUndefinedDataError"
               ) {
-                return "Unnamed";
+                return "Player";
               }
               throw e;
             }
@@ -200,8 +225,8 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "text"],
-  img: ["img"],
+  root: ["root", "freeBox", "text"],
+  freeBox: ["freeBox"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -209,7 +234,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  img: typeof PlasmicImg__;
+  freeBox: "div";
   text: "div";
 };
 
@@ -273,7 +298,7 @@ export const PlasmicAvatarPlayer = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
+    freeBox: makeNodeComponent("freeBox"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicAvatarPlayer
