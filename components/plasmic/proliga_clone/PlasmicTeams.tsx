@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   executePlasmicDataOp,
   usePlasmicDataOp,
@@ -71,7 +72,6 @@ import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import AvatarPlayer from "../../AvatarPlayer"; // plasmic-import: 4QnaRcOLXj0D/component
 import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
-import UpdateTeamsName from "../../UpdateTeamsName"; // plasmic-import: rr9gNzDgkKM7/component
 import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
 import SideBarMyTeam from "../../SideBarMyTeam"; // plasmic-import: 7ylFTnxhQETY/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
@@ -108,7 +108,6 @@ export type PlasmicTeams__OverridesType = {
   mid?: Flex__<"div">;
   str?: Flex__<"div">;
   soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
-  updateTeamsName?: Flex__<typeof UpdateTeamsName>;
   marketMember?: Flex__<typeof MarketMember>;
   sideBarMyTeam?: Flex__<typeof SideBarMyTeam>;
   footer?: Flex__<typeof Footer>;
@@ -156,7 +155,13 @@ function PlasmicTeams__RenderFunc(props: {
         path: "inputState",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "not empty"
+        initFunc: ({ $props, $state, $queries, $ctx }) => "DEF"
+      },
+      {
+        path: "teamplayerstate",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -167,6 +172,8 @@ function PlasmicTeams__RenderFunc(props: {
     $queries: $queries,
     $refs
   });
+  const dataSourcesCtx = usePlasmicDataSourceContext();
+  const plasmicInvalidate = usePlasmicInvalidate();
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
     teamP: usePlasmicDataOp(() => {
@@ -524,6 +531,45 @@ function PlasmicTeams__RenderFunc(props: {
                                     "updateInputState"
                                   ];
                                 }
+
+                                $steps["updateInputState2"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["teamplayerstate"]
+                                        },
+                                        operation: 0,
+                                        value: currentItem.id
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateInputState2"] != null &&
+                                  typeof $steps["updateInputState2"] ===
+                                    "object" &&
+                                  typeof $steps["updateInputState2"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateInputState2"] = await $steps[
+                                    "updateInputState2"
+                                  ];
+                                }
                               }}
                               image={(() => {
                                 try {
@@ -666,6 +712,48 @@ function PlasmicTeams__RenderFunc(props: {
                                         "updateInputState"
                                       ];
                                     }
+
+                                    $steps["updateInputState2"] = true
+                                      ? (() => {
+                                          const actionArgs = {
+                                            variable: {
+                                              objRoot: $state,
+                                              variablePath: ["teamplayerstate"]
+                                            },
+                                            operation: 0,
+                                            value: currentItem.id
+                                          };
+                                          return (({
+                                            variable,
+                                            value,
+                                            startIndex,
+                                            deleteCount
+                                          }) => {
+                                            if (!variable) {
+                                              return;
+                                            }
+                                            const { objRoot, variablePath } =
+                                              variable;
+
+                                            $stateSet(
+                                              objRoot,
+                                              variablePath,
+                                              value
+                                            );
+                                            return value;
+                                          })?.apply(null, [actionArgs]);
+                                        })()
+                                      : undefined;
+                                    if (
+                                      $steps["updateInputState2"] != null &&
+                                      typeof $steps["updateInputState2"] ===
+                                        "object" &&
+                                      typeof $steps["updateInputState2"]
+                                        .then === "function"
+                                    ) {
+                                      $steps["updateInputState2"] =
+                                        await $steps["updateInputState2"];
+                                    }
                                   }}
                                   image={(() => {
                                     try {
@@ -786,6 +874,45 @@ function PlasmicTeams__RenderFunc(props: {
                                     "updateInputState"
                                   ];
                                 }
+
+                                $steps["updateInputState2"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["teamplayerstate"]
+                                        },
+                                        operation: 0,
+                                        value: currentItem.id
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateInputState2"] != null &&
+                                  typeof $steps["updateInputState2"] ===
+                                    "object" &&
+                                  typeof $steps["updateInputState2"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateInputState2"] = await $steps[
+                                    "updateInputState2"
+                                  ];
+                                }
                               }}
                               image={(() => {
                                 try {
@@ -903,6 +1030,45 @@ function PlasmicTeams__RenderFunc(props: {
                                     "updateInputState"
                                   ];
                                 }
+
+                                $steps["updateInputState2"] = true
+                                  ? (() => {
+                                      const actionArgs = {
+                                        variable: {
+                                          objRoot: $state,
+                                          variablePath: ["teamplayerstate"]
+                                        },
+                                        operation: 0,
+                                        value: currentItem.id
+                                      };
+                                      return (({
+                                        variable,
+                                        value,
+                                        startIndex,
+                                        deleteCount
+                                      }) => {
+                                        if (!variable) {
+                                          return;
+                                        }
+                                        const { objRoot, variablePath } =
+                                          variable;
+
+                                        $stateSet(objRoot, variablePath, value);
+                                        return value;
+                                      })?.apply(null, [actionArgs]);
+                                    })()
+                                  : undefined;
+                                if (
+                                  $steps["updateInputState2"] != null &&
+                                  typeof $steps["updateInputState2"] ===
+                                    "object" &&
+                                  typeof $steps["updateInputState2"].then ===
+                                    "function"
+                                ) {
+                                  $steps["updateInputState2"] = await $steps[
+                                    "updateInputState2"
+                                  ];
+                                }
                               }}
                               image={(() => {
                                 try {
@@ -950,19 +1116,6 @@ function PlasmicTeams__RenderFunc(props: {
                       sty.soccerPlaceMens2
                     )}
                   />
-
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__k5DV)}
-                  >
-                    <UpdateTeamsName
-                      data-plasmic-name={"updateTeamsName"}
-                      data-plasmic-override={overrides.updateTeamsName}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.updateTeamsName
-                      )}
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -1144,6 +1297,58 @@ function PlasmicTeams__RenderFunc(props: {
                         throw e;
                       }
                     })()}
+                    upadateclick={async event => {
+                      const $steps = {};
+
+                      $steps["postgresUpdateById"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              dataOp: {
+                                sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                                opId: "9ee76f38-2ef6-47a5-a1ae-71e131b3105b",
+                                userArgs: {
+                                  keys: [$state.teamplayerstate],
+                                  variables: [
+                                    currentItem.position,
+                                    currentItem.id
+                                  ]
+                                },
+                                cacheKey: null,
+                                invalidatedKeys: ["plasmic_refresh_all"],
+                                roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                              }
+                            };
+                            return (async ({ dataOp, continueOnError }) => {
+                              try {
+                                const response = await executePlasmicDataOp(
+                                  dataOp,
+                                  {
+                                    userAuthToken:
+                                      dataSourcesCtx?.userAuthToken,
+                                    user: dataSourcesCtx?.user
+                                  }
+                                );
+                                await plasmicInvalidate(dataOp.invalidatedKeys);
+                                return response;
+                              } catch (e) {
+                                if (!continueOnError) {
+                                  throw e;
+                                }
+                                return e;
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["postgresUpdateById"] != null &&
+                        typeof $steps["postgresUpdateById"] === "object" &&
+                        typeof $steps["postgresUpdateById"].then === "function"
+                      ) {
+                        $steps["postgresUpdateById"] = await $steps[
+                          "postgresUpdateById"
+                        ];
+                      }
+                    }}
                   />
                 );
               })}
@@ -1178,7 +1383,6 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
-    "updateTeamsName",
     "marketMember",
     "sideBarMyTeam",
     "footer"
@@ -1193,7 +1397,6 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
-    "updateTeamsName",
     "marketMember"
   ],
   _532: ["_532", "button"],
@@ -1203,7 +1406,6 @@ const PlasmicDescendants = {
   mid: ["mid"],
   str: ["str"],
   soccerPlaceMens2: ["soccerPlaceMens2"],
-  updateTeamsName: ["updateTeamsName"],
   marketMember: ["marketMember"],
   sideBarMyTeam: ["sideBarMyTeam"],
   footer: ["footer"]
@@ -1222,7 +1424,6 @@ type NodeDefaultElementType = {
   mid: "div";
   str: "div";
   soccerPlaceMens2: typeof SoccerPlaceMens2;
-  updateTeamsName: typeof UpdateTeamsName;
   marketMember: typeof MarketMember;
   sideBarMyTeam: typeof SideBarMyTeam;
   footer: typeof Footer;
@@ -1314,7 +1515,6 @@ export const PlasmicTeams = Object.assign(
     mid: makeNodeComponent("mid"),
     str: makeNodeComponent("str"),
     soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
-    updateTeamsName: makeNodeComponent("updateTeamsName"),
     marketMember: makeNodeComponent("marketMember"),
     sideBarMyTeam: makeNodeComponent("sideBarMyTeam"),
     footer: makeNodeComponent("footer"),

@@ -90,13 +90,15 @@ export type PlasmicMarketMember__ArgsType = {
   clubImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
   name?: string;
   position?: string;
+  upadateclick?: (event: any) => void;
 };
 type ArgPropType = keyof PlasmicMarketMember__ArgsType;
 export const PlasmicMarketMember__ArgProps = new Array<ArgPropType>(
   "image",
   "clubImage",
   "name",
-  "position"
+  "position",
+  "upadateclick"
 );
 
 export type PlasmicMarketMember__OverridesType = {
@@ -109,6 +111,7 @@ export interface DefaultMarketMemberProps {
   clubImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
   name?: string;
   position?: string;
+  upadateclick?: (event: any) => void;
   borjaMayoral?: SingleBooleanChoiceArg<"borjaMayoral">;
   pedri?: SingleBooleanChoiceArg<"pedri">;
   mendez?: SingleBooleanChoiceArg<"mendez">;
@@ -224,7 +227,10 @@ function PlasmicMarketMember__RenderFunc(props: {
         }
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__xd44L)}>
+      <div
+        className={classNames(projectcss.all, sty.freeBox__xd44L)}
+        onClick={args.upadateclick}
+      >
         <div className={classNames(projectcss.all, sty.freeBox__lCzs2)}>
           <PlasmicImg__
             alt={""}
