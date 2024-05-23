@@ -72,6 +72,7 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import AvatarPlayer from "../../AvatarPlayer"; // plasmic-import: 4QnaRcOLXj0D/component
 import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
 import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
+import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
@@ -106,6 +107,7 @@ export type PlasmicTeams__OverridesType = {
   str?: Flex__<"div">;
   soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
   marketMember?: Flex__<typeof MarketMember>;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultTeamsProps {}
@@ -1144,6 +1146,11 @@ function PlasmicTeams__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <Footer
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames("__wab_instance", sty.footer)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1162,7 +1169,8 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
-    "marketMember"
+    "marketMember",
+    "footer"
   ],
   navbar: ["navbar"],
   columns: [
@@ -1183,7 +1191,8 @@ const PlasmicDescendants = {
   mid: ["mid"],
   str: ["str"],
   soccerPlaceMens2: ["soccerPlaceMens2"],
-  marketMember: ["marketMember"]
+  marketMember: ["marketMember"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1200,6 +1209,7 @@ type NodeDefaultElementType = {
   str: "div";
   soccerPlaceMens2: typeof SoccerPlaceMens2;
   marketMember: typeof MarketMember;
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1289,6 +1299,7 @@ export const PlasmicTeams = Object.assign(
     str: makeNodeComponent("str"),
     soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
     marketMember: makeNodeComponent("marketMember"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicTeams
     internalVariantProps: PlasmicTeams__VariantProps,

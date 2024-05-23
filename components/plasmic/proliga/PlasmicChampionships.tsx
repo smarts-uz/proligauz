@@ -68,6 +68,8 @@ import {
 
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
+import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "../proliga_clone/PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -90,6 +92,7 @@ export type PlasmicChampionships__OverridesType = {
   root?: Flex__<"div">;
   h1?: Flex__<"h1">;
   freeBox?: Flex__<"div">;
+  columns?: Flex__<"div">;
 };
 
 export interface DefaultChampionshipsProps {}
@@ -163,6 +166,10 @@ function PlasmicChampionships__RenderFunc(props: {
     $queries = new$Queries;
   }
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants_8Rmrqs5Mzp6I()
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -209,25 +216,31 @@ function PlasmicChampionships__RenderFunc(props: {
           >
             <Stack__
               as={"div"}
+              data-plasmic-name={"columns"}
+              data-plasmic-override={overrides.columns}
               hasGap={true}
-              className={classNames(projectcss.all, sty.columns__jUrf8)}
+              className={classNames(projectcss.all, sty.columns)}
             >
-              <div className={classNames(projectcss.all, sty.column__bo6Pl)}>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.column__bo6Pl)}
+              >
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__lxqfa)}
-                  displayHeight={"auto"}
+                  displayHeight={"136px"}
                   displayMaxHeight={"none"}
                   displayMaxWidth={"100%"}
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
-                  displayWidth={"auto"}
+                  displayWidth={"318px"}
                   loading={"lazy"}
                   src={
                     "https://upload.wikimedia.org/wikipedia/ru/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png"
                   }
                 />
-              </div>
+              </Stack__>
               <PlasmicLink__
                 className={classNames(
                   projectcss.all,
@@ -310,15 +323,23 @@ function PlasmicChampionships__RenderFunc(props: {
               </div>
             </Stack__>
           </div>
-          <div className={classNames(projectcss.all, sty.columns__t6Uc0)}>
-            <div className={classNames(projectcss.all, sty.column__nlApe)} />
-
-            <div className={classNames(projectcss.all, sty.column__ij4O1)} />
-
-            <div className={classNames(projectcss.all, sty.column__tf3Z)} />
-
-            <div className={classNames(projectcss.all, sty.column___6HLl4)} />
-          </div>
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__xWmDf)}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"70px"}
+            loading={"lazy"}
+            src={{
+              src: "/plasmic/proliga/images/group33Png.png",
+              fullWidth: 582,
+              fullHeight: 766,
+              aspectRatio: undefined
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -326,9 +347,10 @@ function PlasmicChampionships__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "freeBox"],
+  root: ["root", "h1", "freeBox", "columns"],
   h1: ["h1"],
-  freeBox: ["freeBox"]
+  freeBox: ["freeBox", "columns"],
+  columns: ["columns"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -337,6 +359,7 @@ type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
   freeBox: "div";
+  columns: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -418,6 +441,7 @@ export const PlasmicChampionships = Object.assign(
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
     freeBox: makeNodeComponent("freeBox"),
+    columns: makeNodeComponent("columns"),
 
     // Metadata about props expected for PlasmicChampionships
     internalVariantProps: PlasmicChampionships__VariantProps,

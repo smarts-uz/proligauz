@@ -9,6 +9,7 @@
   justify-content: flex-start;
   align-items: center;
   grid-row-gap: 16px;
+  background: var(--token-_Z-x7YSfdB4D);
   min-width: 0;
   min-height: 0;
   grid-template-columns:

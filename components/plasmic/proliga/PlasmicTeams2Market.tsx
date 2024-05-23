@@ -257,598 +257,671 @@ function PlasmicTeams2Market__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens,
-            sty.root
-          )}
-        >
-          <Navbar
-            data-plasmic-name={"navbar"}
-            data-plasmic-override={overrides.navbar}
-            className={classNames("__wab_instance", sty.navbar)}
-          />
+      <div
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          plasmic_antd_5_hostless_css.plasmic_tokens,
+          plasmic_plasmic_rich_components_css.plasmic_tokens,
+          sty.root
+        )}
+      >
+        <Navbar
+          data-plasmic-name={"navbar"}
+          data-plasmic-override={overrides.navbar}
+          className={classNames("__wab_instance", sty.navbar)}
+        />
 
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox___0Z5Hv)}
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox___0Z5Hv)}
+        >
+          <PlasmicLink__
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              projectcss.__wab_text,
+              sty.link__zKXtP
+            )}
+            component={Link}
+            href={"https://www.plasmic.app/"}
+            platform={"nextjs"}
           >
-            <PlasmicLink__
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link__zKXtP
-              )}
-              component={Link}
-              href={"https://www.plasmic.app/"}
-              platform={"nextjs"}
-            >
-              {"Team"}
-            </PlasmicLink__>
-            <PlasmicLink__
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link__fbk5W
-              )}
-              component={Link}
-              href={"https://www.plasmic.app/"}
-              platform={"nextjs"}
-            >
-              {"Points"}
-            </PlasmicLink__>
-          </Stack__>
+            {"Team"}
+          </PlasmicLink__>
+          <PlasmicLink__
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              projectcss.__wab_text,
+              sty.link__fbk5W
+            )}
+            component={Link}
+            href={"https://www.plasmic.app/"}
+            platform={"nextjs"}
+          >
+            {"Points"}
+          </PlasmicLink__>
+        </Stack__>
+        <div
+          data-plasmic-name={"columns"}
+          data-plasmic-override={overrides.columns}
+          className={classNames(projectcss.all, sty.columns)}
+        >
           <div
-            data-plasmic-name={"columns"}
-            data-plasmic-override={overrides.columns}
-            className={classNames(projectcss.all, sty.columns)}
+            data-plasmic-name={"column"}
+            data-plasmic-override={overrides.column}
+            className={classNames(projectcss.all, sty.column)}
           >
-            <div
-              data-plasmic-name={"column"}
-              data-plasmic-override={overrides.column}
-              className={classNames(projectcss.all, sty.column)}
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__xnBrl)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__xnBrl)}>
-                <TextInput
-                  data-plasmic-name={"textInput"}
-                  data-plasmic-override={overrides.textInput}
-                  className={classNames("__wab_instance", sty.textInput)}
-                  color={"dark"}
-                  onChange={(...eventArgs) => {
-                    generateStateOnChangeProp($state, ["textInput", "value"])(
-                      (e => e.target?.value).apply(null, eventArgs)
+              <TextInput
+                data-plasmic-name={"textInput"}
+                data-plasmic-override={overrides.textInput}
+                className={classNames("__wab_instance", sty.textInput)}
+                color={"dark"}
+                onChange={(...eventArgs) => {
+                  generateStateOnChangeProp($state, ["textInput", "value"])(
+                    (e => e.target?.value).apply(null, eventArgs)
+                  );
+                }}
+                placeholder={"Search player"}
+                showStartIcon={true}
+                value={
+                  generateStateValueProp($state, ["textInput", "value"]) ?? ""
+                }
+              />
+
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__ehfxY
+                )}
+                component={Link}
+                href={"https://www.plasmic.app/"}
+                platform={"nextjs"}
+              >
+                {"FAVOURITES"}
+              </PlasmicLink__>
+              <Select
+                data-plasmic-name={"clubSelect"}
+                data-plasmic-override={overrides.clubSelect}
+                className={classNames("__wab_instance", sty.clubSelect)}
+                color={"clear"}
+                onChange={(...eventArgs) => {
+                  generateStateOnChangeProp($state, ["clubSelect", "value"])(
+                    eventArgs[0]
+                  );
+                }}
+                options={(() => {
+                  const __composite = [
+                    { value: null, label: null },
+                    { label: null, value: null }
+                  ];
+                  __composite["0"]["value"] = $queries.club.data[0].id;
+                  __composite["0"]["label"] = $queries.club.data[0].name;
+                  __composite["1"]["label"] = "All";
+                  __composite["1"]["value"] = "not null";
+                  return __composite;
+                })()}
+                placeholder={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__xuFjc
+                    )}
+                  >
+                    {"TEAM"}
+                  </div>
+                }
+                value={generateStateValueProp($state, ["clubSelect", "value"])}
+              />
+
+              <Select
+                data-plasmic-name={"type"}
+                data-plasmic-override={overrides.type}
+                className={classNames("__wab_instance", sty.type)}
+                color={"clear"}
+                onChange={(...eventArgs) => {
+                  generateStateOnChangeProp($state, ["type", "value"])(
+                    eventArgs[0]
+                  );
+                }}
+                options={(() => {
+                  const __composite = [
+                    { value: "option1", label: null },
+                    { value: "option2", label: null },
+                    { label: null }
+                  ];
+                  __composite["0"]["label"] = "Goalkeeper";
+                  __composite["1"]["label"] = "Striker";
+                  __composite["2"]["label"] = "Middle";
+                  return __composite;
+                })()}
+                placeholder={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wrDpJ
+                    )}
+                  >
+                    {"POS."}
+                  </div>
+                }
+                value={generateStateValueProp($state, ["type", "value"])}
+              />
+
+              <Select
+                data-plasmic-name={"playerCount"}
+                data-plasmic-override={overrides.playerCount}
+                className={classNames("__wab_instance", sty.playerCount)}
+                color={"clear"}
+                onChange={async (...eventArgs: any) => {
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, ["playerCount", "value"])(
+                      eventArgs[0]
                     );
-                  }}
-                  placeholder={"Search player"}
-                  showStartIcon={true}
-                  value={
-                    generateStateValueProp($state, ["textInput", "value"]) ?? ""
+                  }).apply(null, eventArgs);
+                  (async value => {
+                    const $steps = {};
+
+                    $steps["refreshData"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            queryInvalidation: ["plasmic_refresh_all"]
+                          };
+                          return (async ({ queryInvalidation }) => {
+                            if (!queryInvalidation) {
+                              return;
+                            }
+                            await plasmicInvalidate(queryInvalidation);
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["refreshData"] != null &&
+                      typeof $steps["refreshData"] === "object" &&
+                      typeof $steps["refreshData"].then === "function"
+                    ) {
+                      $steps["refreshData"] = await $steps["refreshData"];
+                    }
+                  }).apply(null, eventArgs);
+                }}
+                options={(() => {
+                  const __composite = [
+                    { value: null, label: null },
+                    { value: null, label: null },
+                    { label: null }
+                  ];
+                  __composite["0"]["value"] = 15;
+                  __composite["0"]["label"] = "15";
+                  __composite["1"]["value"] = 25;
+                  __composite["1"]["label"] = "25";
+                  __composite["2"]["label"] = "All";
+                  return __composite;
+                })()}
+                value={generateStateValueProp($state, ["playerCount", "value"])}
+              />
+            </Stack__>
+          </div>
+        </div>
+        <PlayerAction
+          data-plasmic-name={"playerAction"}
+          data-plasmic-override={overrides.playerAction}
+          className={classNames("__wab_instance", sty.playerAction)}
+        />
+
+        <div className={classNames(projectcss.all, sty.freeBox___7InD5)}>
+          {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+            (() => {
+              try {
+                return $queries.players.data;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return [];
+                }
+                throw e;
+              }
+            })()
+          ).map((__plasmic_item_0, __plasmic_idx_0) => {
+            const currentItem = __plasmic_item_0;
+            const currentIndex = __plasmic_idx_0;
+            return (
+              <div
+                className={classNames(projectcss.all, sty.freeBox__nsFJd)}
+                key={currentIndex}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["postgresCreate"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          dataOp: {
+                            sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                            opId: "f569081c-7890-4699-bbd4-6fd4d259a37b",
+                            userArgs: {
+                              variables: [
+                                currentItem.id,
+                                currentItem.position,
+                                $queries.userTeam.data[0].id
+                              ]
+                            },
+                            cacheKey: null,
+                            invalidatedKeys: ["plasmic_refresh_all"],
+                            roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                          }
+                        };
+                        return (async ({ dataOp, continueOnError }) => {
+                          try {
+                            const response = await executePlasmicDataOp(
+                              dataOp,
+                              {
+                                userAuthToken: dataSourcesCtx?.userAuthToken,
+                                user: dataSourcesCtx?.user
+                              }
+                            );
+                            await plasmicInvalidate(dataOp.invalidatedKeys);
+                            return response;
+                          } catch (e) {
+                            if (!continueOnError) {
+                              throw e;
+                            }
+                            return e;
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["postgresCreate"] != null &&
+                    typeof $steps["postgresCreate"] === "object" &&
+                    typeof $steps["postgresCreate"].then === "function"
+                  ) {
+                    $steps["postgresCreate"] = await $steps["postgresCreate"];
                   }
+                }}
+              >
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__tfRy3)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"40px"}
+                  loading={"lazy"}
+                  src={(() => {
+                    try {
+                      return currentItem.image;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "https://assets-fantasy.llt-services.com/players/t175/p53/256x256/p53_t175_1_001_000.png";
+                      }
+                      throw e;
+                    }
+                  })()}
+                  width={"40px"}
                 />
 
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ps9Vp
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return currentItem.name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "Oblak";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
                 <PlasmicLink__
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__ehfxY
+                    sty.link__mCv0P
                   )}
                   component={Link}
                   href={"https://www.plasmic.app/"}
                   platform={"nextjs"}
                 >
-                  {"FAVOURITES"}
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return currentItem.position;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "GOA";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
                 </PlasmicLink__>
-                <Select
-                  data-plasmic-name={"clubSelect"}
-                  data-plasmic-override={overrides.clubSelect}
-                  className={classNames("__wab_instance", sty.clubSelect)}
-                  color={"clear"}
-                  onChange={(...eventArgs) => {
-                    generateStateOnChangeProp($state, ["clubSelect", "value"])(
-                      eventArgs[0]
-                    );
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__tyGTy)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"14px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/proliga_clone/images/pngtreeEuroSymbolCurrencyPngImage3974231Png2.png",
+                    fullWidth: 512,
+                    fullHeight: 512,
+                    aspectRatio: undefined
                   }}
-                  options={(() => {
-                    const __composite = [
-                      { value: null, label: null },
-                      { label: null, value: null }
-                    ];
-                    __composite["0"]["value"] = $queries.club.data[0].id;
-                    __composite["0"]["label"] = $queries.club.data[0].name;
-                    __composite["1"]["label"] = "All";
-                    __composite["1"]["value"] = "not null";
-                    return __composite;
-                  })()}
-                  placeholder={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__xuFjc
-                      )}
-                    >
-                      {"TEAM"}
-                    </div>
-                  }
-                  value={generateStateValueProp($state, [
-                    "clubSelect",
-                    "value"
-                  ])}
                 />
 
-                <Select
-                  data-plasmic-name={"type"}
-                  data-plasmic-override={overrides.type}
-                  className={classNames("__wab_instance", sty.type)}
-                  color={"clear"}
-                  onChange={(...eventArgs) => {
-                    generateStateOnChangeProp($state, ["type", "value"])(
-                      eventArgs[0]
-                    );
-                  }}
-                  options={(() => {
-                    const __composite = [
-                      { value: "option1", label: null },
-                      { value: "option2", label: null },
-                      { label: null }
-                    ];
-                    __composite["0"]["label"] = "Goalkeeper";
-                    __composite["1"]["label"] = "Striker";
-                    __composite["2"]["label"] = "Middle";
-                    return __composite;
-                  })()}
-                  placeholder={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__wrDpJ
-                      )}
-                    >
-                      {"POS."}
-                    </div>
-                  }
-                  value={generateStateValueProp($state, ["type", "value"])}
-                />
-
-                <Select
-                  data-plasmic-name={"playerCount"}
-                  data-plasmic-override={overrides.playerCount}
-                  className={classNames("__wab_instance", sty.playerCount)}
-                  color={"clear"}
-                  onChange={async (...eventArgs: any) => {
-                    ((...eventArgs) => {
-                      generateStateOnChangeProp($state, [
-                        "playerCount",
-                        "value"
-                      ])(eventArgs[0]);
-                    }).apply(null, eventArgs);
-                    (async value => {
-                      const $steps = {};
-
-                      $steps["refreshData"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              queryInvalidation: ["plasmic_refresh_all"]
-                            };
-                            return (async ({ queryInvalidation }) => {
-                              if (!queryInvalidation) {
-                                return;
-                              }
-                              await plasmicInvalidate(queryInvalidation);
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["refreshData"] != null &&
-                        typeof $steps["refreshData"] === "object" &&
-                        typeof $steps["refreshData"].then === "function"
-                      ) {
-                        $steps["refreshData"] = await $steps["refreshData"];
-                      }
-                    }).apply(null, eventArgs);
-                  }}
-                  options={(() => {
-                    const __composite = [
-                      { value: null, label: null },
-                      { value: null, label: null },
-                      { label: null }
-                    ];
-                    __composite["0"]["value"] = 15;
-                    __composite["0"]["label"] = "15";
-                    __composite["1"]["value"] = 25;
-                    __composite["1"]["label"] = "25";
-                    __composite["2"]["label"] = "All";
-                    return __composite;
-                  })()}
-                  value={generateStateValueProp($state, [
-                    "playerCount",
-                    "value"
-                  ])}
-                />
-              </div>
-            </div>
-          </div>
-          <PlayerAction
-            data-plasmic-name={"playerAction"}
-            data-plasmic-override={overrides.playerAction}
-            className={classNames("__wab_instance", sty.playerAction)}
-          />
-
-          <div className={classNames(projectcss.all, sty.freeBox___7InD5)}>
-            {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-              (() => {
-                try {
-                  return $queries.players.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
-                  }
-                  throw e;
-                }
-              })()
-            ).map((__plasmic_item_0, __plasmic_idx_0) => {
-              const currentItem = __plasmic_item_0;
-              const currentIndex = __plasmic_idx_0;
-              return (
                 <div
-                  className={classNames(projectcss.all, sty.freeBox__nsFJd)}
-                  key={currentIndex}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["postgresCreate"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            dataOp: {
-                              sourceId: "8cdHi4ivRUEkK6qbegQevF",
-                              opId: "f569081c-7890-4699-bbd4-6fd4d259a37b",
-                              userArgs: {
-                                variables: [
-                                  currentItem.id,
-                                  currentItem.position,
-                                  $queries.userTeam.data[0].id
-                                ]
-                              },
-                              cacheKey: null,
-                              invalidatedKeys: ["plasmic_refresh_all"],
-                              roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
-                            }
-                          };
-                          return (async ({ dataOp, continueOnError }) => {
-                            try {
-                              const response = await executePlasmicDataOp(
-                                dataOp,
-                                {
-                                  userAuthToken: dataSourcesCtx?.userAuthToken,
-                                  user: dataSourcesCtx?.user
-                                }
-                              );
-                              await plasmicInvalidate(dataOp.invalidatedKeys);
-                              return response;
-                            } catch (e) {
-                              if (!continueOnError) {
-                                throw e;
-                              }
-                              return e;
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["postgresCreate"] != null &&
-                      typeof $steps["postgresCreate"] === "object" &&
-                      typeof $steps["postgresCreate"].then === "function"
-                    ) {
-                      $steps["postgresCreate"] = await $steps["postgresCreate"];
-                    }
-                  }}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zuOh2
+                  )}
                 >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__tfRy3)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    height={"40px"}
-                    loading={"lazy"}
-                    src={(() => {
+                  <React.Fragment>
+                    {(() => {
                       try {
-                        return currentItem.image;
+                        return currentItem.market_value;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "https://assets-fantasy.llt-services.com/players/t175/p53/256x256/p53_t175_1_001_000.png";
+                          return "1.920.356";
                         }
                         throw e;
                       }
                     })()}
-                    width={"40px"}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ps9Vp
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return currentItem.name;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "Oblak";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                  <PlasmicLink__
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__mCv0P
-                    )}
-                    component={Link}
-                    href={"https://www.plasmic.app/"}
-                    platform={"nextjs"}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return currentItem.position;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "GOA";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </PlasmicLink__>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__tyGTy)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"14px"}
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/proliga_clone/images/pngtreeEuroSymbolCurrencyPngImage3974231Png2.png",
-                      fullWidth: 512,
-                      fullHeight: 512,
-                      aspectRatio: undefined
-                    }}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zuOh2
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return currentItem.market_value;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "1.920.356";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__lgZ6)}
-                    displayHeight={"auto"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    height={"21.73px"}
-                    loading={"lazy"}
-                    src={(() => {
-                      try {
-                        return $queries.club.data[currentItem.club_id - 1]
-                          .flag_url;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "https://assets-fantasy.llt-services.com/teambadge/t175/color/t175_atletico-de-madrid.png";
-                        }
-                        throw e;
-                      }
-                    })()}
-                    width={"21px"}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eWsH
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $queries.club.data[currentItem.club_id - 1]
-                            .name;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "Atl\u00e9tico De Madrid";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ereL0
-                    )}
-                  >
-                    {"FSYP"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___0DgTt
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return currentItem.FSYP;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "93";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9Qgou
-                    )}
-                  >
-                    {"FSYP"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gvG7
-                    )}
-                  >
-                    {"164"}
-                  </div>
+                  </React.Fragment>
                 </div>
-              );
-            })}
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__iak4F)}>
-            <div className={classNames(projectcss.all, sty.freeBox__qGo61)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__kETft)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                height={"45px"}
-                loading={"lazy"}
-                src={"https://cdn-icons-png.flaticon.com/512/3022/3022675.png"}
-                width={"30px"}
-              />
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__lgZ6)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"21.73px"}
+                  loading={"lazy"}
+                  src={(() => {
+                    try {
+                      return $queries.club.data[currentItem.club_id - 1]
+                        .flag_url;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "https://assets-fantasy.llt-services.com/teambadge/t175/color/t175_atletico-de-madrid.png";
+                      }
+                      throw e;
+                    }
+                  })()}
+                  width={"21px"}
+                />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vyXe5
-                )}
-              >
-                {"PROLIGA Fantasy"}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__eWsH
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.club.data[currentItem.club_id - 1].name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "Atl\u00e9tico De Madrid";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ereL0
+                  )}
+                >
+                  {"FSYP"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___0DgTt
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return currentItem.FSYP;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "93";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9Qgou
+                  )}
+                >
+                  {"FSYP"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gvG7
+                  )}
+                >
+                  {"164"}
+                </div>
               </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__cro6A)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__zFYu5)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                height={"18.13"}
-                loading={"lazy"}
-                src={
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
-                }
-                width={"23.13"}
-              />
+            );
+          })}
+        </div>
+        <div className={classNames(projectcss.all, sty.freeBox__iak4F)}>
+          <div className={classNames(projectcss.all, sty.freeBox__qGo61)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__kETft)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              height={"45px"}
+              loading={"lazy"}
+              src={"https://cdn-icons-png.flaticon.com/512/3022/3022675.png"}
+              width={"30px"}
+            />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__nf8XB
-                )}
-              >
-                {"Standing"}
-              </div>
-            </div>
             <div
-              className={classNames(projectcss.all, sty.freeBox__vrUkZ)}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__vyXe5
+              )}
+            >
+              {"PROLIGA Fantasy"}
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__cro6A)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__zFYu5)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              height={"18.13"}
+              loading={"lazy"}
+              src={
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
+              }
+              width={"23.13"}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__nf8XB
+              )}
+            >
+              {"Standing"}
+            </div>
+          </div>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__vrUkZ)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["goToTeams"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/team/classic` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToTeams"] != null &&
+                typeof $steps["goToTeams"] === "object" &&
+                typeof $steps["goToTeams"].then === "function"
+              ) {
+                $steps["goToTeams"] = await $steps["goToTeams"];
+              }
+            }}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__rlilw)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              height={"18.13"}
+              loading={"lazy"}
+              src={"https://cdn-icons-png.flaticon.com/256/10167/10167851.png"}
+              width={"23.13"}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___6XGh
+              )}
+            >
+              {"My Team"}
+            </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox___7Axf0)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__z7Jol)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              height={"18.13"}
+              loading={"lazy"}
+              src={
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
+              }
+              width={"23.13"}
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__u7Gmh
+              )}
               onClick={async event => {
                 const $steps = {};
 
-                $steps["goToTeams"] = true
+                $steps["goToTeams2Market"] = true
                   ? (() => {
-                      const actionArgs = { destination: `/team/classic` };
+                      const actionArgs = { destination: `/new-page` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -864,146 +937,63 @@ function PlasmicTeams2Market__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["goToTeams"] != null &&
-                  typeof $steps["goToTeams"] === "object" &&
-                  typeof $steps["goToTeams"].then === "function"
+                  $steps["goToTeams2Market"] != null &&
+                  typeof $steps["goToTeams2Market"] === "object" &&
+                  typeof $steps["goToTeams2Market"].then === "function"
                 ) {
-                  $steps["goToTeams"] = await $steps["goToTeams"];
+                  $steps["goToTeams2Market"] = await $steps["goToTeams2Market"];
                 }
               }}
             >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__rlilw)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                height={"18.13"}
-                loading={"lazy"}
-                src={
-                  "https://cdn-icons-png.flaticon.com/256/10167/10167851.png"
-                }
-                width={"23.13"}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___6XGh
-                )}
-              >
-                {"My Team"}
-              </div>
+              {"Market"}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___7Axf0)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__z7Jol)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                height={"18.13"}
-                loading={"lazy"}
-                src={
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
-                }
-                width={"23.13"}
-              />
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__poBoI)}>
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__jLqcj)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              height={"18.13"}
+              loading={"lazy"}
+              src={
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
+              }
+              width={"23.13"}
+            />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__u7Gmh
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["goToTeams2Market"] = true
-                    ? (() => {
-                        const actionArgs = { destination: `/new-page` };
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            __nextRouter?.push(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToTeams2Market"] != null &&
-                    typeof $steps["goToTeams2Market"] === "object" &&
-                    typeof $steps["goToTeams2Market"].then === "function"
-                  ) {
-                    $steps["goToTeams2Market"] = await $steps[
-                      "goToTeams2Market"
-                    ];
-                  }
-                }}
-              >
-                {"Market"}
-              </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__ouyCb
+              )}
+            >
+              {"Activity"}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__poBoI)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__jLqcj)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                height={"18.13"}
-                loading={"lazy"}
-                src={
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIcmZaJM1ZSe3jyr9tyEt3PfZ-_qh2LbCkdl9st3lV-16vIQwtrysBVlDaMisw62c_4Bk&usqp=CAU"
-                }
-                width={"23.13"}
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ouyCb
-                )}
-              >
-                {"Activity"}
-              </div>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__pJRw8)}>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__uw3Fv
+              )}
+            >
+              {"END OF THE FIXTURE (36)"}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__pJRw8)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uw3Fv
-                )}
-              >
-                {"END OF THE FIXTURE (36)"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__csf4L
-                )}
-              >
-                {"Friyday 16:00 Goo"}
-              </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__csf4L
+              )}
+            >
+              {"Friyday 16:00 Goo"}
             </div>
           </div>
         </div>

@@ -59,6 +59,13 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
+import {
+  executePlasmicDataOp,
+  usePlasmicDataOp,
+  usePlasmicInvalidate
+} from "@plasmicapp/react-web/lib/data-sources";
+
 import Button from "../../Button"; // plasmic-import: FZ59S2Z_LV2k/component
 import LoginButton2 from "../../LoginButton2"; // plasmic-import: 4z0H5ajimEuS/component
 
@@ -123,6 +130,8 @@ function PlasmicNavbar__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const $globalActions = useGlobalActions?.();
+
   const currentUser = useCurrentUser?.() || {};
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
@@ -142,6 +151,8 @@ function PlasmicNavbar__RenderFunc(props: {
     $queries: {},
     $refs
   });
+  const dataSourcesCtx = usePlasmicDataSourceContext();
+  const plasmicInvalidate = usePlasmicInvalidate();
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants_8Rmrqs5Mzp6I()
@@ -544,7 +555,47 @@ function PlasmicNavbar__RenderFunc(props: {
                 sty.link__fy5Z9
               )}
               component={Link}
-              href={`/team-create`}
+              href={`/team/classic`}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["postgresCreate"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        dataOp: {
+                          sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                          opId: "c69f6705-8c2d-4a0c-a63e-1e0b3a9519ef",
+                          userArgs: {},
+                          cacheKey: null,
+                          invalidatedKeys: ["plasmic_refresh_all"],
+                          roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                        }
+                      };
+                      return (async ({ dataOp, continueOnError }) => {
+                        try {
+                          const response = await executePlasmicDataOp(dataOp, {
+                            userAuthToken: dataSourcesCtx?.userAuthToken,
+                            user: dataSourcesCtx?.user
+                          });
+                          await plasmicInvalidate(dataOp.invalidatedKeys);
+                          return response;
+                        } catch (e) {
+                          if (!continueOnError) {
+                            throw e;
+                          }
+                          return e;
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["postgresCreate"] != null &&
+                  typeof $steps["postgresCreate"] === "object" &&
+                  typeof $steps["postgresCreate"].then === "function"
+                ) {
+                  $steps["postgresCreate"] = await $steps["postgresCreate"];
+                }
+              }}
               platform={"nextjs"}
             >
               <Button
@@ -555,13 +606,33 @@ function PlasmicNavbar__RenderFunc(props: {
                     role={"img"}
                   />
                 }
-                link={`/team-create`}
+                link={`/team/classic`}
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToTeamCreate"] = true
+                  $steps["invokeGlobalAction"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/team-create` };
+                        const actionArgs = {
+                          args: [undefined, "Team created!", undefined, 6]
+                        };
+                        return $globalActions[
+                          "plasmic-antd5-config-provider.showNotification"
+                        ]?.apply(null, [...actionArgs.args]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] = await $steps[
+                      "invokeGlobalAction"
+                    ];
+                  }
+
+                  $steps["goToTeams"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/team/classic` };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&
@@ -577,11 +648,11 @@ function PlasmicNavbar__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToTeamCreate"] != null &&
-                    typeof $steps["goToTeamCreate"] === "object" &&
-                    typeof $steps["goToTeamCreate"].then === "function"
+                    $steps["goToTeams"] != null &&
+                    typeof $steps["goToTeams"] === "object" &&
+                    typeof $steps["goToTeams"].then === "function"
                   ) {
-                    $steps["goToTeamCreate"] = await $steps["goToTeamCreate"];
+                    $steps["goToTeams"] = await $steps["goToTeams"];
                   }
                 }}
                 startIcon={
@@ -600,7 +671,7 @@ function PlasmicNavbar__RenderFunc(props: {
                     sty.text__q6YEk
                   )}
                 >
-                  {"Team Market"}
+                  {"My Team"}
                 </div>
               </Button>
             </PlasmicLink__>

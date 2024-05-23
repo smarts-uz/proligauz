@@ -68,7 +68,10 @@ import {
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import { SimpleChart } from "@plasmicpkgs/react-chartjs-2";
+import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
+
+import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "../proliga_clone/PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -94,6 +97,7 @@ export type PlasmicPlayerInfo__OverridesType = {
   clubs2?: Flex__<typeof Clubs2>;
   link?: Flex__<"a"> & Partial<LinkProps>;
   chart?: Flex__<typeof SimpleChart>;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultPlayerInfoProps {}
@@ -165,6 +169,10 @@ function PlasmicPlayerInfo__RenderFunc(props: {
     $queries = new$Queries;
   }
 
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants_8Rmrqs5Mzp6I()
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -216,10 +224,18 @@ function PlasmicPlayerInfo__RenderFunc(props: {
                   displayMinHeight={"0"}
                   displayMinWidth={"0"}
                   displayWidth={"329px"}
-                  height={"214px"}
+                  height={
+                    hasVariant(globalVariants, "screen", "portrait")
+                      ? "120px"
+                      : "214px"
+                  }
                   loading={"lazy"}
                   src={$queries.query.data[0].image}
-                  width={"214px"}
+                  width={
+                    hasVariant(globalVariants, "screen", "portrait")
+                      ? "120px"
+                      : "214px"
+                  }
                 />
               </div>
               <div className={classNames(projectcss.all, sty.freeBox___0CmUs)}>
@@ -367,6 +383,11 @@ function PlasmicPlayerInfo__RenderFunc(props: {
               type={"line"}
             />
           </div>
+          <Footer
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames("__wab_instance", sty.footer)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -374,11 +395,12 @@ function PlasmicPlayerInfo__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "clubs2", "link", "chart"],
+  root: ["root", "navbar", "clubs2", "link", "chart", "footer"],
   navbar: ["navbar"],
   clubs2: ["clubs2"],
   link: ["link"],
-  chart: ["chart"]
+  chart: ["chart"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -389,6 +411,7 @@ type NodeDefaultElementType = {
   clubs2: typeof Clubs2;
   link: "a";
   chart: typeof SimpleChart;
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -472,6 +495,7 @@ export const PlasmicPlayerInfo = Object.assign(
     clubs2: makeNodeComponent("clubs2"),
     link: makeNodeComponent("link"),
     chart: makeNodeComponent("chart"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicPlayerInfo
     internalVariantProps: PlasmicPlayerInfo__VariantProps,

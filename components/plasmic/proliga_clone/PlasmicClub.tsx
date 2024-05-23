@@ -68,6 +68,7 @@ import {
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
+import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -98,6 +99,7 @@ export type PlasmicClub__OverridesType = {
   def?: Flex__<"div">;
   mid?: Flex__<"div">;
   str?: Flex__<"div">;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultClubProps {}
@@ -1292,6 +1294,11 @@ function PlasmicClub__RenderFunc(props: {
             </div>
             <div className={classNames(projectcss.all, sty.column__udFqK)} />
           </div>
+          <Footer
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames("__wab_instance", sty.footer)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1308,7 +1315,8 @@ const PlasmicDescendants = {
     "goa",
     "def",
     "mid",
-    "str"
+    "str",
+    "footer"
   ],
   navbar: ["navbar"],
   clubs2: ["clubs2"],
@@ -1317,7 +1325,8 @@ const PlasmicDescendants = {
   goa: ["goa"],
   def: ["def"],
   mid: ["mid"],
-  str: ["str"]
+  str: ["str"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1332,6 +1341,7 @@ type NodeDefaultElementType = {
   def: "div";
   mid: "div";
   str: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1419,6 +1429,7 @@ export const PlasmicClub = Object.assign(
     def: makeNodeComponent("def"),
     mid: makeNodeComponent("mid"),
     str: makeNodeComponent("str"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicClub
     internalVariantProps: PlasmicClub__VariantProps,
