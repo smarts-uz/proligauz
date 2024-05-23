@@ -76,11 +76,13 @@ export const PlasmicAvatarPlayer__VariantProps = new Array<VariantPropType>();
 export type PlasmicAvatarPlayer__ArgsType = {
   image?: React.ComponentProps<typeof PlasmicImg__>["src"];
   name?: string;
+  clickOn?: (event: any) => void;
 };
 type ArgPropType = keyof PlasmicAvatarPlayer__ArgsType;
 export const PlasmicAvatarPlayer__ArgProps = new Array<ArgPropType>(
   "image",
-  "name"
+  "name",
+  "clickOn"
 );
 
 export type PlasmicAvatarPlayer__OverridesType = {
@@ -92,6 +94,7 @@ export type PlasmicAvatarPlayer__OverridesType = {
 export interface DefaultAvatarPlayerProps {
   image?: React.ComponentProps<typeof PlasmicImg__>["src"];
   name?: string;
+  clickOn?: (event: any) => void;
   className?: string;
 }
 
@@ -166,6 +169,7 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
         displayMinWidth={"0"}
         displayWidth={"auto"}
         loading={"lazy"}
+        onClick={args.clickOn}
         src={args.image}
         width={"52.5px"}
       />

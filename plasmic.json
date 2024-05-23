@@ -1847,6 +1847,32 @@
           "cssFilePath": "plasmic/proliga/PlasmicUpdateTeamsName.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "1mEeXoy7thbq",
+          "name": "Alert",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicAlert.tsx",
+          "importSpec": {
+            "modulePath": "Alert.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicAlert.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "7ylFTnxhQETY",
+          "name": "SideBarMyTeam",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicSideBarMyTeam.tsx",
+          "importSpec": {
+            "modulePath": "SideBarMyTeam.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicSideBarMyTeam.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -1894,6 +1920,11 @@
           "id": "DSgGrZ0WQs_W",
           "name": "ChevronUpsvgIcon",
           "moduleFilePath": "plasmic/proliga/icons/PlasmicIcon__ChevronUpsvg.tsx"
+        },
+        {
+          "id": "b0eE7qHpNe6S",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/proliga/icons/PlasmicIcon__Icon2.tsx"
         }
       ],
       "images": [

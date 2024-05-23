@@ -61,6 +61,7 @@ import {
 
 import TextInput from "../../TextInput"; // plasmic-import: xwgFLXqL07mD/component
 import Button from "../../Button"; // plasmic-import: FZ59S2Z_LV2k/component
+import Alert from "../../Alert"; // plasmic-import: 1mEeXoy7thbq/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -75,24 +76,17 @@ import IconIcon from "../proliga_clone/icons/PlasmicIcon__Icon"; // plasmic-impo
 
 createPlasmicElementProxy;
 
-export type PlasmicUpdateTeamsName__VariantMembers = {
-  updateName: "updateName";
-};
-export type PlasmicUpdateTeamsName__VariantsArgs = {
-  updateName?: SingleBooleanChoiceArg<"updateName">;
-};
+export type PlasmicUpdateTeamsName__VariantMembers = {};
+export type PlasmicUpdateTeamsName__VariantsArgs = {};
 type VariantPropType = keyof PlasmicUpdateTeamsName__VariantsArgs;
-export const PlasmicUpdateTeamsName__VariantProps = new Array<VariantPropType>(
-  "updateName"
-);
+export const PlasmicUpdateTeamsName__VariantProps =
+  new Array<VariantPropType>();
 
 export type PlasmicUpdateTeamsName__ArgsType = {
-  onUpdateNameChange?: (val: any) => void;
   saveBtn?: (event: any) => void;
 };
 type ArgPropType = keyof PlasmicUpdateTeamsName__ArgsType;
 export const PlasmicUpdateTeamsName__ArgProps = new Array<ArgPropType>(
-  "onUpdateNameChange",
   "saveBtn"
 );
 
@@ -100,13 +94,12 @@ export type PlasmicUpdateTeamsName__OverridesType = {
   root?: Flex__<"div">;
   freeBox?: Flex__<"div">;
   textInput?: Flex__<typeof TextInput>;
-  button?: Flex__<typeof Button>;
+  alert?: Flex__<typeof Alert>;
+  textInput2?: Flex__<typeof TextInput>;
 };
 
 export interface DefaultUpdateTeamsNameProps {
-  onUpdateNameChange?: (val: any) => void;
   saveBtn?: (event: any) => void;
-  updateName?: SingleBooleanChoiceArg<"updateName">;
   className?: string;
 }
 
@@ -144,15 +137,13 @@ function PlasmicUpdateTeamsName__RenderFunc(props: {
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "updateName",
-        type: "writable",
-        variableType: "variant",
-
-        valueProp: "updateName",
-        onChangeProp: "onUpdateNameChange"
+        path: "textInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "textInput.value",
+        path: "textInput2.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
@@ -168,13 +159,11 @@ function PlasmicUpdateTeamsName__RenderFunc(props: {
   });
 
   return (
-    <Stack__
-      as={"div"}
+    <div
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -183,77 +172,29 @@ function PlasmicUpdateTeamsName__RenderFunc(props: {
         projectcss.plasmic_tokens,
         plasmic_antd_5_hostless_css.plasmic_tokens,
         plasmic_plasmic_rich_components_css.plasmic_tokens,
-        sty.root,
-        { [sty.rootupdateName]: hasVariant($state, "updateName", "updateName") }
+        sty.root
       )}
     >
       <div
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox, {
-          [sty.freeBoxupdateName]: hasVariant(
-            $state,
-            "updateName",
-            "updateName"
-          )
-        })}
-        onClick={async event => {
-          const $steps = {};
-
-          $steps["updateUpdateName"] = true
-            ? (() => {
-                const actionArgs = {
-                  vgroup: "updateName",
-                  operation: 2,
-                  value: "updateName"
-                };
-                return (({ vgroup, value }) => {
-                  if (typeof value === "string") {
-                    value = [value];
-                  }
-
-                  const oldValue = $stateGet($state, vgroup);
-                  $stateSet($state, vgroup, !oldValue);
-                  return !oldValue;
-                })?.apply(null, [actionArgs]);
-              })()
-            : undefined;
-          if (
-            $steps["updateUpdateName"] != null &&
-            typeof $steps["updateUpdateName"] === "object" &&
-            typeof $steps["updateUpdateName"].then === "function"
-          ) {
-            $steps["updateUpdateName"] = await $steps["updateUpdateName"];
-          }
-        }}
+        className={classNames(projectcss.all, sty.freeBox)}
       >
-        <div
+        <button
           className={classNames(
             projectcss.all,
+            projectcss.button,
             projectcss.__wab_text,
-            sty.text__gMbP,
-            {
-              [sty.textupdateName__gMbPVaVPw]: hasVariant(
-                $state,
-                "updateName",
-                "updateName"
-              )
-            }
+            sty.button__gMbP
           )}
         >
           {"Name of Team"}
-        </div>
+        </button>
       </div>
       <TextInput
         data-plasmic-name={"textInput"}
         data-plasmic-override={overrides.textInput}
-        className={classNames("__wab_instance", sty.textInput, {
-          [sty.textInputupdateName]: hasVariant(
-            $state,
-            "updateName",
-            "updateName"
-          )
-        })}
+        className={classNames("__wab_instance", sty.textInput)}
         onChange={(...eventArgs) => {
           generateStateOnChangeProp($state, ["textInput", "value"])(
             (e => e.target?.value).apply(null, eventArgs)
@@ -263,11 +204,7 @@ function PlasmicUpdateTeamsName__RenderFunc(props: {
       />
 
       <Button
-        data-plasmic-name={"button"}
-        data-plasmic-override={overrides.button}
-        className={classNames("__wab_instance", sty.button, {
-          [sty.buttonupdateName]: hasVariant($state, "updateName", "updateName")
-        })}
+        className={classNames("__wab_instance", sty.button__qtH74)}
         color={"blue"}
         onClick={args.saveBtn}
       >
@@ -281,15 +218,79 @@ function PlasmicUpdateTeamsName__RenderFunc(props: {
           {"Save"}
         </div>
       </Button>
-    </Stack__>
+      {(() => {
+        try {
+          return true;
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <Alert
+          data-plasmic-name={"alert"}
+          data-plasmic-override={overrides.alert}
+          body={
+            <React.Fragment>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__tTvXq
+                )}
+              >
+                {"Input name of your team"}
+              </div>
+              <TextInput
+                data-plasmic-name={"textInput2"}
+                data-plasmic-override={overrides.textInput2}
+                className={classNames("__wab_instance", sty.textInput2)}
+                onChange={(...eventArgs) => {
+                  generateStateOnChangeProp($state, ["textInput2", "value"])(
+                    (e => e.target?.value).apply(null, eventArgs)
+                  );
+                }}
+                placeholder={"Name"}
+                value={
+                  generateStateValueProp($state, ["textInput2", "value"]) ?? ""
+                }
+              />
+
+              <Button
+                className={classNames("__wab_instance", sty.button__fbtDb)}
+                color={"blue"}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___42Eh0
+                  )}
+                >
+                  {"Save"}
+                </div>
+              </Button>
+            </React.Fragment>
+          }
+          className={classNames("__wab_instance", sty.alert)}
+          header={null}
+          icon={null}
+        />
+      ) : null}
+    </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "textInput", "button"],
+  root: ["root", "freeBox", "textInput", "alert", "textInput2"],
   freeBox: ["freeBox"],
   textInput: ["textInput"],
-  button: ["button"]
+  alert: ["alert", "textInput2"],
+  textInput2: ["textInput2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -298,7 +299,8 @@ type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";
   textInput: typeof TextInput;
-  button: typeof Button;
+  alert: typeof Alert;
+  textInput2: typeof TextInput;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -363,7 +365,8 @@ export const PlasmicUpdateTeamsName = Object.assign(
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
     textInput: makeNodeComponent("textInput"),
-    button: makeNodeComponent("button"),
+    alert: makeNodeComponent("alert"),
+    textInput2: makeNodeComponent("textInput2"),
 
     // Metadata about props expected for PlasmicUpdateTeamsName
     internalVariantProps: PlasmicUpdateTeamsName__VariantProps,
