@@ -1873,6 +1873,19 @@
           "cssFilePath": "plasmic/proliga/PlasmicSideBarMyTeam.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "NaQtMjgilBY9",
+          "name": "PlayerPickerRow",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicPlayerPickerRow.tsx",
+          "importSpec": {
+            "modulePath": "PlayerPickerRow.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicPlayerPickerRow.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

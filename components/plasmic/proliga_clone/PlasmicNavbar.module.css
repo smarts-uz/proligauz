@@ -18,7 +18,7 @@
   flex-direction: row;
   width: 100%;
   position: relative;
-  background: #11111f;
+  background: var(--token-qXSDjipMXR1n);
   min-width: 0;
   padding: 16px;
 }

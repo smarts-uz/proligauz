@@ -70,6 +70,7 @@ import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import TextInput from "../../TextInput"; // plasmic-import: xwgFLXqL07mD/component
 import Select from "../../Select"; // plasmic-import: bCMc_ebYmgPo/component
 import PlayerAction from "../../PlayerAction"; // plasmic-import: oJ05rQ2UYoHy/component
+import PlayerPickerRow from "../../PlayerPickerRow"; // plasmic-import: NaQtMjgilBY9/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "../proliga_clone/PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
@@ -105,6 +106,7 @@ export type PlasmicTeams2Market__OverridesType = {
   type?: Flex__<typeof Select>;
   playerCount?: Flex__<typeof Select>;
   playerAction?: Flex__<typeof PlayerAction>;
+  playerPickerRow?: Flex__<typeof PlayerPickerRow>;
 };
 
 export interface DefaultTeams2MarketProps {}
@@ -505,279 +507,15 @@ function PlasmicTeams2Market__RenderFunc(props: {
             const currentItem = __plasmic_item_0;
             const currentIndex = __plasmic_idx_0;
             return (
-              <div
-                className={classNames(projectcss.all, sty.freeBox__nsFJd)}
+              <PlayerPickerRow
+                data-plasmic-name={"playerPickerRow"}
+                data-plasmic-override={overrides.playerPickerRow}
+                className={classNames("__wab_instance", sty.playerPickerRow)}
+                club={$queries.club}
+                currentItem={currentItem}
                 key={currentIndex}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["postgresCreate"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          dataOp: {
-                            sourceId: "8cdHi4ivRUEkK6qbegQevF",
-                            opId: "f569081c-7890-4699-bbd4-6fd4d259a37b",
-                            userArgs: {
-                              variables: [
-                                currentItem.id,
-                                currentItem.position,
-                                $queries.userTeam.data[0].id
-                              ]
-                            },
-                            cacheKey: null,
-                            invalidatedKeys: ["plasmic_refresh_all"],
-                            roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
-                          }
-                        };
-                        return (async ({ dataOp, continueOnError }) => {
-                          try {
-                            const response = await executePlasmicDataOp(
-                              dataOp,
-                              {
-                                userAuthToken: dataSourcesCtx?.userAuthToken,
-                                user: dataSourcesCtx?.user
-                              }
-                            );
-                            await plasmicInvalidate(dataOp.invalidatedKeys);
-                            return response;
-                          } catch (e) {
-                            if (!continueOnError) {
-                              throw e;
-                            }
-                            return e;
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["postgresCreate"] != null &&
-                    typeof $steps["postgresCreate"] === "object" &&
-                    typeof $steps["postgresCreate"].then === "function"
-                  ) {
-                    $steps["postgresCreate"] = await $steps["postgresCreate"];
-                  }
-                }}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__tfRy3)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  height={"40px"}
-                  loading={"lazy"}
-                  src={(() => {
-                    try {
-                      return currentItem.image;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "https://assets-fantasy.llt-services.com/players/t175/p53/256x256/p53_t175_1_001_000.png";
-                      }
-                      throw e;
-                    }
-                  })()}
-                  width={"40px"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ps9Vp
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return currentItem.name;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "Oblak";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__mCv0P
-                  )}
-                  component={Link}
-                  href={"https://www.plasmic.app/"}
-                  platform={"nextjs"}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return currentItem.position;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "GOA";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </PlasmicLink__>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__tyGTy)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"14px"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/proliga_clone/images/pngtreeEuroSymbolCurrencyPngImage3974231Png2.png",
-                    fullWidth: 512,
-                    fullHeight: 512,
-                    aspectRatio: undefined
-                  }}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zuOh2
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return currentItem.market_value;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "1.920.356";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__lgZ6)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  height={"21.73px"}
-                  loading={"lazy"}
-                  src={(() => {
-                    try {
-                      return $queries.club.data[currentItem.club_id - 1]
-                        .flag_url;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "https://assets-fantasy.llt-services.com/teambadge/t175/color/t175_atletico-de-madrid.png";
-                      }
-                      throw e;
-                    }
-                  })()}
-                  width={"21px"}
-                />
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eWsH
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $queries.club.data[currentItem.club_id - 1].name;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "Atl\u00e9tico De Madrid";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ereL0
-                  )}
-                >
-                  {"FSYP"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___0DgTt
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return currentItem.FSYP;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "93";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___9Qgou
-                  )}
-                >
-                  {"FSYP"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gvG7
-                  )}
-                >
-                  {"164"}
-                </div>
-              </div>
+                userTeam={$queries.userTeam}
+              />
             );
           })}
         </div>
@@ -1012,7 +750,8 @@ const PlasmicDescendants = {
     "clubSelect",
     "type",
     "playerCount",
-    "playerAction"
+    "playerAction",
+    "playerPickerRow"
   ],
   navbar: ["navbar"],
   columns: [
@@ -1028,7 +767,8 @@ const PlasmicDescendants = {
   clubSelect: ["clubSelect"],
   type: ["type"],
   playerCount: ["playerCount"],
-  playerAction: ["playerAction"]
+  playerAction: ["playerAction"],
+  playerPickerRow: ["playerPickerRow"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1043,6 +783,7 @@ type NodeDefaultElementType = {
   type: typeof Select;
   playerCount: typeof Select;
   playerAction: typeof PlayerAction;
+  playerPickerRow: typeof PlayerPickerRow;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1130,6 +871,7 @@ export const PlasmicTeams2Market = Object.assign(
     type: makeNodeComponent("type"),
     playerCount: makeNodeComponent("playerCount"),
     playerAction: makeNodeComponent("playerAction"),
+    playerPickerRow: makeNodeComponent("playerPickerRow"),
 
     // Metadata about props expected for PlasmicTeams2Market
     internalVariantProps: PlasmicTeams2Market__VariantProps,

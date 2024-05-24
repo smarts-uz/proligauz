@@ -104,6 +104,7 @@ export const PlasmicMarketMember__ArgProps = new Array<ArgPropType>(
 export type PlasmicMarketMember__OverridesType = {
   root?: Flex__<"div">;
   linkToPlayerInfo?: Flex__<"a"> & Partial<LinkProps>;
+  freeBox?: Flex__<"div">;
 };
 
 export interface DefaultMarketMemberProps {
@@ -227,217 +228,6 @@ function PlasmicMarketMember__RenderFunc(props: {
         }
       )}
     >
-      <div
-        className={classNames(projectcss.all, sty.freeBox__xd44L)}
-        onClick={args.upadateclick}
-      >
-        <div className={classNames(projectcss.all, sty.freeBox__lCzs2)}>
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img___9Qb9, {
-              [sty.imgborjaMayoral___9Qb9WU1Ba]: hasVariant(
-                $state,
-                "borjaMayoral",
-                "borjaMayoral"
-              ),
-              [sty.imgmendez___9Qb9J9I92]: hasVariant(
-                $state,
-                "mendez",
-                "mendez"
-              ),
-              [sty.imgpedri___9Qb9DZ8Ma]: hasVariant($state, "pedri", "pedri")
-            })}
-            displayHeight={"112px"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"104px"}
-            loading={"lazy"}
-            src={args.image}
-          />
-
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__sZ9LF, {
-              [sty.imgborjaMayoral__sZ9LFwU1Ba]: hasVariant(
-                $state,
-                "borjaMayoral",
-                "borjaMayoral"
-              ),
-              [sty.imgmendez__sZ9LFj9I92]: hasVariant(
-                $state,
-                "mendez",
-                "mendez"
-              ),
-              [sty.imgpedri__sZ9LFdZ8Ma]: hasVariant($state, "pedri", "pedri")
-            })}
-            displayHeight={"28px"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"28px"}
-            loading={"lazy"}
-            src={args.clubImage}
-          />
-        </div>
-        <div className={classNames(projectcss.all, sty.freeBox__z6CCz)}>
-          <div className={classNames(projectcss.all, sty.freeBox__bXyWd)}>
-            <PlasmicLink__
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link___0SQvQ,
-                {
-                  [sty.linkmendez___0SQvQj9I92]: hasVariant(
-                    $state,
-                    "mendez",
-                    "mendez"
-                  )
-                }
-              )}
-              component={Link}
-              href={"https://www.plasmic.app/"}
-              platform={"nextjs"}
-            >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return $props.position;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "DEF";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </PlasmicLink__>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__i1Dba,
-                {
-                  [sty.textborjaMayoral__i1DbawU1Ba]: hasVariant(
-                    $state,
-                    "borjaMayoral",
-                    "borjaMayoral"
-                  ),
-                  [sty.textmendez__i1Dbaj9I92]: hasVariant(
-                    $state,
-                    "mendez",
-                    "mendez"
-                  ),
-                  [sty.textpedri__i1DbadZ8Ma]: hasVariant(
-                    $state,
-                    "pedri",
-                    "pedri"
-                  )
-                }
-              )}
-            >
-              {hasVariant($state, "mendez", "mendez") ? (
-                "Mendez"
-              ) : hasVariant($state, "pedri", "pedri") ? (
-                "Pedri"
-              ) : hasVariant($state, "borjaMayoral", "borjaMayoral") ? (
-                "Borja "
-              ) : (
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $props.name;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "Militao";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              )}
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__vyio0)}>
-            <div className={classNames(projectcss.all, sty.freeBox__ujWbH)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__naf6R
-                )}
-              >
-                {"previous value\n4.306.249"}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={classNames(projectcss.all, sty.freeBox___9Wjcv)}>
-          <div className={classNames(projectcss.all, sty.freeBox___27Ek1)}>
-            <PlasmicLink__
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link__e8O2B,
-                {
-                  [sty.linkborjaMayoral__e8O2BwU1Ba]: hasVariant(
-                    $state,
-                    "borjaMayoral",
-                    "borjaMayoral"
-                  ),
-                  [sty.linkmendez__e8O2Bj9I92]: hasVariant(
-                    $state,
-                    "mendez",
-                    "mendez"
-                  ),
-                  [sty.linkpedri__e8O2BdZ8Ma]: hasVariant(
-                    $state,
-                    "pedri",
-                    "pedri"
-                  )
-                }
-              )}
-              component={Link}
-              href={"https://www.plasmic.app/"}
-              platform={"nextjs"}
-            >
-              {hasVariant($state, "pedri", "pedri")
-                ? "35%"
-                : hasVariant($state, "borjaMayoral", "borjaMayoral")
-                ? "16%"
-                : "39%"}
-            </PlasmicLink__>
-          </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___86Ym
-            )}
-          >
-            {"Current value"}
-          </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__xdV1H
-            )}
-          >
-            {"6.007.170"}
-          </div>
-        </div>
-      </div>
       <PlasmicLink__
         data-plasmic-name={"linkToPlayerInfo"}
         data-plasmic-override={overrides.linkToPlayerInfo}
@@ -454,13 +244,19 @@ function PlasmicMarketMember__RenderFunc(props: {
       >
         {"VIEW PROFILE"}
       </PlasmicLink__>
+      <div
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(projectcss.all, sty.freeBox)}
+      />
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "linkToPlayerInfo"],
-  linkToPlayerInfo: ["linkToPlayerInfo"]
+  root: ["root", "linkToPlayerInfo", "freeBox"],
+  linkToPlayerInfo: ["linkToPlayerInfo"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -468,6 +264,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   linkToPlayerInfo: "a";
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -531,6 +328,7 @@ export const PlasmicMarketMember = Object.assign(
   {
     // Helper components rendering sub-elements
     linkToPlayerInfo: makeNodeComponent("linkToPlayerInfo"),
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicMarketMember
     internalVariantProps: PlasmicMarketMember__VariantProps,

@@ -72,6 +72,7 @@ import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import AvatarPlayer from "../../AvatarPlayer"; // plasmic-import: 4QnaRcOLXj0D/component
 import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
+import PlayerPickerRow from "../../PlayerPickerRow"; // plasmic-import: NaQtMjgilBY9/component
 import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
 import SideBarMyTeam from "../../SideBarMyTeam"; // plasmic-import: 7ylFTnxhQETY/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
@@ -108,6 +109,7 @@ export type PlasmicTeams__OverridesType = {
   mid?: Flex__<"div">;
   str?: Flex__<"div">;
   soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
+  playerPickerRow?: Flex__<typeof PlayerPickerRow>;
   marketMember?: Flex__<typeof MarketMember>;
   sideBarMyTeam?: Flex__<typeof SideBarMyTeam>;
   footer?: Flex__<typeof Footer>;
@@ -1295,6 +1297,119 @@ function PlasmicTeams__RenderFunc(props: {
                 const currentItem = __plasmic_item_0;
                 const currentIndex = __plasmic_idx_0;
                 return (
+                  <PlayerPickerRow
+                    data-plasmic-name={"playerPickerRow"}
+                    data-plasmic-override={overrides.playerPickerRow}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.playerPickerRow
+                    )}
+                    clubImage={(() => {
+                      try {
+                        return $queries.clubs.data[currentItem.club_id - 1]
+                          .flag_url;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return {
+                            src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
+                            fullWidth: 690,
+                            fullHeight: 690,
+                            aspectRatio: undefined
+                          };
+                        }
+                        throw e;
+                      }
+                    })()}
+                    firstImage={(() => {
+                      try {
+                        return currentItem.image;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "https://assets-fantasy.llt-services.com/players/t175/p53/256x256/p53_t175_1_001_000.png";
+                        }
+                        throw e;
+                      }
+                    })()}
+                    fsyp={(() => {
+                      try {
+                        return currentItem.FSYP;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    key={currentIndex}
+                    name={(() => {
+                      try {
+                        return currentItem.name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    position={(() => {
+                      try {
+                        return currentItem.position;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    price={(() => {
+                      try {
+                        return currentItem.market_value;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                  />
+                );
+              })}
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                (() => {
+                  try {
+                    return $queries.pickplayer.data;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()
+              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
                   <MarketMember
                     data-plasmic-name={"marketMember"}
                     data-plasmic-override={overrides.marketMember}
@@ -1470,6 +1585,7 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
+    "playerPickerRow",
     "marketMember",
     "sideBarMyTeam",
     "footer"
@@ -1484,6 +1600,7 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
+    "playerPickerRow",
     "marketMember"
   ],
   _532: ["_532", "button"],
@@ -1493,6 +1610,7 @@ const PlasmicDescendants = {
   mid: ["mid"],
   str: ["str"],
   soccerPlaceMens2: ["soccerPlaceMens2"],
+  playerPickerRow: ["playerPickerRow"],
   marketMember: ["marketMember"],
   sideBarMyTeam: ["sideBarMyTeam"],
   footer: ["footer"]
@@ -1511,6 +1629,7 @@ type NodeDefaultElementType = {
   mid: "div";
   str: "div";
   soccerPlaceMens2: typeof SoccerPlaceMens2;
+  playerPickerRow: typeof PlayerPickerRow;
   marketMember: typeof MarketMember;
   sideBarMyTeam: typeof SideBarMyTeam;
   footer: typeof Footer;
@@ -1602,6 +1721,7 @@ export const PlasmicTeams = Object.assign(
     mid: makeNodeComponent("mid"),
     str: makeNodeComponent("str"),
     soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
+    playerPickerRow: makeNodeComponent("playerPickerRow"),
     marketMember: makeNodeComponent("marketMember"),
     sideBarMyTeam: makeNodeComponent("sideBarMyTeam"),
     footer: makeNodeComponent("footer"),
