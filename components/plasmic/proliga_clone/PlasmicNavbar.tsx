@@ -610,6 +610,46 @@ function PlasmicNavbar__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
+                  $steps["postgresCreate"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          dataOp: {
+                            sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                            opId: "12a3b99b-5bd6-46e2-9b24-5e4a0d8d4eca",
+                            userArgs: {},
+                            cacheKey: null,
+                            invalidatedKeys: ["plasmic_refresh_all"],
+                            roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                          }
+                        };
+                        return (async ({ dataOp, continueOnError }) => {
+                          try {
+                            const response = await executePlasmicDataOp(
+                              dataOp,
+                              {
+                                userAuthToken: dataSourcesCtx?.userAuthToken,
+                                user: dataSourcesCtx?.user
+                              }
+                            );
+                            await plasmicInvalidate(dataOp.invalidatedKeys);
+                            return response;
+                          } catch (e) {
+                            if (!continueOnError) {
+                              throw e;
+                            }
+                            return e;
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["postgresCreate"] != null &&
+                    typeof $steps["postgresCreate"] === "object" &&
+                    typeof $steps["postgresCreate"].then === "function"
+                  ) {
+                    $steps["postgresCreate"] = await $steps["postgresCreate"];
+                  }
+
                   $steps["invokeGlobalAction"] = true
                     ? (() => {
                         const actionArgs = {
