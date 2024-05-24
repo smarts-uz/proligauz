@@ -501,21 +501,6 @@
   max-width: 100%;
   position: relative;
 }
-.marketMember:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  height: 158px;
-  width: 370px;
-  margin-bottom: 0px;
-  transition-property: all;
-  transition-duration: 1s;
-  margin-top: calc(0px + 10px) !important;
-  margin-right: 0px;
-  margin-left: 0px;
-  flex-shrink: 0;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 1s;
-}
 .sideBarMyTeam:global(.__wab_instance) {
   position: fixed;
   top: 4px;

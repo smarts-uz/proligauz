@@ -59,13 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
-import {
-  executePlasmicDataOp,
-  usePlasmicDataOp,
-  usePlasmicInvalidate
-} from "@plasmicapp/react-web/lib/data-sources";
-
 import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "../proliga_clone/PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -84,44 +77,37 @@ export const PlasmicPlayerPickerRow__VariantProps =
   new Array<VariantPropType>();
 
 export type PlasmicPlayerPickerRow__ArgsType = {
-  club?: any;
-  userTeam?: any;
-  currentItem?: any;
   clubImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
-  firstImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
   position?: string;
   fsyp?: string;
   name?: string;
   price?: string;
+  update?: (event: any) => void;
+  firstImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
 };
 type ArgPropType = keyof PlasmicPlayerPickerRow__ArgsType;
 export const PlasmicPlayerPickerRow__ArgProps = new Array<ArgPropType>(
-  "club",
-  "userTeam",
-  "currentItem",
   "clubImage",
-  "firstImage",
   "position",
   "fsyp",
   "name",
-  "price"
+  "price",
+  "update",
+  "firstImage"
 );
 
 export type PlasmicPlayerPickerRow__OverridesType = {
   root?: Flex__<"div">;
-  link?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultPlayerPickerRowProps {
-  club?: any;
-  userTeam?: any;
-  currentItem?: any;
   clubImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
-  firstImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
   position?: string;
   fsyp?: string;
   name?: string;
   price?: string;
+  update?: (event: any) => void;
+  firstImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
   className?: string;
 }
 
@@ -152,19 +138,6 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
             fullHeight: 690,
             aspectRatio: undefined
           },
-          firstImage: (() => {
-            try {
-              return $props.currentItem.image;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "https://assets-fantasy.llt-services.com/players/t175/p53/256x256/p53_t175_1_001_000.png";
-              }
-              throw e;
-            }
-          })(),
           position: "DEF",
           fsyp: "0",
           price: "0"
@@ -185,9 +158,6 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = useCurrentUser?.() || {};
-
-  const dataSourcesCtx = usePlasmicDataSourceContext();
-  const plasmicInvalidate = usePlasmicInvalidate();
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants_8Rmrqs5Mzp6I()
@@ -211,52 +181,7 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root
       )}
-      onClick={async event => {
-        const $steps = {};
-
-        $steps["postgresCreate"] = true
-          ? (() => {
-              const actionArgs = {
-                dataOp: {
-                  sourceId: "8cdHi4ivRUEkK6qbegQevF",
-                  opId: "f569081c-7890-4699-bbd4-6fd4d259a37b",
-                  userArgs: {
-                    variables: [
-                      $props.currentItem.id,
-                      $props.currentItem.position,
-                      $props.userTeam.data[0].id
-                    ]
-                  },
-                  cacheKey: null,
-                  invalidatedKeys: ["plasmic_refresh_all"],
-                  roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
-                }
-              };
-              return (async ({ dataOp, continueOnError }) => {
-                try {
-                  const response = await executePlasmicDataOp(dataOp, {
-                    userAuthToken: dataSourcesCtx?.userAuthToken,
-                    user: dataSourcesCtx?.user
-                  });
-                  await plasmicInvalidate(dataOp.invalidatedKeys);
-                  return response;
-                } catch (e) {
-                  if (!continueOnError) {
-                    throw e;
-                  }
-                  return e;
-                }
-              })?.apply(null, [actionArgs]);
-            })()
-          : undefined;
-        if (
-          $steps["postgresCreate"] != null &&
-          typeof $steps["postgresCreate"] === "object" &&
-          typeof $steps["postgresCreate"].then === "function"
-        ) {
-          $steps["postgresCreate"] = await $steps["postgresCreate"];
-        }
-      }}
+      onClick={args.update}
     >
       <PlasmicImg__
         alt={""}
@@ -296,18 +221,12 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
           })()}
         </React.Fragment>
       </div>
-      <PlasmicLink__
-        data-plasmic-name={"link"}
-        data-plasmic-override={overrides.link}
+      <div
         className={classNames(
           projectcss.all,
-          projectcss.a,
           projectcss.__wab_text,
-          sty.link
+          sty.text__e1ZrQ
         )}
-        component={Link}
-        href={"https://www.plasmic.app/"}
-        platform={"nextjs"}
       >
         <React.Fragment>
           {(() => {
@@ -324,7 +243,7 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
             }
           })()}
         </React.Fragment>
-      </PlasmicLink__>
+      </div>
       <PlasmicImg__
         alt={""}
         className={classNames(sty.img__oDyDd)}
@@ -418,15 +337,13 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "link"],
-  link: ["link"]
+  root: ["root"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -489,7 +406,6 @@ export const PlasmicPlayerPickerRow = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicPlayerPickerRow
     internalVariantProps: PlasmicPlayerPickerRow__VariantProps,

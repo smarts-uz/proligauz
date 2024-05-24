@@ -73,7 +73,6 @@ import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import AvatarPlayer from "../../AvatarPlayer"; // plasmic-import: 4QnaRcOLXj0D/component
 import SoccerPlaceMens2 from "../../SoccerPlaceMens2"; // plasmic-import: xodLqMOhDs29/component
 import PlayerPickerRow from "../../PlayerPickerRow"; // plasmic-import: NaQtMjgilBY9/component
-import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
 import SideBarMyTeam from "../../SideBarMyTeam"; // plasmic-import: 7ylFTnxhQETY/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -110,7 +109,6 @@ export type PlasmicTeams__OverridesType = {
   str?: Flex__<"div">;
   soccerPlaceMens2?: Flex__<typeof SoccerPlaceMens2>;
   playerPickerRow?: Flex__<typeof PlayerPickerRow>;
-  marketMember?: Flex__<typeof MarketMember>;
   sideBarMyTeam?: Flex__<typeof SideBarMyTeam>;
   footer?: Flex__<typeof Footer>;
 };
@@ -181,33 +179,33 @@ function PlasmicTeams__RenderFunc(props: {
     teamP: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "f2c281a8-38ed-48b3-ba38-e7231daa5b27",
+        opId: "0e79ed19-4a3b-4216-a233-9855320d2693",
         userArgs: {},
-        cacheKey: `plasmic.$.f2c281a8-38ed-48b3-ba38-e7231daa5b27.$.`,
+        cacheKey: `plasmic.$.0e79ed19-4a3b-4216-a233-9855320d2693.$.`,
         invalidatedKeys: null,
-        roleId: null
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
     }),
     goa: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "41745ec7-b280-49d3-b0ed-c347cb66f7ed",
+        opId: "29d74613-54ba-4cc4-be49-65113419c637",
         userArgs: {
           filters: [$queries.teamP.data[0].id]
         },
-        cacheKey: `plasmic.$.41745ec7-b280-49d3-b0ed-c347cb66f7ed.$.`,
+        cacheKey: `plasmic.$.29d74613-54ba-4cc4-be49-65113419c637.$.`,
         invalidatedKeys: null,
-        roleId: null
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
     }),
     player: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "599769b6-a1bd-4576-8520-bce68660a78f",
+        opId: "1d0b7867-0ce2-4787-a529-89ca47095a81",
         userArgs: {},
-        cacheKey: `plasmic.$.599769b6-a1bd-4576-8520-bce68660a78f.$.`,
+        cacheKey: `plasmic.$.1d0b7867-0ce2-4787-a529-89ca47095a81.$.`,
         invalidatedKeys: null,
-        roleId: null
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
     }),
     def: usePlasmicDataOp(() => {
@@ -261,11 +259,11 @@ function PlasmicTeams__RenderFunc(props: {
     clubs: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "e3473a79-f02a-4518-82ce-04e07fa19d37",
+        opId: "27028f27-27b7-4991-8695-0bfb15c4a008",
         userArgs: {},
-        cacheKey: `plasmic.$.e3473a79-f02a-4518-82ce-04e07fa19d37.$.`,
+        cacheKey: `plasmic.$.27028f27-27b7-4991-8695-0bfb15c4a008.$.`,
         invalidatedKeys: null,
-        roleId: null
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
     }),
     pickplayer: usePlasmicDataOp(() => {
@@ -607,7 +605,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                    return "https://fantasy.premierleague.com/dist/img/shirts/standard/shirt_0-66.png";
                                   }
                                   throw e;
                                 }
@@ -787,7 +785,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                    return "https://fantasy.premierleague.com/dist/img/shirts/standard/shirt_0-66.png";
                                   }
                                   throw e;
                                 }
@@ -966,7 +964,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                    return "https://fantasy.premierleague.com/dist/img/shirts/standard/shirt_0-66.png";
                                   }
                                   throw e;
                                 }
@@ -982,7 +980,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "Player";
+                                    return ``;
                                   }
                                   throw e;
                                 }
@@ -1145,7 +1143,7 @@ function PlasmicTeams__RenderFunc(props: {
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "https://i.tribune-group.com/0001/a68a4daf/resize-crop(w=500;h=500):sharpen(level=0):output(format=gif)/wp-content/themes/dt/images/no-user.gif";
+                                    return "https://fantasy.premierleague.com/dist/img/shirts/standard/shirt_0-66.png";
                                   }
                                   throw e;
                                 }
@@ -1304,25 +1302,6 @@ function PlasmicTeams__RenderFunc(props: {
                       "__wab_instance",
                       sty.playerPickerRow
                     )}
-                    clubImage={(() => {
-                      try {
-                        return $queries.clubs.data[currentItem.club_id - 1]
-                          .flag_url;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return {
-                            src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
-                            fullWidth: 690,
-                            fullHeight: 690,
-                            aspectRatio: undefined
-                          };
-                        }
-                        throw e;
-                      }
-                    })()}
                     firstImage={(() => {
                       try {
                         return currentItem.image;
@@ -1331,7 +1310,7 @@ function PlasmicTeams__RenderFunc(props: {
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "https://assets-fantasy.llt-services.com/players/t175/p53/256x256/p53_t175_1_001_000.png";
+                          return undefined;
                         }
                         throw e;
                       }
@@ -1389,96 +1368,7 @@ function PlasmicTeams__RenderFunc(props: {
                         throw e;
                       }
                     })()}
-                  />
-                );
-              })}
-              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                (() => {
-                  try {
-                    return $queries.pickplayer.data;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return [];
-                    }
-                    throw e;
-                  }
-                })()
-              ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                const currentItem = __plasmic_item_0;
-                const currentIndex = __plasmic_idx_0;
-                return (
-                  <MarketMember
-                    data-plasmic-name={"marketMember"}
-                    data-plasmic-override={overrides.marketMember}
-                    className={classNames("__wab_instance", sty.marketMember)}
-                    clubImage={(() => {
-                      try {
-                        return $queries.clubs.data[currentItem.club_id - 1]
-                          .flag_url;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return {
-                            src: "/plasmic/proliga_clone/images/realMadridpng.png",
-                            fullWidth: 80,
-                            fullHeight: 104,
-                            aspectRatio: undefined
-                          };
-                        }
-                        throw e;
-                      }
-                    })()}
-                    image={(() => {
-                      try {
-                        return currentItem.image;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return {
-                            src: "/plasmic/proliga_clone/images/rodrygopng.png",
-                            fullWidth: 256,
-                            fullHeight: 256,
-                            aspectRatio: undefined
-                          };
-                        }
-                        throw e;
-                      }
-                    })()}
-                    key={currentIndex}
-                    name={(() => {
-                      try {
-                        return currentItem.name;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
-                    position={(() => {
-                      try {
-                        return currentItem.position;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
-                    upadateclick={async event => {
+                    update={async event => {
                       const $steps = {};
 
                       $steps["postgresUpdateById"] = true
@@ -1486,12 +1376,12 @@ function PlasmicTeams__RenderFunc(props: {
                             const actionArgs = {
                               dataOp: {
                                 sourceId: "8cdHi4ivRUEkK6qbegQevF",
-                                opId: "9ee76f38-2ef6-47a5-a1ae-71e131b3105b",
+                                opId: "8e3f9ff5-776d-4f51-8e60-51b87cc248bb",
                                 userArgs: {
                                   keys: [$state.teamplayerstate],
                                   variables: [
-                                    currentItem.position,
-                                    currentItem.id
+                                    currentItem.id,
+                                    currentItem.position
                                   ]
                                 },
                                 cacheKey: null,
@@ -1529,27 +1419,6 @@ function PlasmicTeams__RenderFunc(props: {
                           "postgresUpdateById"
                         ];
                       }
-
-                      $steps["refreshData"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              queryInvalidation: ["plasmic_refresh_all"]
-                            };
-                            return (async ({ queryInvalidation }) => {
-                              if (!queryInvalidation) {
-                                return;
-                              }
-                              await plasmicInvalidate(queryInvalidation);
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["refreshData"] != null &&
-                        typeof $steps["refreshData"] === "object" &&
-                        typeof $steps["refreshData"].then === "function"
-                      ) {
-                        $steps["refreshData"] = await $steps["refreshData"];
-                      }
                     }}
                   />
                 );
@@ -1586,7 +1455,6 @@ const PlasmicDescendants = {
     "str",
     "soccerPlaceMens2",
     "playerPickerRow",
-    "marketMember",
     "sideBarMyTeam",
     "footer"
   ],
@@ -1600,8 +1468,7 @@ const PlasmicDescendants = {
     "mid",
     "str",
     "soccerPlaceMens2",
-    "playerPickerRow",
-    "marketMember"
+    "playerPickerRow"
   ],
   _532: ["_532", "button"],
   button: ["button"],
@@ -1611,7 +1478,6 @@ const PlasmicDescendants = {
   str: ["str"],
   soccerPlaceMens2: ["soccerPlaceMens2"],
   playerPickerRow: ["playerPickerRow"],
-  marketMember: ["marketMember"],
   sideBarMyTeam: ["sideBarMyTeam"],
   footer: ["footer"]
 } as const;
@@ -1630,7 +1496,6 @@ type NodeDefaultElementType = {
   str: "div";
   soccerPlaceMens2: typeof SoccerPlaceMens2;
   playerPickerRow: typeof PlayerPickerRow;
-  marketMember: typeof MarketMember;
   sideBarMyTeam: typeof SideBarMyTeam;
   footer: typeof Footer;
 };
@@ -1695,7 +1560,7 @@ function withPlasmicPageGuard<P extends object>(
 ) {
   const PageGuard: React.FC<P> = props => (
     <PlasmicPageGuard__
-      minRole={null}
+      minRole={"f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"}
       appId={"tDWy3GXn2mzd9e2xUaPdmu"}
       authorizeEndpoint={"https://studio.plasmic.app/authorize"}
       canTriggerLogin={false}
@@ -1722,7 +1587,6 @@ export const PlasmicTeams = Object.assign(
     str: makeNodeComponent("str"),
     soccerPlaceMens2: makeNodeComponent("soccerPlaceMens2"),
     playerPickerRow: makeNodeComponent("playerPickerRow"),
-    marketMember: makeNodeComponent("marketMember"),
     sideBarMyTeam: makeNodeComponent("sideBarMyTeam"),
     footer: makeNodeComponent("footer"),
 

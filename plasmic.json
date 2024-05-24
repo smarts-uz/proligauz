@@ -1886,6 +1886,19 @@
           "cssFilePath": "plasmic/proliga/PlasmicPlayerPickerRow.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "KNRpEkS9bXP0",
+          "name": "MessageCard",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicMessageCard.tsx",
+          "importSpec": {
+            "modulePath": "MessageCard.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicMessageCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

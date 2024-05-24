@@ -63,7 +63,8 @@ import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import Clubs2 from "../../Clubs2"; // plasmic-import: 3EueAFP_3sEI/component
 import SearchComponent from "../../SearchComponent"; // plasmic-import: mmk_GiTXUtux/component
 import SoccerPlaceMens from "../../SoccerPlaceMens"; // plasmic-import: w6mcybgJxhpK/component
-import MarketMember from "../../MarketMember"; // plasmic-import: 4Bc2YM6MYzzT/component
+import MessageCard from "../../MessageCard"; // plasmic-import: KNRpEkS9bXP0/component
+import Select from "../../Select"; // plasmic-import: bCMc_ebYmgPo/component
 import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
@@ -94,6 +95,10 @@ export type PlasmicHomepage__OverridesType = {
   searchComponent?: Flex__<typeof SearchComponent>;
   columns?: Flex__<"div">;
   soccerPlaceMens?: Flex__<typeof SoccerPlaceMens>;
+  select?: Flex__<typeof Select>;
+  select2?: Flex__<typeof Select>;
+  select5?: Flex__<typeof Select>;
+  select6?: Flex__<typeof Select>;
   footer?: Flex__<typeof Footer>;
 };
 
@@ -129,6 +134,42 @@ function PlasmicHomepage__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = useCurrentUser?.() || {};
+
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "select.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "select2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "select5.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "select6.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   return (
     <React.Fragment>
@@ -285,7 +326,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 </PlasmicLink__>
               </Stack__>
             </div>
-            <div className={classNames(projectcss.all, sty.column___7Ggbf)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.column___7Ggbf)}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -293,82 +338,35 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.text__ru5GL
                 )}
               >
-                {"Market"}
+                {"\u041f\u0420\u0410\u0412\u0418\u041b\u0418!"}
               </div>
-              <MarketMember
+              <MessageCard
+                className={classNames("__wab_instance", sty.messageCard__hDvns)}
+              />
+
+              <MessageCard
                 className={classNames(
                   "__wab_instance",
-                  sty.marketMember___2JEJo
+                  sty.messageCard___4RSaU
                 )}
               />
 
-              <MarketMember
-                borjaMayoral={true}
+              <MessageCard
                 className={classNames(
                   "__wab_instance",
-                  sty.marketMember__pqCvr
+                  sty.messageCard___2ONt1
                 )}
               />
 
-              <MarketMember
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__sRxMk
-                )}
+              <MessageCard
+                className={classNames("__wab_instance", sty.messageCard__apEks)}
               />
-
-              <MarketMember
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__pxnig
-                )}
-                mendez={true}
-              />
-
-              <MarketMember
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__jbBtg
-                )}
-              />
-
-              <MarketMember
-                borjaMayoral={true}
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__i6QhO
-                )}
-              />
-
-              <MarketMember
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember___6HLlc
-                )}
-              />
-
-              <MarketMember
-                className={classNames(
-                  "__wab_instance",
-                  sty.marketMember__kSyqu
-                )}
-              />
-
-              <PlasmicLink__
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__lWzaV
-                )}
-                component={Link}
-                href={"https://www.plasmic.app/"}
-                platform={"nextjs"}
-              >
-                {"go to transfer market"}
-              </PlasmicLink__>
-            </div>
-            <div className={classNames(projectcss.all, sty.column__ljt9J)}>
+            </Stack__>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.column__ljt9J)}
+            >
               <div
                 className={classNames(
                   projectcss.all,
@@ -378,29 +376,115 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 {"\u041f\u0420\u0410\u0412\u0418\u041b\u0418!"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__nYQjH
-                )}
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__nZk)}
               >
-                {"no data"}
-              </div>
-              <PlasmicLink__
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__rrSDg
-                )}
-                component={Link}
-                href={"https://www.plasmic.app/"}
-                platform={"nextjs"}
+                <Select
+                  data-plasmic-name={"select"}
+                  data-plasmic-override={overrides.select}
+                  className={classNames("__wab_instance", sty.select)}
+                  onChange={(...eventArgs) => {
+                    generateStateOnChangeProp($state, ["select", "value"])(
+                      eventArgs[0]
+                    );
+                  }}
+                  options={[
+                    { value: "option1", label: "Option 1" },
+                    { value: "option2", label: "Option 2" }
+                  ]}
+                  placeholder={
+                    "-\u0412\u0441\u0435 \u043a\u043b\u0443\u0431\u044b"
+                  }
+                  value={generateStateValueProp($state, ["select", "value"])}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__olZs)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hP66M
+                  )}
+                >
+                  {"\u0426\u0435\u043d\u0430 \u043e\u0442"}
+                </div>
+                <Select
+                  data-plasmic-name={"select2"}
+                  data-plasmic-override={overrides.select2}
+                  className={classNames("__wab_instance", sty.select2)}
+                  onChange={(...eventArgs) => {
+                    generateStateOnChangeProp($state, ["select2", "value"])(
+                      eventArgs[0]
+                    );
+                  }}
+                  options={[
+                    { value: "option1", label: "Option 1" },
+                    { value: "option2", label: "Option 2" }
+                  ]}
+                  placeholder={"40"}
+                  value={generateStateValueProp($state, ["select2", "value"])}
+                />
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___4FfY4)}
               >
-                {"Show players"}
-              </PlasmicLink__>
-            </div>
+                <Select
+                  data-plasmic-name={"select5"}
+                  data-plasmic-override={overrides.select5}
+                  className={classNames("__wab_instance", sty.select5)}
+                  onChange={(...eventArgs) => {
+                    generateStateOnChangeProp($state, ["select5", "value"])(
+                      eventArgs[0]
+                    );
+                  }}
+                  options={[
+                    { value: "option1", label: "Option 1" },
+                    { value: "option2", label: "Option 2" }
+                  ]}
+                  placeholder={
+                    "-\u0412\u0441\u0435  \u0438\u0433\u0440\u043e\u043a\u0438"
+                  }
+                  value={generateStateValueProp($state, ["select5", "value"])}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__bdilj)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ahhtc
+                  )}
+                >
+                  {"\u0414\u043e"}
+                </div>
+                <Select
+                  data-plasmic-name={"select6"}
+                  data-plasmic-override={overrides.select6}
+                  className={classNames("__wab_instance", sty.select6)}
+                  onChange={(...eventArgs) => {
+                    generateStateOnChangeProp($state, ["select6", "value"])(
+                      eventArgs[0]
+                    );
+                  }}
+                  options={[
+                    { value: "option1", label: "Option 1" },
+                    { value: "option2", label: "Option 2" }
+                  ]}
+                  placeholder={"12,0"}
+                  value={generateStateValueProp($state, ["select6", "value"])}
+                />
+              </Stack__>
+            </Stack__>
           </div>
           <Footer
             data-plasmic-name={"footer"}
@@ -423,6 +507,10 @@ const PlasmicDescendants = {
     "searchComponent",
     "columns",
     "soccerPlaceMens",
+    "select",
+    "select2",
+    "select5",
+    "select6",
     "footer"
   ],
   navbar: ["navbar"],
@@ -430,8 +518,19 @@ const PlasmicDescendants = {
   heroSection: ["heroSection", "img"],
   img: ["img"],
   searchComponent: ["searchComponent"],
-  columns: ["columns", "soccerPlaceMens"],
+  columns: [
+    "columns",
+    "soccerPlaceMens",
+    "select",
+    "select2",
+    "select5",
+    "select6"
+  ],
   soccerPlaceMens: ["soccerPlaceMens"],
+  select: ["select"],
+  select2: ["select2"],
+  select5: ["select5"],
+  select6: ["select6"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -446,6 +545,10 @@ type NodeDefaultElementType = {
   searchComponent: typeof SearchComponent;
   columns: "div";
   soccerPlaceMens: typeof SoccerPlaceMens;
+  select: typeof Select;
+  select2: typeof Select;
+  select5: typeof Select;
+  select6: typeof Select;
   footer: typeof Footer;
 };
 
@@ -533,6 +636,10 @@ export const PlasmicHomepage = Object.assign(
     searchComponent: makeNodeComponent("searchComponent"),
     columns: makeNodeComponent("columns"),
     soccerPlaceMens: makeNodeComponent("soccerPlaceMens"),
+    select: makeNodeComponent("select"),
+    select2: makeNodeComponent("select2"),
+    select5: makeNodeComponent("select5"),
+    select6: makeNodeComponent("select6"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage

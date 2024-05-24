@@ -511,10 +511,7 @@ function PlasmicTeams2Market__RenderFunc(props: {
                 data-plasmic-name={"playerPickerRow"}
                 data-plasmic-override={overrides.playerPickerRow}
                 className={classNames("__wab_instance", sty.playerPickerRow)}
-                club={$queries.club}
-                currentItem={currentItem}
                 key={currentIndex}
-                userTeam={$queries.userTeam}
               />
             );
           })}
