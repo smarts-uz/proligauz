@@ -540,6 +540,52 @@ function PlasmicTeams__RenderFunc(props: {
                 ) {
                   $steps["revertMoney"] = await $steps["revertMoney"];
                 }
+
+                $steps["upadateActivity"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        dataOp: {
+                          sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                          opId: "91020635-a445-466e-9689-42d162095ebd",
+                          userArgs: {
+                            variables: [
+                              $queries.teamP.data[0].id,
+                              "You Seld " +
+                                $queries.player.data[$state.playerId - 1].name +
+                                " for $" +
+                                $queries.player.data[$state.playerId - 1]
+                                  .market_value
+                            ]
+                          },
+                          cacheKey: null,
+                          invalidatedKeys: ["plasmic_refresh_all"],
+                          roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                        }
+                      };
+                      return (async ({ dataOp, continueOnError }) => {
+                        try {
+                          const response = await executePlasmicDataOp(dataOp, {
+                            userAuthToken: dataSourcesCtx?.userAuthToken,
+                            user: dataSourcesCtx?.user
+                          });
+                          await plasmicInvalidate(dataOp.invalidatedKeys);
+                          return response;
+                        } catch (e) {
+                          if (!continueOnError) {
+                            throw e;
+                          }
+                          return e;
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["upadateActivity"] != null &&
+                  typeof $steps["upadateActivity"] === "object" &&
+                  typeof $steps["upadateActivity"].then === "function"
+                ) {
+                  $steps["upadateActivity"] = await $steps["upadateActivity"];
+                }
               }}
               onOpenChange={generateStateOnChangeProp($state, [
                 "modal",
