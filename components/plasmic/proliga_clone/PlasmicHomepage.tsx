@@ -1615,10 +1615,198 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 {"\u041d\u043e\u0432\u043e\u0441\u0442\u0438"}
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__bwAt)} />
+              <div className={classNames(projectcss.all, sty.freeBox__bwAt)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gNxV8
+                  )}
+                >
+                  {"14:00"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dyz7H
+                  )}
+                >
+                  {
+                    "\u0418\u0433\u0440\u043e\u043a \u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0443\u0437\u043d\u0430\u043b \u043e\u0431 \u044d\u0442\u043e\u043c"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__cKGo6)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dbYba
+                  )}
+                >
+                  {"16:00"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___5FzwA
+                  )}
+                >
+                  {
+                    "\u0418\u0433\u0440\u043e\u043a \u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0443\u0437\u043d\u0430\u043b \u043e\u0431 \u044d\u0442\u043e\u043c"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__itf9G)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___3Lm0B
+                  )}
+                >
+                  {"14:00"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jcm90
+                  )}
+                >
+                  {
+                    "\u0418\u0433\u0440\u043e\u043a \u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0443\u0437\u043d\u0430\u043b \u043e\u0431 \u044d\u0442\u043e\u043c"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__w5XLt)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bb231
+                  )}
+                >
+                  {"14:00"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__e36SH
+                  )}
+                >
+                  {
+                    "\u0418\u0433\u0440\u043e\u043a \u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0443\u0437\u043d\u0430\u043b \u043e\u0431 \u044d\u0442\u043e\u043c"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__asMut)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wLpZ
+                  )}
+                >
+                  {"14:00"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__y1Opr
+                  )}
+                >
+                  {
+                    "\u0418\u0433\u0440\u043e\u043a \u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0443\u0437\u043d\u0430\u043b \u043e\u0431 \u044d\u0442\u043e\u043c"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__z30Rr)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cbWfn
+                  )}
+                >
+                  {"14:00"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dxqg7
+                  )}
+                >
+                  {
+                    "\u0418\u0433\u0440\u043e\u043a \u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0443\u0437\u043d\u0430\u043b \u043e\u0431 \u044d\u0442\u043e\u043c"
+                  }
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__n615V)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__w84ZK
+                  )}
+                >
+                  {"14:00"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__o5E9
+                  )}
+                >
+                  {
+                    "\u0418\u0433\u0440\u043e\u043a \u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0443\u0437\u043d\u0430\u043b \u043e\u0431 \u044d\u0442\u043e\u043c"
+                  }
+                </div>
+              </div>
             </Stack__>
-            <div className={classNames(projectcss.all, sty.column__ifeDh)} />
+            <div className={classNames(projectcss.all, sty.column__ifeDh)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wkeHe
+                )}
+              >
+                {"\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u0435\u0435"}
+              </div>
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img__xtpA5)}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={
+                  "https://img.chelseafc.com/image/upload/f_auto,ar_16:9,w_500,c_fill,g_auto,q_90/editorial/news/2024/05/21/Richard_Olise_Chelsea_defender.jpg"
+                }
+              />
 
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__eHuVg
+                )}
+              >
+                {
+                  "\u00ab\u0427\u0435\u043b\u0441\u0438\u00bb \u0445\u043e\u0447\u0435\u0442 \u043f\u0440\u0438\u043e\u0431\u0440\u0435\u0441\u0442\u0438 \u0438\u0433\u0440\u043e\u043a\u0430 \u0438\u0437 \u041b\u0430 \u041b\u0438\u0433\u0438."
+                }
+              </div>
+            </div>
             <div className={classNames(projectcss.all, sty.column__ycZ7Y)}>
               <div
                 className={classNames(
@@ -1629,57 +1817,390 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 {"\u0442\u0430\u0431\u043b\u0438\u0446\u044c "}
               </div>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__jGqfr)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hyYfi
+                  )}
+                >
+                  {"\u0418\u0441\u043f\u0430\u043d\u0438\u044f"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__nKbvV)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"14px"}
+                  loading={"lazy"}
+                  src={
+                    "https://flagdownload.com/wp-content/uploads/Flag_of_Spain_Flat_Round.png"
+                  }
+                  width={"14px"}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__vcpuP)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__q3Eyj
+                  )}
+                >
+                  {"O\u0431"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1Z5WV
+                  )}
+                >
+                  {"T/S"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__uOOq0
+                  )}
+                >
+                  {"O"}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__bqHCq)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__x3Ys4
+                  )}
+                >
+                  {"\u041c\u0430\u0434\u0440\u0438\u0434"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__foOtP)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"14px"}
+                  loading={"lazy"}
+                  src={
+                    "https://seeklogo.com/images/R/real-madrid-club-crest-new-logo-03D0B23BC4-seeklogo.com.png"
+                  }
+                  width={"14px"}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__jJFrc)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dMLfx
+                  )}
+                >
+                  {"12"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__d7Re
+                  )}
+                >
+                  {"9"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___6S3JN
+                  )}
+                >
+                  {"15"}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__jnbNd)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rQx7R
+                  )}
+                >
+                  {"\u041c\u0430\u0434\u0440\u0438\u0434"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__b61If)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"14px"}
+                  loading={"lazy"}
+                  src={
+                    "https://1000logos.net/wp-content/uploads/2018/05/Atletico-Madrid-Logo.png"
+                  }
+                  width={"14px"}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___6GjaG)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vxv67
+                  )}
+                >
+                  {"12"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__drsju
+                  )}
+                >
+                  {"9"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__pcjSo
+                  )}
+                >
+                  {"15"}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__vH7Xq)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fkE4N
+                  )}
+                >
+                  {"\u041c\u0430\u0434\u0440\u0438\u0434"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__icD35)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"14px"}
+                  loading={"lazy"}
+                  src={
+                    "https://upload.wikimedia.org/wikipedia/sco/thumb/c/cc/Chelsea_FC.svg/2048px-Chelsea_FC.svg.png"
+                  }
+                  width={"14px"}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__d8TKw)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hl0PT
+                  )}
+                >
+                  {"12"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zKbfG
+                  )}
+                >
+                  {"9"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jaXhm
+                  )}
+                >
+                  {"15"}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___1Rl5P)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fxlkE
+                  )}
+                >
+                  {"\u041c\u0430\u0434\u0440\u0438\u0434"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__uWuZb)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"14px"}
+                  loading={"lazy"}
+                  src={
+                    "https://logowik.com/content/uploads/images/526_liverpoolfc.jpg"
+                  }
+                  width={"14px"}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__x3MJn)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___8Rfy4
+                  )}
+                >
+                  {"12"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__i37HZ
+                  )}
+                >
+                  {"9"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fZkA
+                  )}
+                >
+                  {"15"}
+                </div>
+              </Stack__>
+              <Stack__
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox___6Bcxj)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__b5ANs
+                  )}
+                >
+                  {"\u041c\u0430\u0434\u0440\u0438\u0434"}
+                </div>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__rfGan)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  height={"14px"}
+                  loading={"lazy"}
+                  src={
+                    "https://resources.premierleague.com/premierleague/badges/50/t1.png"
+                  }
+                  width={"14px"}
+                />
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___4UmHm)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qOdCq
+                  )}
+                >
+                  {"12"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___77NFm
+                  )}
+                >
+                  {"9"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__lYtwv
+                  )}
+                >
+                  {"15"}
+                </div>
+              </Stack__>
             </div>
           </div>
           <Footer
             data-plasmic-name={"footer"}
             data-plasmic-override={overrides.footer}
             className={classNames("__wab_instance", sty.footer)}
-          />
-
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__kSnNy)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"32px"}
-            loading={"lazy"}
-            src={
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
-            }
-          />
-
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__ask5Z)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"32px"}
-            loading={"lazy"}
-            src={
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
-            }
-          />
-
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__n2Qax)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"32px"}
-            loading={"lazy"}
-            src={
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
-            }
           />
         </div>
       </div>

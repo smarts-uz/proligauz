@@ -160,8 +160,8 @@ function PlasmicTeams__RenderFunc(props: {
       {
         path: "teamplayerstate",
         type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -1382,9 +1382,17 @@ function PlasmicTeams__RenderFunc(props: {
                       }
                     })()}
                     key={currentIndex}
-                    name={(() => {
+                    modalCancelBtn={async () => {
+                      const $steps = {};
+                    }}
+                    modalContent={(() => {
                       try {
-                        return currentItem.name;
+                        return (
+                          "Market value: $" +
+                          currentItem.market_value +
+                          " Name: " +
+                          currentItem.name
+                        );
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -1395,33 +1403,7 @@ function PlasmicTeams__RenderFunc(props: {
                         throw e;
                       }
                     })()}
-                    position={(() => {
-                      try {
-                        return currentItem.position;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
-                    price={(() => {
-                      try {
-                        return currentItem.market_value;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
-                    update={async event => {
+                    modalOkBtn={async () => {
                       const $steps = {};
 
                       $steps["postgresUpdateById"] = true
@@ -1473,6 +1455,58 @@ function PlasmicTeams__RenderFunc(props: {
                         ];
                       }
                     }}
+                    modalTitle={(() => {
+                      try {
+                        return "Are you sure you want to buy this player?";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "Modal Title";
+                        }
+                        throw e;
+                      }
+                    })()}
+                    name={(() => {
+                      try {
+                        return currentItem.name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    position={(() => {
+                      try {
+                        return currentItem.position;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                    price={(() => {
+                      try {
+                        return currentItem.market_value;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
                   />
                 );
               })}

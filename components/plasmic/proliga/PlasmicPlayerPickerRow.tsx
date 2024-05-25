@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+
 import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "../proliga_clone/PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -84,6 +86,10 @@ export type PlasmicPlayerPickerRow__ArgsType = {
   price?: string;
   update?: (event: any) => void;
   firstImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  modalOkBtn?: () => void;
+  modalCancelBtn?: () => void;
+  modalTitle?: string;
+  modalContent?: string;
 };
 type ArgPropType = keyof PlasmicPlayerPickerRow__ArgsType;
 export const PlasmicPlayerPickerRow__ArgProps = new Array<ArgPropType>(
@@ -93,11 +99,18 @@ export const PlasmicPlayerPickerRow__ArgProps = new Array<ArgPropType>(
   "name",
   "price",
   "update",
-  "firstImage"
+  "firstImage",
+  "modalOkBtn",
+  "modalCancelBtn",
+  "modalTitle",
+  "modalContent"
 );
 
 export type PlasmicPlayerPickerRow__OverridesType = {
   root?: Flex__<"div">;
+  button?: Flex__<"button">;
+  modal?: Flex__<typeof AntdModal>;
+  freeBox?: Flex__<"div">;
 };
 
 export interface DefaultPlayerPickerRowProps {
@@ -108,6 +121,10 @@ export interface DefaultPlayerPickerRowProps {
   price?: string;
   update?: (event: any) => void;
   firstImage?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  modalOkBtn?: () => void;
+  modalCancelBtn?: () => void;
+  modalTitle?: string;
+  modalContent?: string;
   className?: string;
 }
 
@@ -140,7 +157,9 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
           },
           position: "DEF",
           fsyp: "0",
-          price: "0"
+          price: "0",
+          modalTitle: "Modal Title",
+          modalContent: "modal content"
         },
         props.args
       ),
@@ -159,18 +178,34 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants_8Rmrqs5Mzp6I()
   });
 
   return (
-    <Stack__
-      as={"div"}
+    <div
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -181,169 +216,282 @@ function PlasmicPlayerPickerRow__RenderFunc(props: {
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root
       )}
-      onClick={args.update}
     >
-      <PlasmicImg__
-        alt={""}
-        className={classNames(sty.img__bjNN)}
-        displayHeight={"auto"}
-        displayMaxHeight={"none"}
-        displayMaxWidth={"100%"}
-        displayMinHeight={"0"}
-        displayMinWidth={"0"}
-        displayWidth={"auto"}
-        height={"40px"}
-        loading={"lazy"}
-        src={args.firstImage}
-        width={"40px"}
-      />
+      <Stack__
+        as={"button"}
+        data-plasmic-name={"button"}
+        data-plasmic-override={overrides.button}
+        hasGap={true}
+        className={classNames(projectcss.all, projectcss.button, sty.button)}
+        onClick={async event => {
+          const $steps = {};
 
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__kWvhV
-        )}
-      >
-        <React.Fragment>
-          {(() => {
-            try {
-              return $props.name;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "Oblak";
-              }
-              throw e;
-            }
-          })()}
-        </React.Fragment>
-      </div>
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__e1ZrQ
-        )}
-      >
-        <React.Fragment>
-          {(() => {
-            try {
-              return $props.position;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "GOA";
-              }
-              throw e;
-            }
-          })()}
-        </React.Fragment>
-      </div>
-      <PlasmicImg__
-        alt={""}
-        className={classNames(sty.img__oDyDd)}
-        displayHeight={"auto"}
-        displayMaxHeight={"none"}
-        displayMaxWidth={"100%"}
-        displayMinHeight={"0"}
-        displayMinWidth={"0"}
-        displayWidth={"14px"}
-        loading={"lazy"}
-        src={{
-          src: "/plasmic/proliga_clone/images/pngtreeEuroSymbolCurrencyPngImage3974231Png2.png",
-          fullWidth: 512,
-          fullHeight: 512,
-          aspectRatio: undefined
+          $steps["updateModalOpen"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["modal", "open"]
+                  },
+                  operation: 0,
+                  value: true
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateModalOpen"] != null &&
+            typeof $steps["updateModalOpen"] === "object" &&
+            typeof $steps["updateModalOpen"].then === "function"
+          ) {
+            $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+          }
         }}
-      />
+      >
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__bjNN)}
+          displayHeight={"auto"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"auto"}
+          height={"40px"}
+          loading={"lazy"}
+          src={args.firstImage}
+          width={"40px"}
+        />
 
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__uFtA1
-        )}
-      >
-        <React.Fragment>
-          {(() => {
-            try {
-              return $props.price;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "1.920.356";
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__kWvhV
+          )}
+        >
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.name;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "Oblak";
+                }
+                throw e;
               }
-              throw e;
-            }
-          })()}
-        </React.Fragment>
-      </div>
-      <PlasmicImg__
-        alt={""}
-        className={classNames(sty.img__p539M)}
-        displayHeight={"30px"}
-        displayMaxHeight={"none"}
-        displayMaxWidth={"100%"}
-        displayMinHeight={"0"}
-        displayMinWidth={"0"}
-        displayWidth={"30px"}
-        height={"21.73px"}
-        loading={"lazy"}
-        src={args.clubImage}
-        width={"21px"}
-      />
+            })()}
+          </React.Fragment>
+        </div>
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__e1ZrQ
+          )}
+        >
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.position;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "GOA";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        </div>
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__oDyDd)}
+          displayHeight={"auto"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"14px"}
+          loading={"lazy"}
+          src={{
+            src: "/plasmic/proliga_clone/images/pngtreeEuroSymbolCurrencyPngImage3974231Png2.png",
+            fullWidth: 512,
+            fullHeight: 512,
+            aspectRatio: undefined
+          }}
+        />
 
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text___6Ak9J
-        )}
-      >
-        {"FSYP"}
-      </div>
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__rhWYp
-        )}
-      >
-        <React.Fragment>
-          {(() => {
-            try {
-              return $props.fsyp;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return "93";
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__uFtA1
+          )}
+        >
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.price;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "1.920.356";
+                }
+                throw e;
               }
-              throw e;
-            }
-          })()}
-        </React.Fragment>
-      </div>
-    </Stack__>
+            })()}
+          </React.Fragment>
+        </div>
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__p539M)}
+          displayHeight={"30px"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"30px"}
+          height={"21.73px"}
+          loading={"lazy"}
+          src={args.clubImage}
+          width={"21px"}
+        />
+
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text___6Ak9J
+          )}
+        >
+          {"FSYP"}
+        </div>
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__rhWYp
+          )}
+        >
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.fsyp;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "93";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        </div>
+      </Stack__>
+      <AntdModal
+        data-plasmic-name={"modal"}
+        data-plasmic-override={overrides.modal}
+        className={classNames("__wab_instance", sty.modal)}
+        defaultStylesClassName={classNames(
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          plasmic_antd_5_hostless_css.plasmic_tokens,
+          plasmic_plasmic_rich_components_css.plasmic_tokens
+        )}
+        maskClosable={true}
+        modalScopeClassName={sty["modal__modal"]}
+        okText={"Accept"}
+        onCancel={args.modalCancelBtn}
+        onOk={args.modalOkBtn}
+        onOpenChange={generateStateOnChangeProp($state, ["modal", "open"])}
+        open={generateStateValueProp($state, ["modal", "open"])}
+        title={
+          <React.Fragment>
+            {(() => {
+              try {
+                return $props.modalTitle;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return "Modal title";
+                }
+                throw e;
+              }
+            })()}
+          </React.Fragment>
+        }
+        trigger={null}
+      >
+        <div
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          className={classNames(projectcss.all, sty.freeBox)}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__zfSc8
+            )}
+          >
+            <React.Fragment>
+              {(() => {
+                try {
+                  return $props.modalContent;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "Modal content";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          </div>
+        </div>
+      </AntdModal>
+    </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "button", "modal", "freeBox"],
+  button: ["button"],
+  modal: ["modal", "freeBox"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  button: "button";
+  modal: typeof AntdModal;
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -406,6 +554,9 @@ export const PlasmicPlayerPickerRow = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    button: makeNodeComponent("button"),
+    modal: makeNodeComponent("modal"),
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicPlayerPickerRow
     internalVariantProps: PlasmicPlayerPickerRow__VariantProps,
