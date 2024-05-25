@@ -2020,6 +2020,57 @@ function PlasmicTeams__RenderFunc(props: {
                       ) {
                         $steps["updatePlayer"] = await $steps["updatePlayer"];
                       }
+
+                      $steps["updateUserActivity"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              dataOp: {
+                                sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                                opId: "91020635-a445-466e-9689-42d162095ebd",
+                                userArgs: {
+                                  variables: [
+                                    $queries.teamP.data[0].id,
+                                    "You Bought " +
+                                      currentItem.name +
+                                      " for $" +
+                                      currentItem.market_value
+                                  ]
+                                },
+                                cacheKey: null,
+                                invalidatedKeys: ["plasmic_refresh_all"],
+                                roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                              }
+                            };
+                            return (async ({ dataOp, continueOnError }) => {
+                              try {
+                                const response = await executePlasmicDataOp(
+                                  dataOp,
+                                  {
+                                    userAuthToken:
+                                      dataSourcesCtx?.userAuthToken,
+                                    user: dataSourcesCtx?.user
+                                  }
+                                );
+                                await plasmicInvalidate(dataOp.invalidatedKeys);
+                                return response;
+                              } catch (e) {
+                                if (!continueOnError) {
+                                  throw e;
+                                }
+                                return e;
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateUserActivity"] != null &&
+                        typeof $steps["updateUserActivity"] === "object" &&
+                        typeof $steps["updateUserActivity"].then === "function"
+                      ) {
+                        $steps["updateUserActivity"] = await $steps[
+                          "updateUserActivity"
+                        ];
+                      }
                     }}
                     modalTitle={(() => {
                       try {
