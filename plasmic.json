@@ -1926,6 +1926,33 @@
           "cssFilePath": "plasmic/proliga/PlasmicSellPlayerCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "IyS4U3yaVhR8",
+          "name": "Activity",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicActivity.tsx",
+          "importSpec": {
+            "modulePath": "../pages/activity.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicActivity.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/activity"
+        },
+        {
+          "id": "JFWOLtBypZOZ",
+          "name": "UserActivity",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicUserActivity.tsx",
+          "importSpec": {
+            "modulePath": "UserActivity.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicUserActivity.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
