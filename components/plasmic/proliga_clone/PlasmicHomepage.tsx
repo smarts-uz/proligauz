@@ -314,7 +314,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   href={"https://www.plasmic.app/"}
                   platform={"nextjs"}
                 >
-                  {"\u0421\u041e\u0427\u0420\u0410\u041d\u0418\u0422\u042a"}
+                  {"\u0421\u041eX\u0420\u0410\u041d\u0418\u0422\u042a"}
                 </PlasmicLink__>
               </Stack__>
             </div>
@@ -1580,7 +1580,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   displayWidth={"32px"}
                   loading={"lazy"}
                   src={
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png"
                   }
                 />
               </Stack__>

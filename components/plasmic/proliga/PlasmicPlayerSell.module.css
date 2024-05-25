@@ -37,7 +37,7 @@
   max-width: 100%;
   position: relative;
 }
-.freeBox__cstxG {
+.freeBox__m4Zg {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -47,7 +47,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__cstxG > :global(.__wab_flex-container) {
+.freeBox__m4Zg > :global(.__wab_flex-container) {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -55,27 +55,27 @@
   margin-left: calc(0px - 16px);
   width: calc(100% + 16px);
 }
-.freeBox__cstxG > :global(.__wab_flex-container) > *,
-.freeBox__cstxG > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__cstxG > :global(.__wab_flex-container) > picture > img,
-.freeBox__cstxG
+.freeBox__m4Zg > :global(.__wab_flex-container) > *,
+.freeBox__m4Zg > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__m4Zg > :global(.__wab_flex-container) > picture > img,
+.freeBox__m4Zg
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
   > img {
   margin-left: 16px;
 }
-.link__p3Od {
+.link__fdf3F {
   position: relative;
   text-align: left;
   color: var(--token-jgohepLVeKvh);
 }
-.link__oBeLp {
+.link__dVhnv {
   position: relative;
   text-align: center;
   color: var(--token-jgohepLVeKvh);
 }
-.freeBox__cynQa {
+.freeBox__wkV7I {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -86,14 +86,14 @@
   max-width: 100%;
   padding: 8px;
 }
-.text__jGxnO {
+.text__bFdVs {
   width: 100%;
   height: auto;
   max-width: 100%;
   color: var(--token-jgohepLVeKvh);
   min-width: 0;
 }
-.text__mbNo {
+.text__lgBXf {
   position: relative;
   width: 100%;
   height: auto;
@@ -102,46 +102,22 @@
   font-weight: 900;
   min-width: 0;
 }
-.modal:global(.__wab_instance) {
+.button__zgKNn:global(.__wab_instance) {
   max-width: 100%;
-  object-fit: cover;
-  color: var(--token-jgohepLVeKvh);
-}
-.pcls_Ptl9_TeQa_Ax {
-  background: var(--token-LqtA0Zd3XkIQ);
-  outline: none;
-}
-.modal__modal :global(.ant-modal-close) {
-  color: #e21c1c;
-  background: #1a1717;
-  outline: none;
-}
-.freeBox__spkbu {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
-.button__ahFXh:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  color: var(--token-LqtA0Zd3XkIQ);
-  background: var(--token-LqtA0Zd3XkIQ);
-}
-.text___8Tten {
   position: relative;
   width: auto;
-  height: auto;
-  max-width: 100%;
-  font-size: 20px;
-  color: var(--token-jgohepLVeKvh);
-  background: var(--token-LqtA0Zd3XkIQ);
+}
+.svg__mbakv {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__oLt2U {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
 }
 .columns {
   display: flex;
@@ -185,7 +161,7 @@
     width: calc((100% - 1 * var(--plsmc-rc-col-gap, 0px)) * 12 / 12);
   }
 }
-.column__wtIiA {
+.column__eRff {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -198,7 +174,7 @@
   min-width: 0;
   padding: 8px;
 }
-.text__aUurg {
+.text__bBoRa {
   position: relative;
   width: 100%;
   height: auto;
@@ -217,40 +193,40 @@
   color: var(--token-jgohepLVeKvh);
   background: var(--token-LqtA0Zd3XkIQ);
 }
-.menuItem__yHZg2:global(.__wab_instance) {
+.menuItem__utj4B:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.text__n6PxQ {
+.text__hvYpq {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.menuItem__gb7Ov:global(.__wab_instance) {
+.menuItem___1IFuv:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.text__ioQc {
+.text__iXqpS {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.button__jbZUg:global(.__wab_instance) {
+.button__oNe1A:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
-.text__dtZNz {
+.text__g7P5B {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
 }
-.freeBox__u1Zqe {
+.freeBox__fKubM {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -264,7 +240,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__iw1Nk {
+.freeBox__waDhI {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -276,7 +252,7 @@
   min-width: 0;
   padding: 0px;
 }
-.freeBox___6S8Gg {
+.freeBox__rh3J3 {
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -290,7 +266,7 @@
   min-height: 0;
   padding: 0px;
 }
-.freeBox___6S8Gg > :global(.__wab_flex-container) {
+.freeBox__rh3J3 > :global(.__wab_flex-container) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -298,10 +274,10 @@
   margin-top: calc(0px - 10px);
   height: calc(100% + 10px);
 }
-.freeBox___6S8Gg > :global(.__wab_flex-container) > *,
-.freeBox___6S8Gg > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox___6S8Gg > :global(.__wab_flex-container) > picture > img,
-.freeBox___6S8Gg
+.freeBox__rh3J3 > :global(.__wab_flex-container) > *,
+.freeBox__rh3J3 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__rh3J3 > :global(.__wab_flex-container) > picture > img,
+.freeBox__rh3J3
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
@@ -326,13 +302,13 @@
   min-width: 0;
   padding: 0px 0px 20px;
 }
-.freeBox__dcpmG {
+.freeBox__cxDpk {
   position: relative;
   top: auto;
   left: auto;
   display: flex;
 }
-.avatarPlayer__uvTA:global(.__wab_instance) {
+.avatarPlayer__sOd8H:global(.__wab_instance) {
   max-width: 100%;
 }
 .def {
@@ -363,11 +339,11 @@
 .def > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-left: 35px;
 }
-.freeBox__vv8U {
+.freeBox__mnhMb {
   position: relative;
   display: flex;
 }
-.avatarPlayer__gYokA:global(.__wab_instance) {
+.avatarPlayer__q3UoV:global(.__wab_instance) {
   max-width: 100%;
   transform: none;
 }
@@ -396,11 +372,11 @@
 .mid > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-left: 60px;
 }
-.freeBox__ofx2 {
+.freeBox__m55P7 {
   position: relative;
   display: flex;
 }
-.avatarPlayer__nu6Lx:global(.__wab_instance) {
+.avatarPlayer__pb102:global(.__wab_instance) {
   max-width: 100%;
 }
 .str {
@@ -428,11 +404,11 @@
 .str > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-left: 15px;
 }
-.freeBox__l1A6S {
+.freeBox__hjM {
   position: relative;
   display: flex;
 }
-.avatarPlayer__jttBq:global(.__wab_instance) {
+.avatarPlayer__nuyX5:global(.__wab_instance) {
   max-width: 100%;
 }
 .soccerPlaceMens2:global(.__wab_instance) {
@@ -448,19 +424,7 @@
     flex-shrink: 0;
   }
 }
-.freeBox__oTuO {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 8px;
-}
-.column__wTiGc {
+.column___5N4J1 {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -470,7 +434,7 @@
   min-width: 0;
   padding: 8px;
 }
-.column__wTiGc > :global(.__wab_flex-container) {
+.column___5N4J1 > :global(.__wab_flex-container) {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -478,17 +442,17 @@
   margin-top: calc(0px - 0px);
   height: calc(100% + 0px);
 }
-.column__wTiGc > :global(.__wab_flex-container) > *,
-.column__wTiGc > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.column__wTiGc > :global(.__wab_flex-container) > picture > img,
-.column__wTiGc
+.column___5N4J1 > :global(.__wab_flex-container) > *,
+.column___5N4J1 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.column___5N4J1 > :global(.__wab_flex-container) > picture > img,
+.column___5N4J1
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
   > img {
   margin-top: 0px;
 }
-.freeBox__peasw {
+.freeBox__ifSH {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -501,7 +465,7 @@
   min-width: 0;
   padding: 16px 8px;
 }
-.text__r9E {
+.text___70Yvu {
   position: relative;
   width: 100%;
   height: auto;
@@ -511,7 +475,7 @@
   padding-left: 8px;
   min-width: 0;
 }
-.freeBox___6HiPo {
+.freeBox__hKhPg {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -523,7 +487,7 @@
   min-width: 0;
   padding: 8px;
 }
-.text__fjj5R {
+.text__rtP5U {
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -532,7 +496,7 @@
   padding-right: 48px;
   min-width: 0;
 }
-.freeBox__u55K7 {
+.freeBox__uyPuU {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -543,7 +507,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__u55K7 > :global(.__wab_flex-container) {
+.freeBox__uyPuU > :global(.__wab_flex-container) {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -551,46 +515,42 @@
   margin-left: calc(0px - 32px);
   width: calc(100% + 32px);
 }
-.freeBox__u55K7 > :global(.__wab_flex-container) > *,
-.freeBox__u55K7 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__u55K7 > :global(.__wab_flex-container) > picture > img,
-.freeBox__u55K7
+.freeBox__uyPuU > :global(.__wab_flex-container) > *,
+.freeBox__uyPuU > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__uyPuU > :global(.__wab_flex-container) > picture > img,
+.freeBox__uyPuU
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
   > img {
   margin-left: 32px;
 }
-.link__tjnjF {
+.link__tUomj {
   position: relative;
   padding-left: 32px;
   color: var(--token-jgohepLVeKvh);
   font-weight: 700;
 }
-.link__llnkR {
+.link__cVzOt {
   position: relative;
   color: var(--token-jgohepLVeKvh);
   font-weight: 700;
 }
-.link__yKoXy {
+.link__nzXnQ {
   position: relative;
   color: var(--token-jgohepLVeKvh);
   font-weight: 700;
 }
-.link__urgD1 {
+.link__phNo {
   position: relative;
   color: var(--token-jgohepLVeKvh);
   font-weight: 700;
 }
-.link__xEuMz {
+.link__omOVu {
   position: relative;
   text-align: right;
   color: var(--token-jgohepLVeKvh);
   font-weight: 700;
-}
-.playerPickerRow:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
 }
 .sideBarMyTeam:global(.__wab_instance) {
   position: fixed;

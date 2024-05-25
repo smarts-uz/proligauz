@@ -1899,6 +1899,33 @@
           "cssFilePath": "plasmic/proliga/PlasmicMessageCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "8sTQYnxgsujq",
+          "name": "PlayerSell",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicPlayerSell.tsx",
+          "importSpec": {
+            "modulePath": "../pages/team/sellplayer.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicPlayerSell.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/team/sellplayer"
+        },
+        {
+          "id": "ViX-reU4QKrx",
+          "name": "SellPlayerCard",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicSellPlayerCard.tsx",
+          "importSpec": {
+            "modulePath": "SellPlayerCard.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicSellPlayerCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
