@@ -1440,7 +1440,54 @@ function PlasmicTeams__RenderFunc(props: {
                     modalOkBtn={async () => {
                       const $steps = {};
 
-                      $steps["postgresUpdateById"] = true
+                      $steps["updateMoney"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              dataOp: {
+                                sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                                opId: "5df622fa-bcb3-48c3-b0bf-51f41af19ca7",
+                                userArgs: {
+                                  keys: [$queries.teamP.data[0].id],
+                                  variables: [
+                                    $queries.teamP.data[0].balance -
+                                      currentItem.market_value
+                                  ]
+                                },
+                                cacheKey: null,
+                                invalidatedKeys: ["plasmic_refresh_all"],
+                                roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                              }
+                            };
+                            return (async ({ dataOp, continueOnError }) => {
+                              try {
+                                const response = await executePlasmicDataOp(
+                                  dataOp,
+                                  {
+                                    userAuthToken:
+                                      dataSourcesCtx?.userAuthToken,
+                                    user: dataSourcesCtx?.user
+                                  }
+                                );
+                                await plasmicInvalidate(dataOp.invalidatedKeys);
+                                return response;
+                              } catch (e) {
+                                if (!continueOnError) {
+                                  throw e;
+                                }
+                                return e;
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateMoney"] != null &&
+                        typeof $steps["updateMoney"] === "object" &&
+                        typeof $steps["updateMoney"].then === "function"
+                      ) {
+                        $steps["updateMoney"] = await $steps["updateMoney"];
+                      }
+
+                      $steps["updatePlayer"] = true
                         ? (() => {
                             const actionArgs = {
                               dataOp: {
@@ -1480,13 +1527,11 @@ function PlasmicTeams__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["postgresUpdateById"] != null &&
-                        typeof $steps["postgresUpdateById"] === "object" &&
-                        typeof $steps["postgresUpdateById"].then === "function"
+                        $steps["updatePlayer"] != null &&
+                        typeof $steps["updatePlayer"] === "object" &&
+                        typeof $steps["updatePlayer"].then === "function"
                       ) {
-                        $steps["postgresUpdateById"] = await $steps[
-                          "postgresUpdateById"
-                        ];
+                        $steps["updatePlayer"] = await $steps["updatePlayer"];
                       }
                     }}
                     modalTitle={(() => {
