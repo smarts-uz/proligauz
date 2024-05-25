@@ -277,6 +277,18 @@ function PlasmicTeams__RenderFunc(props: {
         invalidatedKeys: null,
         roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
+    }),
+    pickedPlayersCount: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "dc06ce2a-bfaa-450c-9107-6eaef3b16d33",
+        userArgs: {
+          filters: [$queries.teamP.data[0].id]
+        },
+        cacheKey: `plasmic.$.dc06ce2a-bfaa-450c-9107-6eaef3b16d33.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
     })
   };
   if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
@@ -1197,13 +1209,35 @@ function PlasmicTeams__RenderFunc(props: {
                   {"Squad"}
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fjj5R
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox___6HiPo)}
                 >
-                  {"Players(2/11)"}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fjj5R
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (
+                            "Player(" +
+                            $queries.pickedPlayersCount.data.length +
+                            "/11)"
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "Players";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
                 </div>
               </div>
               <Stack__
@@ -1302,6 +1336,25 @@ function PlasmicTeams__RenderFunc(props: {
                       "__wab_instance",
                       sty.playerPickerRow
                     )}
+                    clubImage={(() => {
+                      try {
+                        return $queries.clubs.data[currentItem.club_id - 1]
+                          .flag_url;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return {
+                            src: "/plasmic/proliga/images/logoDesignTemplateB588De7Cc0B07E82392C3B2Ea4Ea7B73Screenjpg.jpg",
+                            fullWidth: 690,
+                            fullHeight: 690,
+                            aspectRatio: undefined
+                          };
+                        }
+                        throw e;
+                      }
+                    })()}
                     firstImage={(() => {
                       try {
                         return currentItem.image;
