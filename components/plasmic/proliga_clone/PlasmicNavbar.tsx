@@ -68,6 +68,7 @@ import {
 
 import Button from "../../Button"; // plasmic-import: FZ59S2Z_LV2k/component
 import LoginButton2 from "../../LoginButton2"; // plasmic-import: 4z0H5ajimEuS/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import { useScreenVariants as useScreenVariants_8Rmrqs5Mzp6I } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 8Rmrqs5Mzp6I/globalVariant
 
@@ -134,6 +135,9 @@ function PlasmicNavbar__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  let [$queries, setDollarQueries] = React.useState<
+    Record<string, ReturnType<typeof usePlasmicDataOp>>
+  >({});
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -148,11 +152,29 @@ function PlasmicNavbar__RenderFunc(props: {
   const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries: {},
+    $queries: $queries,
     $refs
   });
   const dataSourcesCtx = usePlasmicDataSourceContext();
   const plasmicInvalidate = usePlasmicInvalidate();
+
+  const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
+    defaultMoney: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "822c885d-5ddd-45c8-b8f0-774400585e7a",
+        userArgs: {},
+        cacheKey: `plasmic.$.822c885d-5ddd-45c8-b8f0-774400585e7a.$.`,
+        invalidatedKeys: null,
+        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+      };
+    })
+  };
+  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
+    setDollarQueries(new$Queries);
+
+    $queries = new$Queries;
+  }
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants_8Rmrqs5Mzp6I()
@@ -633,8 +655,10 @@ function PlasmicNavbar__RenderFunc(props: {
                           const actionArgs = {
                             dataOp: {
                               sourceId: "8cdHi4ivRUEkK6qbegQevF",
-                              opId: "12a3b99b-5bd6-46e2-9b24-5e4a0d8d4eca",
-                              userArgs: {},
+                              opId: "0648309a-3b57-4ecf-9705-219da83138d7",
+                              userArgs: {
+                                variables: [$queries.defaultMoney.data[0].value]
+                              },
                               cacheKey: null,
                               invalidatedKeys: ["plasmic_refresh_all"],
                               roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"

@@ -75,6 +75,33 @@
   text-align: center;
   color: var(--token-jgohepLVeKvh);
 }
+.freeBox__cynQa {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  padding: 8px;
+}
+.text__jGxnO {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: var(--token-jgohepLVeKvh);
+  min-width: 0;
+}
+.text__mbNo {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: var(--token-jgohepLVeKvh);
+  font-weight: 900;
+  min-width: 0;
+}
 .columns {
   display: flex;
   position: relative;

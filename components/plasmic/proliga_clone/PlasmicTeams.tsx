@@ -365,6 +365,40 @@ function PlasmicTeams__RenderFunc(props: {
             >
               {"Points"}
             </PlasmicLink__>
+            <div className={classNames(projectcss.all, sty.freeBox__cynQa)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jGxnO
+                )}
+              >
+                {"Balance"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mbNo
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return "$" + $queries.teamP.data[0].balance;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+            </div>
           </Stack__>
           <div
             data-plasmic-name={"columns"}
