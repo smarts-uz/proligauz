@@ -335,6 +335,18 @@ function PlasmicTeams__RenderFunc(props: {
         invalidatedKeys: null,
         roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
       };
+    }),
+    teamCapitan: usePlasmicDataOp(() => {
+      return {
+        sourceId: "8cdHi4ivRUEkK6qbegQevF",
+        opId: "1c1b4b12-06d9-4774-90d7-13f88aae33f2",
+        userArgs: {
+          filters: [$queries.teamP.data[0].id]
+        },
+        cacheKey: `plasmic.$.1c1b4b12-06d9-4774-90d7-13f88aae33f2.$.`,
+        invalidatedKeys: null,
+        roleId: null
+      };
     })
   };
   if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
@@ -669,7 +681,49 @@ function PlasmicTeams__RenderFunc(props: {
                 acceptBtn={async () => {
                   const $steps = {};
 
-                  $steps["postgresUpdateById"] = true
+                  $steps["unsetCapitan"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          dataOp: {
+                            sourceId: "8cdHi4ivRUEkK6qbegQevF",
+                            opId: "fd8a9fde-dd5e-438f-aa7a-80522af64b03",
+                            userArgs: {
+                              keys: [$queries.teamCapitan.data[0].id]
+                            },
+                            cacheKey: null,
+                            invalidatedKeys: ["plasmic_refresh_all"],
+                            roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+                          }
+                        };
+                        return (async ({ dataOp, continueOnError }) => {
+                          try {
+                            const response = await executePlasmicDataOp(
+                              dataOp,
+                              {
+                                userAuthToken: dataSourcesCtx?.userAuthToken,
+                                user: dataSourcesCtx?.user
+                              }
+                            );
+                            await plasmicInvalidate(dataOp.invalidatedKeys);
+                            return response;
+                          } catch (e) {
+                            if (!continueOnError) {
+                              throw e;
+                            }
+                            return e;
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["unsetCapitan"] != null &&
+                    typeof $steps["unsetCapitan"] === "object" &&
+                    typeof $steps["unsetCapitan"].then === "function"
+                  ) {
+                    $steps["unsetCapitan"] = await $steps["unsetCapitan"];
+                  }
+
+                  $steps["updateCapitan"] = true
                     ? (() => {
                         const actionArgs = {
                           dataOp: {
@@ -704,13 +758,11 @@ function PlasmicTeams__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["postgresUpdateById"] != null &&
-                    typeof $steps["postgresUpdateById"] === "object" &&
-                    typeof $steps["postgresUpdateById"].then === "function"
+                    $steps["updateCapitan"] != null &&
+                    typeof $steps["updateCapitan"] === "object" &&
+                    typeof $steps["updateCapitan"].then === "function"
                   ) {
-                    $steps["postgresUpdateById"] = await $steps[
-                      "postgresUpdateById"
-                    ];
+                    $steps["updateCapitan"] = await $steps["updateCapitan"];
                   }
                 }}
                 className={classNames("__wab_instance", sty.updateCapitan)}
