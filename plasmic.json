@@ -1953,6 +1953,19 @@
           "cssFilePath": "plasmic/proliga/PlasmicUserActivity.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "XWByMSCmxs7g",
+          "name": "UpdateCapitan",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicUpdateCapitan.tsx",
+          "importSpec": {
+            "modulePath": "UpdateCapitan.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicUpdateCapitan.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

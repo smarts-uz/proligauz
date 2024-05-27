@@ -150,6 +150,9 @@
   color: var(--token-jgohepLVeKvh);
   background: var(--token-LqtA0Zd3XkIQ);
 }
+.updateCapitan:global(.__wab_instance) {
+  position: relative;
+}
 .columns {
   display: flex;
   position: relative;
