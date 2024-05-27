@@ -4,7 +4,9 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  background: linear-gradient(#353542, #353542), #ffffff;
+  background: url("https://www.premierleague.com/resources/rebrand/v7.146.7/i/elements/backgrounds/primary-graphic.svg")
+      top 50% left 50% / cover repeat,
+    var(--token-RZcyrn6MkYNW);
   position: relative;
   justify-self: flex-start;
   padding: 8px;

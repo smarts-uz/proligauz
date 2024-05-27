@@ -81,6 +81,7 @@ export const PlasmicSideBarMyTeam__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSideBarMyTeam__OverridesType = {
   root?: Flex__<"div">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultSideBarMyTeamProps {
@@ -123,11 +124,13 @@ function PlasmicSideBarMyTeam__RenderFunc(props: {
   });
 
   return (
-    <div
+    <Stack__
+      as={"div"}
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
+      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -139,7 +142,11 @@ function PlasmicSideBarMyTeam__RenderFunc(props: {
         sty.root
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__mbjt)}>
+      <Stack__
+        as={"div"}
+        hasGap={true}
+        className={classNames(projectcss.all, sty.freeBox__mbjt)}
+      >
         <PlasmicImg__
           alt={""}
           className={classNames(sty.img__a5X0Z)}
@@ -148,10 +155,16 @@ function PlasmicSideBarMyTeam__RenderFunc(props: {
           displayMaxWidth={"100%"}
           displayMinHeight={"0"}
           displayMinWidth={"0"}
-          displayWidth={"auto"}
+          displayWidth={
+            hasVariant(globalVariants, "screen", "dessktop") ? "49px" : "auto"
+          }
           height={"45px"}
           loading={"lazy"}
-          src={"https://cdn-icons-png.flaticon.com/512/3022/3022675.png"}
+          src={
+            hasVariant(globalVariants, "screen", "dessktop")
+              ? "https://img.freepik.com/premium-psd/golden-trophy-cup-png_705838-448.jpg"
+              : "https://cdn-icons-png.flaticon.com/512/3022/3022675.png"
+          }
           width={"30px"}
         />
 
@@ -164,7 +177,7 @@ function PlasmicSideBarMyTeam__RenderFunc(props: {
         >
           {"PROLIGA Fantasy"}
         </div>
-      </div>
+      </Stack__>
       <div className={classNames(projectcss.all, sty.freeBox___565V6)}>
         <PlasmicImg__
           alt={""}
@@ -303,7 +316,14 @@ function PlasmicSideBarMyTeam__RenderFunc(props: {
           {"Market"}
         </div>
       </div>
-      <div className={classNames(projectcss.all, sty.freeBox__pvXk7)}>
+      <PlasmicLink__
+        data-plasmic-name={"link"}
+        data-plasmic-override={overrides.link}
+        className={classNames(projectcss.all, projectcss.a, sty.link)}
+        component={Link}
+        href={`/activity`}
+        platform={"nextjs"}
+      >
         <PlasmicImg__
           alt={""}
           className={classNames(sty.img__eble0)}
@@ -330,7 +350,7 @@ function PlasmicSideBarMyTeam__RenderFunc(props: {
         >
           {"Activity"}
         </div>
-      </div>
+      </PlasmicLink__>
       <div className={classNames(projectcss.all, sty.freeBox__h2Qq)}>
         <div
           className={classNames(
@@ -351,18 +371,20 @@ function PlasmicSideBarMyTeam__RenderFunc(props: {
           {"Friyday 16:00 Goo"}
         </div>
       </div>
-    </div>
+    </Stack__>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "link"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -425,6 +447,7 @@ export const PlasmicSideBarMyTeam = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicSideBarMyTeam
     internalVariantProps: PlasmicSideBarMyTeam__VariantProps,

@@ -208,9 +208,11 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.clubs2)}
           />
 
-          <div
+          <Stack__
+            as={"div"}
             data-plasmic-name={"heroSection"}
             data-plasmic-override={overrides.heroSection}
+            hasGap={true}
             className={classNames(projectcss.all, sty.heroSection)}
           >
             <PlasmicImg__
@@ -223,8 +225,24 @@ function PlasmicHomepage__RenderFunc(props: {
               displayMinWidth={"0"}
               displayWidth={"auto"}
               loading={"lazy"}
+              src={
+                "https://dlcdnwebimgs.asus.com/gain/3EF83AFB-7D9C-4D1A-918E-8910190606D1/fwebp"
+              }
+              width={"800px"}
             />
-          </div>
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__qIiUy
+              )}
+            >
+              {
+                "\u0418\u0433\u0440\u0430\u0439\u0442\u0435 \u0441 \u043d\u0430\u043c\u0438 \u0438 \u043f\u043e\u043b\u0443\u0447\u0430\u0439\u0442\u0435 \u043f\u043e\u0434\u0430\u0440\u043a\u0438!"
+              }
+            </div>
+          </Stack__>
           <SearchComponent
             data-plasmic-name={"searchComponent"}
             data-plasmic-override={overrides.searchComponent}

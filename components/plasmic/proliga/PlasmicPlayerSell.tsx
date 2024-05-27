@@ -400,7 +400,15 @@ function PlasmicPlayerSell__RenderFunc(props: {
               </div>
             </div>
             <Button className={classNames("__wab_instance", sty.button__zgKNn)}>
-              {"Sell"}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__uhI5K
+                )}
+              >
+                {"Sell"}
+              </div>
             </Button>
           </Stack__>
           <div

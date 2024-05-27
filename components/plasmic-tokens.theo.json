@@ -61,6 +61,16 @@
       }
     },
     {
+      "name": "Green Back",
+      "type": "color",
+      "value": "#64FF3C",
+      "category": "color",
+      "meta": {
+        "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+        "id": "xGiRE7fxgNcn"
+      }
+    },
+    {
       "name": "Header Back",
       "type": "color",
       "value": "#650A7B",

@@ -7,7 +7,10 @@
   justify-content: center;
   align-items: center;
   justify-self: flex-start;
-  background: #93deef;
+  background: url("https://www.premierleague.com/resources/rebrand/v7.146.7/i/elements/backgrounds/primary-graphic.svg")
+      top 50% left 50% / cover repeat,
+    var(--token-RZcyrn6MkYNW);
+  box-shadow: 8px 8px 16px 6px #a6c7a7db;
 }
 .freeBox__f40Z {
   display: flex;
@@ -26,7 +29,7 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  color: var(--token-LqtA0Zd3XkIQ);
+  color: var(--token-jgohepLVeKvh);
   font-size: 22px;
   font-weight: 700;
   text-align: left;
@@ -64,6 +67,7 @@
   width: 400px;
   height: auto;
   max-width: 100%;
-  color: var(--token-LqtA0Zd3XkIQ);
+  color: var(--token-jgohepLVeKvh);
+  box-shadow: none;
   flex-shrink: 0;
 }

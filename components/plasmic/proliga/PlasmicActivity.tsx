@@ -68,6 +68,7 @@ import {
 
 import Navbar from "../../Navbar"; // plasmic-import: TKT8XnZtrLZi/component
 import UserActivity from "../../UserActivity"; // plasmic-import: JFWOLtBypZOZ/component
+import Footer from "../../Footer"; // plasmic-import: kIdovXGtWiEz/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -93,6 +94,7 @@ export type PlasmicActivity__OverridesType = {
   navbar?: Flex__<typeof Navbar>;
   freeBox?: Flex__<"div">;
   userActivity?: Flex__<typeof UserActivity>;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultActivityProps {}
@@ -232,6 +234,11 @@ function PlasmicActivity__RenderFunc(props: {
               );
             })}
           </Stack__>
+          <Footer
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames("__wab_instance", sty.footer)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -239,10 +246,11 @@ function PlasmicActivity__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbar", "freeBox", "userActivity"],
+  root: ["root", "navbar", "freeBox", "userActivity", "footer"],
   navbar: ["navbar"],
   freeBox: ["freeBox", "userActivity"],
-  userActivity: ["userActivity"]
+  userActivity: ["userActivity"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -252,6 +260,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   freeBox: "div";
   userActivity: typeof UserActivity;
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -334,6 +343,7 @@ export const PlasmicActivity = Object.assign(
     navbar: makeNodeComponent("navbar"),
     freeBox: makeNodeComponent("freeBox"),
     userActivity: makeNodeComponent("userActivity"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicActivity
     internalVariantProps: PlasmicActivity__VariantProps,
