@@ -2096,10 +2096,6 @@ function PlasmicTeams__RenderFunc(props: {
                       sty.soccerPlaceMens2
                     )}
                   />
-
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__oTuO)}
-                  />
                 </div>
               </div>
             </div>
