@@ -243,13 +243,13 @@ function PlasmicTeams__RenderFunc(props: {
     def: usePlasmicDataOp(() => {
       return {
         sourceId: "8cdHi4ivRUEkK6qbegQevF",
-        opId: "105ce4d6-f10b-4e05-88d8-e9b788210405",
+        opId: "c7d4d263-b030-4b91-9747-74e8333a1692",
         userArgs: {
           filters: [$queries.teamP.data[0].id]
         },
-        cacheKey: `plasmic.$.105ce4d6-f10b-4e05-88d8-e9b788210405.$.`,
+        cacheKey: `plasmic.$.c7d4d263-b030-4b91-9747-74e8333a1692.$.`,
         invalidatedKeys: null,
-        roleId: "f8970d3a-c1ae-4ba8-80dd-90e548ee70d6"
+        roleId: null
       };
     }),
     mid: usePlasmicDataOp(() => {
@@ -770,6 +770,20 @@ function PlasmicTeams__RenderFunc(props: {
                           const currentIndex = __plasmic_idx_0;
                           return (
                             <AvatarPlayer
+                              capitanVisibility={(() => {
+                                try {
+                                  return currentItem.is_captain;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               className={classNames(
                                 "__wab_instance",
                                 sty.avatarPlayer__uvTA
@@ -1022,6 +1036,20 @@ function PlasmicTeams__RenderFunc(props: {
                             key={currentIndex}
                           >
                             <AvatarPlayer
+                              capitanVisibility={(() => {
+                                try {
+                                  return currentItem.is_captain;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               className={classNames(
                                 "__wab_instance",
                                 sty.avatarPlayer__gYokA
@@ -1274,6 +1302,20 @@ function PlasmicTeams__RenderFunc(props: {
                             key={currentIndex}
                           >
                             <AvatarPlayer
+                              capitanVisibility={(() => {
+                                try {
+                                  return currentItem.is_captain;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               className={classNames(
                                 "__wab_instance",
                                 sty.avatarPlayer__nu6Lx
@@ -1526,6 +1568,20 @@ function PlasmicTeams__RenderFunc(props: {
                             key={currentIndex}
                           >
                             <AvatarPlayer
+                              capitanVisibility={(() => {
+                                try {
+                                  return currentItem.is_captain;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return false;
+                                  }
+                                  throw e;
+                                }
+                              })()}
                               className={classNames(
                                 "__wab_instance",
                                 sty.avatarPlayer__jttBq

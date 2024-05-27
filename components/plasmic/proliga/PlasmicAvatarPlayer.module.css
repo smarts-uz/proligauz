@@ -14,6 +14,17 @@
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
 }
+.img__cfuKp {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  z-index: 2;
+  left: 1px;
+  top: 2px;
+}
+.img__cfuKp > picture > img {
+  object-fit: cover;
+}
 .freeBox {
   display: flex;
   position: relative;

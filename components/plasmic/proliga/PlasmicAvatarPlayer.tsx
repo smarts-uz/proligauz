@@ -78,13 +78,15 @@ export type PlasmicAvatarPlayer__ArgsType = {
   name?: string;
   clickOn?: (event: any) => void;
   clubLogo?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  capitanVisibility?: boolean;
 };
 type ArgPropType = keyof PlasmicAvatarPlayer__ArgsType;
 export const PlasmicAvatarPlayer__ArgProps = new Array<ArgPropType>(
   "image",
   "name",
   "clickOn",
-  "clubLogo"
+  "clubLogo",
+  "capitanVisibility"
 );
 
 export type PlasmicAvatarPlayer__OverridesType = {
@@ -98,6 +100,7 @@ export interface DefaultAvatarPlayerProps {
   name?: string;
   clickOn?: (event: any) => void;
   clubLogo?: React.ComponentProps<typeof PlasmicImg__>["src"];
+  capitanVisibility?: boolean;
   className?: string;
 }
 
@@ -129,7 +132,8 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
             fullWidth: 690,
             fullHeight: 690,
             aspectRatio: undefined
-          }
+          },
+          capitanVisibility: false
         },
         props.args
       ),
@@ -165,6 +169,35 @@ function PlasmicAvatarPlayer__RenderFunc(props: {
         sty.root
       )}
     >
+      {(() => {
+        try {
+          return $props.capitanVisibility;
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__cfuKp)}
+          displayHeight={"auto"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"auto"}
+          loading={"lazy"}
+          src={
+            "https://www.serieafantasy.com/static/media/select-captain.94d730cd.svg"
+          }
+          width={"15px"}
+        />
+      ) : null}
       <div
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
