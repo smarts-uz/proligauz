@@ -1993,6 +1993,20 @@
           "cssFilePath": "plasmic/proliga/PlasmicAdminNavbar.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "GFedZJdOZJVw",
+          "name": "FixtureAdminPage",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicFixtureAdminPage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/fixture-admin-page.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicFixtureAdminPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/fixture-admin-page"
         }
       ],
       "icons": [
