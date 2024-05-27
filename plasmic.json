@@ -1966,6 +1966,33 @@
           "cssFilePath": "plasmic/proliga/PlasmicUpdateCapitan.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "l6vELxZhJ9Rs",
+          "name": "HomePageAdmin",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicHomePageAdmin.tsx",
+          "importSpec": {
+            "modulePath": "../pages/home-page-admin.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicHomePageAdmin.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/home-page-admin"
+        },
+        {
+          "id": "a1eyFQc8LDBj",
+          "name": "AdminNavbar",
+          "type": "managed",
+          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicAdminNavbar.tsx",
+          "importSpec": {
+            "modulePath": "AdminNavbar.tsx"
+          },
+          "cssFilePath": "plasmic/proliga/PlasmicAdminNavbar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
