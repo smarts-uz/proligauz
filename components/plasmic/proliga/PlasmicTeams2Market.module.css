@@ -259,8 +259,11 @@
 }
 .playerAction:global(.__wab_instance) {
   max-width: 100%;
-  position: relative;
-  margin-left: 750px;
+  position: absolute;
+  margin-left: 0px;
+  left: 755px;
+  top: 275px;
+  z-index: 1;
 }
 @media (max-width: 768px) {
   .playerAction:global(.__wab_instance) {
@@ -300,17 +303,16 @@
 }
 .freeBox__iak4F {
   display: flex;
-  position: fixed;
+  position: absolute;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 262.3px;
   height: auto;
   max-width: 100%;
-  left: 0;
-  top: 0;
+  left: -336px;
+  top: 120px;
   z-index: 2;
-  bottom: 0;
   justify-self: flex-start;
   margin-top: 195px;
   margin-bottom: 0px;

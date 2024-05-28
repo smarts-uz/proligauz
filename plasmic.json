@@ -1031,19 +1031,6 @@
           "componentType": "component"
         },
         {
-          "id": "JPTZnE__mF34",
-          "name": "LoginButton",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicLoginButton.tsx",
-          "importSpec": {
-            "modulePath": "LoginButton.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicLoginButton.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "4z0H5ajimEuS",
           "name": "LoginButton2",
           "type": "managed",
@@ -1121,19 +1108,6 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "text-input"
-        },
-        {
-          "id": "EcPHyLOdrRa4",
-          "name": "Clubs",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClubs.tsx",
-          "importSpec": {
-            "modulePath": "Clubs.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicClubs.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         },
         {
           "id": "brwm8J1lJ4Hp",
@@ -1297,33 +1271,6 @@
           "path": "/breaking-news"
         },
         {
-          "id": "4Bc2YM6MYzzT",
-          "name": "MarketMember",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicMarketMember.tsx",
-          "importSpec": {
-            "modulePath": "MarketMember.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicMarketMember.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "I1NchpjylJEs",
-          "name": "Market",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicMarket.tsx",
-          "importSpec": {
-            "modulePath": "../pages/market.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicMarket.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/market"
-        },
-        {
           "id": "D7Sj75T4yazB",
           "name": "IdealXl",
           "type": "managed",
@@ -1376,20 +1323,6 @@
           "cssFilePath": "plasmic/proliga_clone/PlasmicInjuredTeamMember.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "VQ1INKk1DLfp",
-          "name": "Checkbox",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicCheckbox.tsx",
-          "importSpec": {
-            "modulePath": "Checkbox.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicCheckbox.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "checkbox"
         },
         {
           "id": "jP1iWNVmUw64",
@@ -1496,47 +1429,6 @@
           "componentType": "component"
         },
         {
-          "id": "PJy0F_y50N2W",
-          "name": "InfoMatches",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicInfoMatches.tsx",
-          "importSpec": {
-            "modulePath": "InfoMatches.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicInfoMatches.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "HKQhiFHHfgky",
-          "name": "MoreInfo",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicMoreInfo.tsx",
-          "importSpec": {
-            "modulePath": "../pages/clubPlayer/[id].tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicMoreInfo.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/clubPlayer/[id]"
-        },
-        {
-          "id": "h0_szABvd8-m",
-          "name": "ClubInfo",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClubInfo.tsx",
-          "importSpec": {
-            "modulePath": "../pages/club/[name].tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicClubInfo.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/club/[name]"
-        },
-        {
           "id": "3EueAFP_3sEI",
           "name": "Clubs2",
           "type": "managed",
@@ -1576,20 +1468,6 @@
           "componentType": "component"
         },
         {
-          "id": "vKrRy_9WiPth",
-          "name": "ClubPlayer",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicClubPlayer.tsx",
-          "importSpec": {
-            "modulePath": "../pages/club-2/[id].tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicClubPlayer.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/club-2/[id]"
-        },
-        {
           "id": "MiYb6Bkn-8fe",
           "name": "Teams",
           "type": "managed",
@@ -1617,32 +1495,6 @@
           "componentType": "component"
         },
         {
-          "id": "qUbRTVIHal7b",
-          "name": "Card",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicCard.tsx",
-          "importSpec": {
-            "modulePath": "Card.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicCard.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "qXLKrSBr6JMH",
-          "name": "StandingPlayers",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga_clone/PlasmicStandingPlayers.tsx",
-          "importSpec": {
-            "modulePath": "StandingPlayers.tsx"
-          },
-          "cssFilePath": "plasmic/proliga_clone/PlasmicStandingPlayers.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "xmY-b23pZr3-",
           "name": "Club",
           "type": "managed",
@@ -1663,7 +1515,7 @@
           "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
           "renderModuleFilePath": "plasmic/proliga/PlasmicMarkets.tsx",
           "importSpec": {
-            "modulePath": "../pages/market-2.tsx"
+            "modulePath": "../pages/markets.tsx"
           },
           "cssFilePath": "plasmic/proliga/PlasmicMarkets.module.css",
           "scheme": "blackbox",
@@ -1709,20 +1561,6 @@
           "cssFilePath": "plasmic/proliga/PlasmicPlayerInfoMarket.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "sLfjzSKSb4kE",
-          "name": "TeamMarket",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga/PlasmicTeamMarket.tsx",
-          "importSpec": {
-            "modulePath": "../pages/player/[id].tsx"
-          },
-          "cssFilePath": "plasmic/proliga/PlasmicTeamMarket.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/player/[id]"
         },
         {
           "id": "EwVsXqDViOHx",
@@ -1836,32 +1674,6 @@
           "path": "/competition/[id]"
         },
         {
-          "id": "rr9gNzDgkKM7",
-          "name": "UpdateTeamsName",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga/PlasmicUpdateTeamsName.tsx",
-          "importSpec": {
-            "modulePath": "UpdateTeamsName.tsx"
-          },
-          "cssFilePath": "plasmic/proliga/PlasmicUpdateTeamsName.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "1mEeXoy7thbq",
-          "name": "Alert",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga/PlasmicAlert.tsx",
-          "importSpec": {
-            "modulePath": "Alert.tsx"
-          },
-          "cssFilePath": "plasmic/proliga/PlasmicAlert.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "7ylFTnxhQETY",
           "name": "SideBarMyTeam",
           "type": "managed",
@@ -1899,20 +1711,6 @@
           "cssFilePath": "plasmic/proliga/PlasmicMessageCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "8sTQYnxgsujq",
-          "name": "PlayerSell",
-          "type": "managed",
-          "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga/PlasmicPlayerSell.tsx",
-          "importSpec": {
-            "modulePath": "../pages/team/sellplayer.tsx"
-          },
-          "cssFilePath": "plasmic/proliga/PlasmicPlayerSell.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/team/sellplayer"
         },
         {
           "id": "ViX-reU4QKrx",
@@ -1995,18 +1793,17 @@
           "componentType": "component"
         },
         {
-          "id": "GFedZJdOZJVw",
-          "name": "FixtureAdminPage",
+          "id": "hHE4D7ugAvRd",
+          "name": "Switch",
           "type": "managed",
           "projectId": "tDWy3GXn2mzd9e2xUaPdmu",
-          "renderModuleFilePath": "plasmic/proliga/PlasmicFixtureAdminPage.tsx",
+          "renderModuleFilePath": "plasmic/proliga/PlasmicSwitch.tsx",
           "importSpec": {
-            "modulePath": "../pages/fixture-admin-page.tsx"
+            "modulePath": "Switch.tsx"
           },
-          "cssFilePath": "plasmic/proliga/PlasmicFixtureAdminPage.module.css",
+          "cssFilePath": "plasmic/proliga/PlasmicSwitch.module.css",
           "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/fixture-admin-page"
+          "componentType": "component"
         }
       ],
       "icons": [

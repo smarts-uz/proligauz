@@ -597,6 +597,7 @@
   max-width: 100%;
   transition-property: all, all;
   transition-duration: 1s, 1s;
+  display: none;
   -webkit-transition-property: all, all;
   -webkit-transition-duration: 1s, 1s;
 }
@@ -607,6 +608,8 @@
   max-width: 100%;
   color: var(--token-jgohepLVeKvh);
   font-size: 23px;
-  font-family: "Kaisei Opti", serif;
+  font-family: "Inter Tight", sans-serif;
   text-align: right;
+  padding-right: 10px;
+  font-weight: 600;
 }

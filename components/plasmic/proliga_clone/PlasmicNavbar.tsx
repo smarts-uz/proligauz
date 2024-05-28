@@ -406,7 +406,7 @@ function PlasmicNavbar__RenderFunc(props: {
                 sty.link__vGl2M
               )}
               component={Link}
-              href={`/market-2`}
+              href={`/markets`}
               platform={"nextjs"}
             >
               <Button
@@ -417,13 +417,13 @@ function PlasmicNavbar__RenderFunc(props: {
                     role={"img"}
                   />
                 }
-                link={`/market-2`}
+                link={`/markets`}
                 onClick={async event => {
                   const $steps = {};
 
                   $steps["goToMarkets"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/market-2` };
+                        const actionArgs = { destination: `/markets` };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&

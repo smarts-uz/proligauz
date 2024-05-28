@@ -22,6 +22,11 @@
 .root > * {
   grid-column: 4;
 }
+@media (max-width: 1800px) {
+  .root > * {
+    grid-column: 4;
+  }
+}
 @media (max-width: 768px) {
   .root {
     justify-items: center;
@@ -166,10 +171,11 @@
   flex-wrap: nowrap;
   margin-top: 32px;
   margin-left: 0px;
+  background: var(--token-as44I7WwR-rZ);
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
   --plsmc-rc-col-gap: 0px;
-  padding: 8px 8px 8px 260px;
+  padding: 8px 8px 8px 270px;
 }
 .columns > :nth-child(2n + 1) {
   width: calc((100% - 2 * var(--plsmc-rc-col-gap, 0px)) * 6 / 12);
@@ -596,13 +602,19 @@
   position: relative;
 }
 .sideBarMyTeam:global(.__wab_instance) {
-  position: fixed;
-  top: 215px;
-  left: 0;
-  bottom: 233px;
+  position: absolute;
+  top: 214px;
+  left: -338px;
   z-index: 2;
-  height: 1152px;
+  height: 627px;
+  right: 1195px;
   margin: 0px;
+}
+@media (max-width: 1800px) {
+  .sideBarMyTeam:global(.__wab_instance) {
+    right: 1157px;
+    left: -327px;
+  }
 }
 @media (max-width: 768px) {
   .sideBarMyTeam:global(.__wab_instance) {

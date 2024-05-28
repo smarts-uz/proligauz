@@ -196,6 +196,8 @@
 @media (max-width: 768px) {
   .freeBox__kjQyd {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding-right: 0px;
+    padding-left: 0px;
   }
 }
 .freeBox__u4CMl {
@@ -250,6 +252,11 @@
   > picture
   > img {
   margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .freeBox__qwkJf {
+    padding: 0px;
+  }
 }
 .freeBox__iCwhV {
   display: flex;
@@ -342,6 +349,7 @@
   margin-bottom: 16px;
   margin-top: 0px;
   background: var(--token-jgohepLVeKvh);
+  cursor: pointer;
   min-width: 0;
   padding: 8px;
 }
@@ -374,6 +382,12 @@
   > img {
   margin-left: 6px;
 }
+@media (max-width: 768px) {
+  .freeBox___3YAhp {
+    width: 200px;
+    flex-shrink: 0;
+  }
+}
 .cmsEntryField__bfwl:global(.__wab_instance) {
   object-fit: fill;
   max-width: 100%;
@@ -383,6 +397,13 @@
   width: 60px;
   height: 60px;
   flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .cmsEntryField__bfwl:global(.__wab_instance) {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
 }
 .cmsEntryField__a42Ms:global(.__wab_instance) {
   object-fit: fill;
@@ -394,6 +415,13 @@
   height: 45px;
   flex-shrink: 0;
 }
+@media (max-width: 768px) {
+  .cmsEntryField__a42Ms:global(.__wab_instance) {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+}
 .cmsEntryField__deAe:global(.__wab_instance) {
   object-fit: cover;
   max-width: 100%;
@@ -401,12 +429,22 @@
   font-size: 18px;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  .cmsEntryField__deAe:global(.__wab_instance) {
+    font-size: 16px;
+  }
+}
 .cmsEntryField__xv7Rc:global(.__wab_instance) {
   object-fit: cover;
   max-width: 100%;
   color: var(--token-_Z-x7YSfdB4D);
   font-size: 18px;
   font-weight: 600;
+}
+@media (max-width: 768px) {
+  .cmsEntryField__xv7Rc:global(.__wab_instance) {
+    font-size: 16px;
+  }
 }
 .freeBox__ia3Pj {
   display: flex;
@@ -421,6 +459,11 @@
   top: auto;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 768px) {
+  .freeBox__ia3Pj {
+    width: auto;
+  }
 }
 .cmsEntryField__oj3Wx:global(.__wab_instance) {
   object-fit: cover;
@@ -442,6 +485,11 @@
   top: auto;
   min-width: 0;
   padding: 8px;
+}
+@media (max-width: 768px) {
+  .freeBox___7My3H {
+    width: auto;
+  }
 }
 .cmsEntryField___1Mb85:global(.__wab_instance) {
   object-fit: cover;
